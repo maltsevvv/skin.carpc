@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="2000">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<include>FrameMax</include>
+		<control type="label" id="1">
+			<left>0</left>
+			<top>10</top>
+			<width>1280</width>
+			<align>center</align>
+			<font>40</font>
+		</control>
+		<control type="list" id="3">
+			<pagecontrol>60</pagecontrol>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<onleft>-</onleft>
+			<onright>60</onright>
+		</control>
+		<control type="list" id="6">
+			<pagecontrol>60</pagecontrol>
+			<scroll>true</scroll>
+			<onup>60</onup>
+			<ondown>9000</ondown>
+			<onleft>9000</onleft>
+			<onright>60</onright>
+		</control>
+		<control type="grouplist" id="9000">
+			<onup>9001</onup>
+			<ondown>3</ondown>
+			<onleft></onleft>
+			<onright></onright>
+			<control type="button" id="5">
+				<description>Button</description>
+				<align>center</align>
+				<label>$LOCALIZE[368]</label>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<onleft></onleft>
+				<onright>3</onright>
+			</control>
+			
+			<control type="button" id="7">
+				<description>Button</description>
+				<align>center</align>
+				<font>40</font>
+				<label></label>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<onleft></onleft>
+				<onright>3</onright>
+			</control>
+		</control>
+		<control type="scrollbar" id="60">
+			<top>60</top>
+			<left>1230</left>
+			<width>48</width>
+			<height>550</height>
+			<texturesliderbackground colordiffuse="BB808080">scrollbarv_bar_bold2.png</texturesliderbackground>
+			<texturesliderbar colordiffuse="$VAR[TextColorDisable]">osdsliderbar_square.png</texturesliderbar>
+			<texturesliderbarfocus colordiffuse="$VAR[TextColorEnable]">osdsliderbar_square.png</texturesliderbarfocus>
+			<textureslidernib colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernib>
+			<textureslidernibfocus colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernibfocus>
+			<onleft>6</onleft>
+			<ondown>60</ondown>
+			<onup>60</onup>
+			<onright>9000</onright>
+			<showonepage>false</showonepage>
+			<orientation>vertical</orientation>
+		</control>
+	</controls>
+</window>

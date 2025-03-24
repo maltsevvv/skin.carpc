@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">1000</defaultcontrol>
+	<controls>
+		<include>background80</include>
+		<include>framemax</include>
+		<include>select</include>
+
+		<control type="textbox" id="5">
+			<left>57</left>
+			<top>80</top>
+			<width>920</width>
+			<height>580</height>
+			<pagecontrol>3000</pagecontrol>
+			<font>40</font>
+		</control>
+		<control type="scrollbar" id="3000">
+			<include>HiddenObject</include>
+			<ondown>3000</ondown>
+			<onup>3000</onup>
+		</control>
+
+		<control type="button" id="1000">
+			<left>440</left>
+			<top>655</top>
+			<width>145</width> 
+			<height>145</height>
+			<texturefocus>select-buttonFO.png</texturefocus>
+			<texturenofocus>select-button.png</texturenofocus>
+			<onclick>Action(Close)</onclick>
+			<onup>PageUp(3000)</onup>
+			<ondown>PageDown(3000)</ondown>
+		</control>
+		<control type="label">
+			<left>57</left>
+			<top>100</top>
+			<width>330</width>
+			<height>35</height>
+			<font>30</font>
+			<!-- <textcolor>$VAR[CustomTextColorLabel2]</textcolor> -->
+			<align>right</align>
+			<aligny>center</aligny>
+			<label>$LOCALIZE[31035] [COLOR=button_focus]$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages][/COLOR]</label>
+			<wrapmultiline>true</wrapmultiline>
+			<visible>Integer.IsGreater(Container(5).NumPages,1)</visible>
+		</control>
+	</controls>
+</window>

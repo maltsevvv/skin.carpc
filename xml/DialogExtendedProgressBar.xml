@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<controls>
+		<include>notification</include>
+		<control type="fadelabel" id="30">
+			<top>35</top>
+		</control>
+		<control type="progress" id="32">
+			<description>Progress Bar</description>
+			<left>200</left>
+			<top>30</top>
+			<width>850</width>
+			<height>150</height>
+			<info>System.Progress</info>
+		</control>
+		<control type="label">
+			<description>Строка состояния в %</description>
+			<left>100</left>
+			<top>75</top>
+			<width>1080</width>
+			<height>65</height>
+			<font>40</font>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<align>right</align>
+			<label>$INFO[Control.GetLabel(32),%]</label>
+		</control>
+		<control type="label" id="31">
+			<description>Title Label</description>
+			<left>50</left>
+			<top>110</top>
+			<width>1180</width>
+			<height>65</height>
+			<font>40</font>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+	</controls>
+</window>

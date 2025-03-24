@@ -1,0 +1,6 @@
+1.0.5 - ADD Change Background Image Interface
+      - ADD Change Background Image for CanBus Interface
+	  - Rename button Programs on CanBus Home Menu
+	  - Load Background Image in skin folder background
+	  - BAG FIX CanBus
+1.0.4 - BAG FIX SD overlay

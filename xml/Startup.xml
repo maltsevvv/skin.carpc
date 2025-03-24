@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+
+	<onload condition="Skin.HasSetting(RNSEncoder)">SetProperty(RNSEncoder,true,10000)</onload>
+	<onload condition="!Skin.HasSetting(RNSEncoder)">SetProperty(RNSEncoder,false,10000)</onload> <!-- on boot false -->
+	
+	<onload condition="!Skin.HasSetting(CanBusKeyCar)">SetProperty(CanBusKeyCar,true,10000)</onload> <!-- on boot true -->
+	<onload condition="Skin.HasSetting(CanBusKeyCar)">SetProperty(CanBusKeyCar,false,10000)</onload>
+	
+	<onload condition="!Skin.HasSetting(PowerOFF)">SetProperty(PowerOFF,true,10000)</onload> <!-- on boot true -->
+	<onload condition="Skin.HasSetting(PowerOFF)">SetProperty(PowerOFF,false,10000)</onload>
+	
+	<onload condition="!Skin.HasSetting(rnsdtv)">SetProperty(rnsdtv,true,10000)</onload> <!-- on boot true -->
+	<onload condition="Skin.HasSetting(rnsdtv)">SetProperty(rnsdtv,false,10000)</onload>
+
+	<onload condition="!Skin.HasSetting(rnsetv)">SetProperty(rnsetv,true,10000)</onload> <!-- on boot true -->
+	<onload condition="Skin.HasSetting(rnsetv)">SetProperty(rnsetv,false,10000)</onload>
+
+	<onload condition="Skin.HasSetting(RNSTFT)">SetProperty(RNSTFT,true,10000)</onload>
+	<onload condition="!Skin.HasSetting(RNSTFT)">SetProperty(RNSTFT,false,10000)</onload> <!-- on boot false -->
+	
+	<onload condition="Skin.HasSetting(TMCEmulation)">SetProperty(TMCEmulation,true,10000)</onload> <!-- on boot true -->
+	<onload condition="!Skin.HasSetting(TMCEmulation)">SetProperty(TMCEmulation,false,10000)</onload>
+	
+	<onload condition="Skin.HasSetting(CanBusEmulation)">SetProperty(CanBusEmulation,true,10000)</onload>
+	<onload condition="!Skin.HasSetting(CanBusEmulation)">SetProperty(CanBusEmulation,false,10000)</onload> <!-- on boot false -->
+	
+	<onload condition="Skin.HasSetting(SendFIS)">SetProperty(SendFIS,true,10000)</onload>
+	<onload condition="!Skin.HasSetting(SendFIS)">SetProperty(SendFIS,false,10000)</onload> <!-- on boot false -->
+
+	<onload condition="Skin.HasSetting(MFSW_LeftRight)">SetProperty(MFSW_LeftRight,true,10000)</onload>
+	<onload condition="!Skin.HasSetting(MFSW_LeftRight)">SetProperty(MFSW_LeftRight,false,10000)</onload> <!-- on boot false -->
+
+	<onload condition="Skin.HasSetting(MFSW_UpDown)">SetProperty(MFSW_UpDown,true,10000)</onload>
+	<onload condition="!Skin.HasSetting(MFSW_UpDown)">SetProperty(MFSW_UpDown,false,10000)</onload> <!-- on boot false -->
+
+	<onload>ReplaceWindow(Home)</onload>
+	<allowoverlay>yes</allowoverlay>
+</window>

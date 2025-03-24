@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="10004">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		<include>background</include>
+		<include>HomeButtonCommons</include>
+		<control type="label">
+			<left>0</left>
+			<top>10</top>
+			<width>1280</width>
+			<label>$LOCALIZE[5]</label>
+			<align>center</align>
+			<font>30</font>
+		</control>
+<!-- 1st Row -->
+		<control type="group">
+			<top>-20</top>
+			<control type="group">
+				<description>Appearance</description>
+				<left>134</left>
+				<top>96</top>
+				<control type="image">
+					<visible>Control.HasFocus(10)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/interface.png</texture>
+				</control>
+				<control type="button" id="10">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(AppearanceSettings)</onclick>
+					<onright>20</onright>
+					<ondown>50</ondown>
+					<onleft>-</onleft>
+					<onup></onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[14206]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+				</control>  
+			</control>
+
+			<control type="group">
+				<description>Media Setting</description>
+				<left>388</left>
+				<top>96</top>
+				<control type="image">
+					<visible>Control.HasFocus(20)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/media.png</texture>
+				</control>
+				<control type="button" id="20">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(MediaSettings)</onclick>
+					<onright>30</onright>
+					<ondown>60</ondown>
+					<onleft>10</onleft>
+					<onup>-</onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[14211]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>		
+				</control>  
+			</control>
+
+			<control type="group">
+				<description>PlayerSettings</description>
+				<left>642</left>
+				<top>96</top>
+				<control type="image">
+					<visible>Control.HasFocus(30)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/player.png</texture>
+				</control>
+				<control type="button" id="30">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(PlayerSettings)</onclick>
+					<onright>40</onright>
+					<ondown>70</ondown>
+					<onleft>20</onleft>
+					<onup>-</onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[14211]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>		
+				</control>  
+			</control>
+
+			<control type="group">
+				<description>PVR Setting</description>
+				<left>896</left>
+				<top>96</top>
+				<control type="image">
+					<visible>Control.HasFocus(40)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/livetv.png</texture>
+				</control>
+				<control type="button" id="40">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(PVRSettings)</onclick>
+					<onright>50</onright>
+					<ondown>80</ondown>
+					<onleft>30</onleft>
+					<onup>-</onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[14204]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>		
+				</control>  
+			</control>
+		</control>
+<!-- 2st Row -->
+		<control type="group">
+			<top>-20</top>
+			<control type="group">
+				<description>AddonBrowser</description>
+				<left>134</left>
+				<top>350</top>
+				<control type="image">
+					<visible>Control.HasFocus(50)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/addons.png</texture>
+				</control>
+				<control type="button" id="50">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(AddonBrowser)</onclick>
+					<onright>60</onright>
+					<ondown>100</ondown>
+					<onleft>40</onleft>
+					<onup>10</onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[24001]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>		
+				</control>  
+			</control>
+
+			<control type="group">
+				<description>SystemSettings</description>
+				<left>388</left>
+				<top>350</top>
+				<control type="image">
+					<visible>Control.HasFocus(60)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/system.png</texture>
+				</control>
+				<control type="button" id="60">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(SystemSettings)</onclick>
+					<onright>70</onright>
+					<ondown>100</ondown>
+					<onleft>50</onleft>
+					<onup>20</onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[13000]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>		
+				</control>  
+			</control>
+
+			<control type="group">
+				<description>ServiceSettings</description>
+				<left>642</left>
+				<top>350</top>
+				<control type="image">
+					<visible>Control.HasFocus(70)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/network.png</texture>
+				</control>
+				<control type="button" id="70">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>ActivateWindow(ServiceSettings)</onclick>
+					<onright>80</onright>
+					<ondown>100</ondown>
+					<onleft>60</onleft>
+					<onup>30</onup>
+				</control>
+				<control type="label">
+					<left>0</left>  
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[13000]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>		
+				</control>  
+			</control>
+
+			<control type="group">
+				<description>ServiceSettings</description>
+				<left>896</left>
+				<top>350</top>
+				<control type="image">
+					<visible>Control.HasFocus(80)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-20</top>
+					<width>250</width>
+					<height>250</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonHomeIconColor]">icons/settings/sysinfo.png</texture>
+				</control>
+				<control type="button" id="80">
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonBorderFocus]">frame_250px.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">frame_250px.png</texturefocus>
+					<onclick>activatewindow(systeminfo)</onclick>
+					<onright>10</onright>
+					<ondown>100</ondown>
+					<onleft>70</onleft>
+					<onup>40</onup>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>190</top>
+					<height>40</height>
+					<width>250</width>
+					<label>$LOCALIZE[10007] </label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>40</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="10104">
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<visible>!player.passthrough</visible>
+		<description>Рамка громкости</description>
+		<control type="image">
+			<left>150</left>
+			<top>150</top>
+			<width>705</width>
+			<height>175</height>
+			<texture>background.png</texture>
+		</control>
+  		<control type="image">
+			<left>150</left>
+			<top>150 </top>
+			<width>700</width> 
+			<height>5</height> 
+			<texture>button-focus.png</texture>
+		</control>
+  		<control type="image">
+			<left>150</left>
+			<top>320 </top>
+			<width>700</width> 
+			<height>5</height> 
+			<texture>button-focus.png</texture>
+		</control>
+		<control type="image">
+			<left>150</left>
+			<top>150</top>
+			<height>175</height>
+			<width>5</width> 
+			<texture>button-focus.png</texture>
+		</control>
+		<control type="image">
+			<left>850</left>
+			<top>150</top>
+			<height>175</height>
+			<width>5</width> 
+			<texture>button-focus.png</texture>
+		</control>
+		<control type="label">
+			<description>Volume</description>
+			<left>40</left>
+			<top>170</top>
+			<width>940</width>
+			<align>center</align>
+			<font>40</font>
+			<label>Kodi-Volume</label>
+		</control>
+		<control type="progress" id="1">
+			<info>Player.Volume</info>
+			<left>240</left>
+			<top>250</top>
+			<width>540</width>
+			<height>50</height>
+			
+		</control>
+		<control type="label">
+			<description>-</description>
+			<left>160</left>
+			<top>240</top>
+			<align>left</align>
+			<font>70</font>
+			<label>-</label>
+		</control>
+		<control type="label">
+			<description>+</description>
+			<left>800</left>
+			<top>240</top>
+			<align>left</align>
+			<font>70</font>
+			<label>+</label>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.carpc" version="1.0.5" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.16.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC For VAG</summary>
+		<summary lang="ru">Skin CarPC Для VAG</summary>
+		<description lang="en">Skin CarPC For VAG. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка CarPC Для VAG. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<screenshot>resources/screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>

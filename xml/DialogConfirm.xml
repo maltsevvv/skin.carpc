@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window id="10101">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background1</include>
+		<include>FrameDialog</include>
+		<control type="label" id="1">
+			<description>Заголовок</description>
+			<left>50</left>
+			<top>80</top>
+			<width>1180</width>
+			<align>center</align>
+			<font>50</font>
+			<label>-</label>
+		</control>
+		
+		<control type="progress" id="20">
+			<description>Progress Bar</description>
+			<left>240</left>
+			<top>210</top>
+			<width>800</width>
+			<height>140</height>
+			<info>System.Progress</info>
+		</control>	
+		
+		<control type="label">
+			<description>Строка состояния в %</description>
+			<left>240</left>
+			<top>250</top>
+			<width>800</width>
+			<height>140</height>
+			<align>center</align>
+			<label>$INFO[System.Progressbar,%]</label>
+		</control>
+		
+		<control type="textbox" id="9">
+			<description>dialog line 1/2/3</description>
+			<left>50</left>
+			<top>130</top>
+			<width>1180</width>
+			<height>200</height>
+			<align>center</align>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<label />
+			<scroll>true</scroll>
+		</control>
+
+		<control type="grouplist" id="9000">
+			<top>350</top>
+			<width>1280</width>
+			<orientation>horizontal</orientation>
+			<control type="button" id="11">
+				<description>OK button</description>
+				<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+				<textcolor>$VAR[TextColor]</textcolor>
+				<align>center</align>
+				<label>107</label>
+			</control>
+			<control type="button" id="10">
+				<description>Cancel button</description>
+				<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+				<texturenofocus  colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+				<textcolor>$VAR[TextColor]</textcolor>
+				<align>center</align>
+				<label>106</label>
+			</control>
+			<control type="button" id="12">
+				<description>Custom button</description>
+				<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+				<texturenofocus  colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+				<textcolor>$VAR[TextColor]</textcolor>
+				<align>center</align>
+				<label>106</label>
+			</control>
+		</control>
+	</controls>
+</window>

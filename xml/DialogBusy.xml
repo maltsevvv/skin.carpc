@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="136">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>notification</include>
+		<control type="group">
+			<top>65</top>
+			<left>60</left>
+			<width>910</width>
+			<control type="label">
+				<description>Busy label</description>
+				<width>910</width>
+				<!-- <align>center</align> -->
+				<label>$LOCALIZE[20186]</label>
+			</control>
+			<control type="image">
+				<description>Busy animation</description>
+				<top>-620</top>
+				<left>80</left>
+				<width>80</width>
+				<texture colordiffuse="FF808080">spinner.png</texture>
+				<aspectratio>keep</aspectratio>
+				<animation effect="rotate" start="720" end="0" center="auto" time="1500" loop="true" condition="true">conditional</animation>
+			</control>
+		</control>
+	</controls>
+</window>

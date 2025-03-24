@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="canbus">
+
+		<description>CanBusRPM</description>
+		<control type="group">
+			<visible>!Skin.HasSetting(time) + Window.IsActive(Home) | !Skin.HasSetting(time) + !Window.IsActive(Home) | Skin.HasSetting(time) + !Window.IsActive(Home)</visible>
+			<left>0</left>
+			<top>10</top>
+			<control type="image">
+				<left>240</left>
+				<top>5</top>
+				<width>90</width>
+				<height>90</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_rpm.png</texture>
+			</control>
+			<control type="label">
+				<top>0</top>
+				<left>10</left>
+				<height>70</height>
+				<width>230</width>
+				<font>digital_90</font>
+				<align>right</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>[B]$INFO[Window(10000).Property(CanBusRPM)][/B]</label>
+			</control>
+		</control>
+
+		<description>Coolant</description>
+		<control type="group">
+			<visible>!Skin.HasSetting(time) + Window.IsActive(Home) | !Skin.HasSetting(time) + !Window.IsActive(Home) | Skin.HasSetting(time) + !Window.IsActive(Home)</visible>
+			<left>900</left>
+			<top>10</top>
+			<control type="image">
+				<left>280</left>
+				<top>0</top>
+				<width>70</width>
+				<height>70</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_temp.png</texture>
+			</control>
+			<control type="label">
+				<top>0</top>
+				<left>50</left>
+				<height>70</height>
+				<width>230</width>
+				<font>digital_90</font>
+				<align>right</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>[B]$INFO[Window(10000).Property(CanBusCoolant)][/B]</label>
+				<!-- <label>[B]120[/B]</label> -->
+			</control>
+		</control>
+
+		<description>Speed</description>
+		<control type="group">
+			<visible>!Skin.HasSetting(time) + Window.IsActive(Home) | !Skin.HasSetting(time) + !Window.IsActive(Home) | Skin.HasSetting(time) + !Window.IsActive(Home)</visible>
+			<left>440</left>
+			<top>120</top>
+			<control type="image">
+				<left>130</left>
+				<top>-60</top>
+				<width>150</width>
+				<height>150</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_speed.png</texture>
+			</control>
+			<control type="label">
+				<top>0</top>
+				<height>300</height>
+				<width>420</width>
+				<font>digital_250</font>
+				<align>center</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>$INFO[Window(10000).Property(CanBusSpeed)]</label>
+			</control>
+		</control>
+		
+		<control type="label">
+			<visible>!Skin.HasSetting(time) + Window.IsActive(Home) | !Skin.HasSetting(time) + !Window.IsActive(Home) | Skin.HasSetting(time) + !Window.IsActive(Home)</visible>
+			<top>15</top>
+			<left>0</left>
+			<width>1280</width>
+			<height>70</height>
+			<font>digital_70</font>
+			<align>center</align>
+			<textcolor>$VAR[TextColorDisable]</textcolor>
+			<label>[B]$INFO[System.Time][/B]</label>
+		</control>
+
+
+		
+		<control type="group">
+			<description>RPI TEMP</description>
+			<visible>Window.IsActive(1205) + !Skin.HasSetting(RNS-JP3)</visible>
+			<left>670</left>
+			<top>630</top>
+			<control type="image">
+				<left>240</left>
+				<top>0</top>
+				<width>70</width>
+				<height>70</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_temp_rpi.png</texture>
+			</control>
+			<control type="label">
+				<top>0</top>
+				<left></left>
+				<height>70</height>
+				<width>230</width>
+				<font>digital_90</font>
+				<align>right</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>$INFO[Window(10000).Property(rpi_cpu)]</label>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>RPI TEMP</description>
+			<visible>Window.IsActive(1205) + Skin.HasSetting(RNS-JP3)</visible>
+			<left>670</left>
+			<top>530</top>
+			<control type="image">
+				<left>240</left>
+				<top>0</top>
+				<width>70</width>
+				<height>70</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_temp_rpi.png</texture>
+			</control>
+			<control type="label">
+				<top>0</top>
+				<left></left>
+				<height>70</height>
+				<width>230</width>
+				<font>digital_90</font>
+				<align>right</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>$INFO[Window(10000).Property(rpi_cpu)]</label>
+			</control>
+		</control>
+		
+	<!-- 	<description>Odometr</description>
+		<control type="group">
+			<visible>Window.IsActive(1205)</visible>
+			<left>20</left>
+			<top>0</top>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>250</width>
+				<height>250</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_odometr1.png</texture>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>130</top>
+				<height>90</height>
+				<width>280</width>
+				<font>digital_70</font>
+				<align>center</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>[B]$INFO[Window(10000).Property(odometr1)][/B]</label>
+			</control>
+		</control> -->
+
+<!-- 		<description>ODOMETR 2</description>
+		<control type="group">
+			<visible>Window.IsActive(1205)</visible>
+			<left>1000</left>
+			<top>0</top>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>250</width>
+				<height>250</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">car/icon_odometr2.png</texture>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>130</top>
+				<height>90</height>
+				<width>280</width>
+				<font>digital_70</font>
+				<align>center</align>
+				<textcolor>$VAR[TextColorCan]</textcolor>
+				<label>[B]$INFO[Window(10000).Property(odometr2)][/B]</label>
+			</control>
+		</control> -->
+	</include> 
+</includes>

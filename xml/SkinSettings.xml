@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">211</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background</include>
+		<include>FrameMax</include>
+		<control type="grouplist">
+			<description>Background</description>
+			<left>50</left>
+			<top>80</top>
+			<width>1180</width>
+			<height>520</height>
+			<align>top</align>
+			<orientation>vertical</orientation>
+			<control type="label" id="210">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[36102]</label>
+				<onup>211</onup>
+				<ondown></ondown>
+			</control>	
+			<control type="radiobutton" id="211">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[33068] $LOCALIZE[14206]</label>
+				<onclick>Skin.ToggleSetting(UseCustomBackground)</onclick>
+				<selected>Skin.HasSetting(UseCustomBackground)</selected>
+				<textwidth>900</textwidth>
+				<onup>210</onup>
+				<ondown>212</ondown>
+			</control>
+			<control type="button" id="212">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[14206], $LOCALIZE[33069]</label>
+				<onclick>Skin.SetFile(CustomBackgroundPath,,special://skin/background/)</onclick>
+				<enable>Skin.HasSetting(UseCustomBackground)</enable>
+				<visible>Skin.HasSetting(UseCustomBackground)</visible>
+			</control>	
+			<control type="button" id="213">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[33070] $INFO[Skin.String(CustomBackgroundPath)]</label>
+				<onclick>Skin.SetImage(CustomBackgroundPath)</onclick>
+				<enable>Skin.HasSetting(UseCustomBackground)</enable>
+				<visible>Skin.HasSetting(UseCustomBackground)</visible>
+			</control>
+			<control type="radiobutton" id="214">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[33068] $LOCALIZE[14206]. $LOCALIZE[242] $LOCALIZE[40000]</label>
+				<onclick>Skin.ToggleSetting(UseCustomBackgroundPanel)</onclick>
+				<selected>Skin.HasSetting(UseCustomBackgroundPanel)</selected>
+				<textwidth>900</textwidth>
+			</control>
+			<control type="button" id="215">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[40000]. $LOCALIZE[33069]</label>
+				<onclick>Skin.SetFile(CustomBackgroundPathPanel,,special://skin/background/)</onclick>
+				<enable>Skin.HasSetting(UseCustomBackgroundPanel)</enable>
+				<visible>Skin.HasSetting(UseCustomBackgroundPanel)</visible>
+			</control>	
+			<control type="button" id="216">
+				<width>1180</width>
+				<font>40</font>
+				<label>$LOCALIZE[33070] $INFO[Skin.String(CustomBackgroundPathPanel)]</label>
+				<onclick>Skin.SetImage(CustomBackgroundPathPanel)</onclick>
+				<enable>Skin.HasSetting(UseCustomBackgroundPanel)</enable>
+				<visible>Skin.HasSetting(UseCustomBackgroundPanel)</visible>
+			</control>
+		</control>
+<!-- 		<control type="label">
+			<description>home</description>
+			<left>45</left>
+			<top>85</top>
+			<font>50</font>
+			<width>450</width>
+			<align>center</align>
+			<scroll>yes</scroll>
+			<font>40</font>
+			<label>$LOCALIZE[513]</label>
+			<textcolor>$VAR[CustomTextColor]</textcolor>
+		</control>
+		<control type="image">
+			<visible>![Skin.HasSetting(horizontal)]</visible>
+			<left>550</left>
+			<top>-300</top>
+			<width>400</width>
+			<aspectratio>keep</aspectratio>
+			<texture>special://skin/resources/screenshot-01.png</texture>
+		</control>
+		<control type="image">
+			<visible>[Skin.HasSetting(horizontal)]</visible>
+			<left>550</left>
+			<top>-300</top>
+			<width>400</width>
+			<aspectratio>keep</aspectratio>
+			<texture>special://skin/resources/screenshot-02.png</texture>
+		</control>
+		<control type="grouplist"id="10">
+			<top>170</top>
+			<left>57</left>
+			<width>480</width>
+			<height>520</height>
+			<itemgap>10</itemgap>
+			<orientation>vertical</orientation>
+			<align>top</align>
+			<control type="radiobutton" id="21">
+				<description>horizontal menu</description>
+				<width>480</width>
+				<align>left</align>
+				<radioposx>410</radioposx>
+				<textwidth>400</textwidth>
+				<label>$LOCALIZE[40030]</label>
+				<onclick>Skin.ToggleSetting(horizontal)</onclick>
+				<selected>Skin.HasSetting(horizontal)</selected>
+				<onclick condition="!Skin.HasSetting(horizontal)">SetProperty(horizontal,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(horizontal)">SetProperty(horizontal,false,10000)</onclick>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="label" id="22">
+				<description>home</description>
+				<left>45</left>
+				<top>85</top>
+				<font>50</font>
+				<width>500</width>
+				<align>center</align>
+				<scroll>yes</scroll>
+				<font>40</font>
+				<label>$LOCALIZE[20411]</label>
+				<textcolor>$VAR[CustomTextColor]</textcolor>
+			</control>
+			<control type="radiobutton" id="11">
+				<description>radio</description>
+				<top>80</top>
+				<width>480</width>
+				<align>left</align>
+				<radioposx>410</radioposx>
+				<textwidth>400</textwidth>
+				<label>$LOCALIZE[19021]</label>
+				<onclick>Skin.ToggleSetting(radio)</onclick>
+				<selected>Skin.HasSetting(radio)</selected>
+				<onclick condition="!Skin.HasSetting(radio)">SetProperty(radio,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(radio)">SetProperty(radio,false,10000)</onclick>
+			</control>
+			<control type="radiobutton" id="12">
+				<description>tv</description>
+				<top>80</top>
+				<width>480</width>
+				<align>left</align>
+				<radioposx>410</radioposx>
+				<textwidth>400</textwidth>
+				<label>$LOCALIZE[19020]</label>
+				<onclick>Skin.ToggleSetting(tv)</onclick>
+				<selected>Skin.HasSetting(tv)</selected>
+				<onclick condition="!Skin.HasSetting(tv)">SetProperty(tv,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(tv)">SetProperty(tv,false,10000)</onclick>
+			</control>
+			<control type="radiobutton" id="13">
+				<description>programs</description>
+				<top>80</top>
+				<width>480</width>
+				<align>left</align>
+				<radioposx>410</radioposx>
+				<textwidth>400</textwidth>
+				<label>$LOCALIZE[0]</label>
+				<onclick>Skin.ToggleSetting(programs)</onclick>
+				<selected>Skin.HasSetting(programs)</selected>
+				<onclick condition="!Skin.HasSetting(programs)">SetProperty(programs,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(programs)">SetProperty(programs,false,10000)</onclick>
+			</control>
+
+		</control> -->
+	</controls>
+</window>

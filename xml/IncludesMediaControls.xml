@@ -1,0 +1,636 @@
+<includes>
+	<include name="PlayerControl">
+ 		<control type="group">
+			<visible>Player.HasMedia + !Skin.HasSetting(RNS-JP3)</visible>
+			<left>10</left>
+			<top>350</top>
+			<control type="image">
+				<left>-10</left>
+				<top>260</top>
+				<width>1280</width>
+				<height>110</height>
+				<texture colordiffuse="CC000000">playercontrols-background.png</texture>
+			</control>
+			<control type="grouplist" id="200">
+				<left>10</left>
+				<top>265</top>
+				<width>1260</width>
+				<height>100</height>
+				<itemgap>1</itemgap>
+				<scrolltime>150</scrolltime>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onup>50</onup>
+				<ondown>-</ondown>
+				<onleft>221</onleft>
+				<onright>100</onright>
+
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(201)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="201">
+						<width>100</width>
+						<height>100</height>
+						<label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
+						<font></font>
+						<texturefocus></texturefocus>
+						<texturenofocus></texturenofocus>
+						<onclick>PlayerControl(Repeat)</onclick>
+						<onleft>-</onleft>
+						<onright>202</onright>
+						<onup>50</onup>
+						<ondown></ondown>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatNF.png</texture>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+						<visible>!Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatNF.png</texture>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+						<visible>Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatOneNF.png</texture>
+						<visible>Playlist.IsRepeatOne</visible>
+						<visible>!Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatOneNF.png</texture>
+						<visible>Playlist.IsRepeatOne</visible>
+						<visible>Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatAllNF.png</texture>
+						<visible>Playlist.IsRepeat</visible>
+						<visible>!Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatAllNF.png</texture>
+						<visible>Playlist.IsRepeat</visible>
+						<visible>Control.HasFocus(201)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(202)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="togglebutton" id="202">
+						<width>100</width>
+						<height>100</height>
+						<label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
+						<font></font>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOffNF.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOffNF.png</texturenofocus>
+						<usealttexture>Playlist.IsRandom</usealttexture>
+						<alttexturefocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOnNF.png</alttexturefocus>
+						<alttexturenofocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOnNF.png</alttexturenofocus>
+						<onclick>PlayerControl(Random)</onclick>
+						<onup>50</onup>
+						<onleft>201</onleft>
+						<onright>203</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(203)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="203">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdprevtrackfo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdprevtrackfo.png</texturenofocus>
+						<onclick>PlayerControl(Previous)</onclick>
+						<onup>50</onup>
+						<onleft>202</onleft>
+						<onright>204</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(204)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="204">
+						<description>Stop</description>
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdstopfo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdstopfo.png</texturenofocus>
+						<onclick>PlayerControl(stop)</onclick>
+						<onup>50</onup>
+						<onleft>203</onleft>
+						<onright>205</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(205)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="togglebutton" id="205">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdpausefo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdpausefo.png</texturenofocus>
+						<alttexturefocus colordiffuse="$VAR[ButtonNoFocus]">osdplayfo.png</alttexturefocus>
+						<alttexturenofocus colordiffuse="$VAR[ButtonNFocus]">osdplayfo.png</alttexturenofocus>
+						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+						<onclick>PlayerControl(Play)</onclick>
+						<onup>50</onup>
+						<onleft>204</onleft>
+						<onright>206</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(206)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="206">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdnexttrackfo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdnexttrackfo.png</texturenofocus>
+						<onclick>PlayerControl(Next)</onclick>
+						<onup>50</onup>
+						<onleft>205</onleft>
+						<onright>207</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(207)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="207">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_language2.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_language2.png</texturenofocus>
+						<onclick>AudioNextLanguage</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>206</onleft>
+						<onright>208</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(208)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="208">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_subtatle.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_subtatle.png</texturenofocus>
+						<onclick>NextSubtitle</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onleft>207</onleft>
+						<onright>209</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(209)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="209">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">usb_music.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">usb_music.png</texturenofocus>
+						<onclick>ActivateWindow(OSDAudioSettings)</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>208</onleft>
+						<onright>210</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(210)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="210">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">usb_musicvideos.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">usb_musicvideos.png</texturenofocus>
+						<onclick>ActivateWindow(OSDVideoSettings)</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>209</onleft>
+						<onright>100</onright>
+					</control>
+				</control>
+			</control>
+		</control>
+
+<!-- RNS-JP3 -->
+ 		<control type="group">
+			<visible>Player.HasMedia + Skin.HasSetting(RNS-JP3)</visible>
+			<left>10</left>
+			<top>250</top>
+			<control type="image">
+				<left>-10</left>
+				<top>260</top>
+				<width>1280</width>
+				<height>110</height>
+				<texture colordiffuse="CC000000">playercontrols-background.png</texture>
+			</control>
+			<control type="grouplist" id="200">
+				<left>10</left>
+				<top>265</top>
+				<width>1260</width>
+				<height>100</height>
+				<itemgap>1</itemgap>
+				<scrolltime>150</scrolltime>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onup>50</onup>
+				<ondown>-</ondown>
+				<onleft>221</onleft>
+				<onright>100</onright>
+
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(201)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="201">
+						<width>100</width>
+						<height>100</height>
+						<label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
+						<font></font>
+						<texturefocus></texturefocus>
+						<texturenofocus></texturenofocus>
+						<onclick>PlayerControl(Repeat)</onclick>
+						<onleft>-</onleft>
+						<onright>202</onright>
+						<onup>50</onup>
+						<ondown></ondown>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatNF.png</texture>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+						<visible>!Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatNF.png</texture>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+						<visible>Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatOneNF.png</texture>
+						<visible>Playlist.IsRepeatOne</visible>
+						<visible>!Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatOneNF.png</texture>
+						<visible>Playlist.IsRepeatOne</visible>
+						<visible>Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatAllNF.png</texture>
+						<visible>Playlist.IsRepeat</visible>
+						<visible>!Control.HasFocus(201)</visible>
+					</control>
+					<control type="image">
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">OSDRepeatAllNF.png</texture>
+						<visible>Playlist.IsRepeat</visible>
+						<visible>Control.HasFocus(201)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(202)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="togglebutton" id="202">
+						<width>100</width>
+						<height>100</height>
+						<label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
+						<font></font>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOffNF.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOffNF.png</texturenofocus>
+						<usealttexture>Playlist.IsRandom</usealttexture>
+						<alttexturefocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOnNF.png</alttexturefocus>
+						<alttexturenofocus colordiffuse="$VAR[ButtonNoFocus]">OSDRandomOnNF.png</alttexturenofocus>
+						<onclick>PlayerControl(Random)</onclick>
+						<onup>50</onup>
+						<onleft>201</onleft>
+						<onright>203</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(203)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="203">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdprevtrackfo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdprevtrackfo.png</texturenofocus>
+						<onclick>PlayerControl(Previous)</onclick>
+						<onup>50</onup>
+						<onleft>202</onleft>
+						<onright>204</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(204)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="204">
+						<description>Stop</description>
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdstopfo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdstopfo.png</texturenofocus>
+						<onclick>PlayerControl(stop)</onclick>
+						<onup>50</onup>
+						<onleft>203</onleft>
+						<onright>205</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(205)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="togglebutton" id="205">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdpausefo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdpausefo.png</texturenofocus>
+						<alttexturefocus colordiffuse="$VAR[ButtonNoFocus]">osdplayfo.png</alttexturefocus>
+						<alttexturenofocus colordiffuse="$VAR[ButtonNFocus]">osdplayfo.png</alttexturenofocus>
+						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+						<onclick>PlayerControl(Play)</onclick>
+						<onup>50</onup>
+						<onleft>204</onleft>
+						<onright>206</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(206)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="206">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">osdnexttrackfo.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">osdnexttrackfo.png</texturenofocus>
+						<onclick>PlayerControl(Next)</onclick>
+						<onup>50</onup>
+						<onleft>205</onleft>
+						<onright>207</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(207)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="207">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_language2.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_language2.png</texturenofocus>
+						<onclick>AudioNextLanguage</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>206</onleft>
+						<onright>208</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(208)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="208">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_subtatle.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_subtatle.png</texturenofocus>
+						<onclick>NextSubtitle</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>207</onleft>
+						<onright>209</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(209)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="209">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">usb_music.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">usb_music.png</texturenofocus>
+						<onclick>ActivateWindow(OSDAudioSettings)</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>208</onleft>
+						<onright>210</onright>
+					</control>
+				</control>
+				<control type="group">
+					<width>100</width>
+					<height>100</height>
+					<control type="image">
+						<visible>Control.HasFocus(210)</visible>
+						<left>5</left>
+						<top>5</top>
+						<width>90</width>
+						<height>90</height>
+						<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+					</control>
+					<control type="button" id="210">
+						<width>100</width>
+						<height>100</height>
+						<texturefocus colordiffuse="$VAR[ButtonNoFocus]">usb_musicvideos.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">usb_musicvideos.png</texturenofocus>
+						<onclick>ActivateWindow(OSDVideoSettings)</onclick>
+						<visible>Window.IsActive(FullScreenVideo)</visible>
+						<onup>50</onup>
+						<onleft>209</onleft>
+						<onright>100</onright>
+					</control>
+				</control>
+			</control>
+		</control>
+
+	</include>
+</includes>

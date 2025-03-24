@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_50_List">
+		<control type="group">
+			<top>0</top>
+			<control type="panel" id="50">
+				<left>0</left>
+				<top>65</top>
+				<width>1200</width>
+				<height>538</height>
+				<align>top</align>
+				<pagecontrol>60</pagecontrol>
+				<onup>100</onup>
+				<ondown>50</ondown>
+				<onleft>100</onleft>
+				<onright>60</onright>
+				<description>No Focus</description>
+				<itemlayout height="85">
+					<control type="image">
+						<top>-5</top>
+						<width>1200</width>
+						<height>85</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texture>
+					</control>
+					<control type="image">
+						<left>55</left>
+						<top>4</top>
+						<width>68</width>
+						<height>68</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="label">
+						<left>130</left>
+						<top>0</top>
+						<width>820</width>
+						<height>65</height>
+						<align>left</align>
+						<textcolor>$VAR[TextColor]</textcolor>
+						<!-- <selectedcolor>$VAR[TextColor]</selectedcolor> -->
+						<shadowcolor>-</shadowcolor>
+						<font>50</font>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<left>950</left>
+						<top>0</top>
+						<width>140</width>
+						<height>65</height>
+						<align>left</align>
+						<textcolor>$VAR[TextColorDisable]</textcolor>
+						<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<font>30</font>
+						<info>ListItem.Label2</info>
+					</control>
+					<control type= "group">
+						<control type="label">
+							<left>130</left>
+							<top>0</top>
+							<width>350</width>
+							<height>65</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[TextColor]</textcolor>
+							<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+							<shadowcolor>-</shadowcolor>
+							<font>50</font>
+							<visible>Pvr.HasTVChannels</visible>
+							<info>ListItem.Label</info>
+						</control>
+						<visible>ListItem.HasEpg</visible>
+						<control type="progress">
+							<left>530</left>
+							<top>-20</top>
+							<width>640</width>
+							<height>150</height>
+							<align>left</align>
+							<info>ListItem.Progress</info>
+						</control>
+						<control type="label">
+							<left>530</left>
+							<top>-10</top>
+							<width>640</width>
+							<height>65</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[TextColorDisable]</textcolor>
+							<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+							<font>30</font>
+							<label>$INFO[ListItem.Title]</label>
+						</control>
+					</control>
+					<control type="image">
+						<left>1100</left>
+						<top>15</top>
+						<width>55</width>
+						<height>40</height>
+						<texture>$INFO[ListItem.VideoResolution,dark/,.png]</texture>
+						<visible>[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+					</control>
+					<description>Маркер продолжить</description>
+					<control type="image">
+						<posx>1150</posx>
+						<posy>10</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>keep</aspectratio>
+						<texture colordiffuse="$VAR[TextColorSelect]">OverlayWatching.png</texture>
+						<visible>ListItem.IsResumable</visible>
+					</control>
+					<control type="image">
+						<posx>1150</posx>
+						<posy>11</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture colordiffuse="$VAR[TextColorSelect]">$INFO[ListItem.Overlay]</texture>
+						<visible>!ListItem.IsResumable</visible>
+					</control>
+				</itemlayout>
+				<description>Focuse</description>
+				<focusedlayout height="85">
+					<control type="image">
+						<top>-5</top>
+						<width>1200</width>
+						<height>85</height>
+						<texture colordiffuse="$VAR[ButtonFocus]">button_base.png</texture>
+					</control>
+					<control type="image">
+						<left>55</left>
+						<top>4</top>
+						<width>68</width>
+						<height>68</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="label">
+						<left>130</left>
+						<top>0</top>
+						<width>820</width>
+						<height>65</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<!-- <selectedcolor>$VAR[TextColorSelect]</selectedcolor> -->
+						<font>50</font>
+						<scroll>true</scroll>
+						<scrollspeed>30</scrollspeed>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<left>950</left>
+						<top>0</top>
+						<width>140</width>
+						<height>65</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>$VAR[TextColorDisable]</textcolor>
+						<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<font>30</font>
+						<info>ListItem.Label2</info>
+					</control>
+					<control type= "group">
+						<visible>ListItem.HasEpg</visible>
+						<control type="progress">
+							<left>530</left>
+							<top>-20</top>
+							<width>640</width>
+							<height>150</height>
+							<align>right</align>
+							<info>ListItem.Progress</info>
+						</control>
+						<control type="label">
+							<left>530</left>
+							<top>-10</top>
+							<width>640</width>
+							<height>65</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[TextColorFocus]</textcolor>
+							<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+							<font>30</font>
+							<label>$INFO[ListItem.Title]</label>
+						</control>
+					</control>
+					<control type="image">
+						<left>1100</left>
+						<top>15</top>
+						<width>55</width>
+						<height>40</height>
+						<texture>$INFO[ListItem.VideoResolution,dark/,.png]</texture>
+						<visible>[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+					</control>
+					<description>Маркер продолжить</description>
+					<control type="image">
+						<posx>1150</posx>
+						<posy>10</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>keep</aspectratio>
+						<texture colordiffuse="$VAR[TextColorSelect]">OverlayWatching.png</texture>
+						<visible>ListItem.IsResumable</visible>
+					</control>
+					<control type="image">
+						<posx>1150</posx>
+						<posy>11</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture colordiffuse="$VAR[ButtonFocus]">$INFO[ListItem.Overlay]</texture>
+						<visible>!ListItem.IsResumable</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<top>70</top>
+				<left>1200</left>
+				<width>48</width>
+				<height>550</height>
+				<texturesliderbackground colordiffuse="BB808080">scrollbarv_bar_bold2.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="$VAR[TextColorDisable]">osdsliderbar_square.png</texturesliderbar>
+				<texturesliderbarfocus colordiffuse="$VAR[TextColorEnable]">osdsliderbar_square.png</texturesliderbarfocus>
+				<textureslidernib colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernibfocus>
+				<onleft>50</onleft>
+				<ondown>60</ondown>
+				<onup>60</onup>
+				<onright>100</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+			</control>
+
+ 		<!-- 	<control type="group" id="61">
+				<left>150</left>
+				<top>-23</top>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>80</width>
+					<height>80</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="66000000">subback2.png</texture>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(62) | Control.HasFocus(63) | Control.HasFocus(64)</visible>
+					<left>2</left>
+					<top>2</top>
+					<width>80</width>
+					<height>80</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[CustomButtonColorFocus]">subback2.png</texture>
+				</control>
+				<description>Update library</description>
+				<control type="button" id="62">
+					<width>85</width>
+					<height>85</height>
+					<onclick>UpdateLibrary(video)</onclick>
+					<visible>Window.IsActive(MyVideoNav.xml)</visible>
+					<texturefocus colordiffuse="white">button_reload.png</texturefocus>
+					<texturenofocus colordiffuse="white">button_reload.png</texturenofocus>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>222</onleft>
+					<onright>60</onright>
+				</control>
+				<control type="button" id="63">
+					<width>85</width>
+					<height>85</height>
+					<onclick>UpdateLibrary(music)</onclick>
+					<visible>Window.IsActive(MyMusicNav.xml)</visible>
+					<texturefocus colordiffuse="white">button_reload.png</texturefocus>
+					<texturenofocus colordiffuse="white">button_reload.png</texturenofocus>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>222</onleft>
+					<onright>60</onright>
+				</control>
+				<control type="button" id="64">
+					<width>85</width>
+					<height>85</height>
+					<onclick>UpdateAddonRepos</onclick>
+					<visible>Window.IsActive(AddonBrowser.xml)</visible>
+					<texturefocus colordiffuse="white">button_reload.png</texturefocus>
+					<texturenofocus colordiffuse="white">button_reload.png</texturenofocus>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>222</onleft>
+					<onright>60</onright>
+				</control>
+			</control> -->
+
+<!-- 			<description>Левая группа кнопок</description>
+			<control type="group"id="10">
+				<animation effect="fade" start="80" end="0" condition="Control.HasFocus(50)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" condition="Control.HasFocus(60)">Conditional</animation>
+				<top>85</top>
+				<left>57</left>
+				<width>300</width>
+				<height>520</height>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				<align>top</align>
+
+				<control type="image">
+					<width>70</width>
+					<height>70</height>
+					<texture>icons/logo.png</texture>
+				</control>
+				<control type="image">
+					<width>300</width>
+					<height>580</height>
+					<texture>background.png</texture>
+				</control>
+				<control type="label" id="203">
+					<top>0</top>
+					<left>0</left>
+					<width>290</width>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<label>$INFO[System.AddonTitle(skin.rnsd)]</label>
+				</control>
+				<control type="label" id="203">
+					<top>75</top>
+					<left>0</left>
+					<width>290</width>
+					<align>center</align>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<label>$LOCALIZE[24051] $INFO[System.AddonVersion(skin.rnsd)]</label>
+				</control>
+				<control type="label" id="203">
+					<top>150</top>
+					<left>0</left>
+					<width>290</width>
+					<align>center</align>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<label>$LOCALIZE[24053]</label>
+				</control>
+				<control type="label" id="203">
+					<top>225</top>
+					<left>0</left>
+					<width>290</width>
+					<align>center</align>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<label>$INFO[Window(10000).Property(key)]</label>
+				</control>
+				<control type="grouplist"id="600">
+					<left>0</left>
+					<top>400</top>
+					<width>290</width>
+					<height>160</height>
+					<itemgap>10</itemgap>
+					<orientation>vertical</orientation>
+					<onright>50</onright>
+					<control type="togglebutton" id="619">
+						<description>Update library</description>
+						<width>290</width>
+						<font>40</font>
+						<label>$LOCALIZE[653]</label>
+						<onclick>UpdateLibrary(video)</onclick>
+						<visible>Window.IsActive(MyVideoNav.xml)</visible>
+						<altlabel>$LOCALIZE[13353]</altlabel> 
+						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+					<control type="togglebutton" id="620">
+						<description>Update library</description>
+						<width>290</width>
+						<font>40</font>
+						<label>$LOCALIZE[653]</label>
+						<onclick>UpdateLibrary(music)</onclick>
+						<visible>Window.IsActive(MyMusicNav.xml)</visible>
+						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+					<control type="togglebutton" id="621">
+						<description>Update library</description>
+						<width>290</width>
+						<font>40</font>
+						<label>$LOCALIZE[24034]</label>
+						<onclick>UpdateAddonRepos</onclick>
+						<visible>Window.IsActive(AddonBrowser.xml)</visible>
+						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+				</control>
+			</control> -->
+		</control>
+	</include>
+
+
+
+	<include name="ThumbnailView">
+		<control type="panel" id="500">
+			<posx>77</posx>
+			<posy>75</posy>
+			<width>1150</width>
+			<height>550</height>
+			<onleft condition="Control.IsVisible(555)">Control.SetFocus(555)</onleft>
+			<onleft condition="!Control.IsVisible(555)">Control.SetFocus(666)</onleft>
+			<onright>60</onright>
+			<onup>500</onup>
+			<ondown>500</ondown>
+			<viewtype label="21371">wide</viewtype>
+			<pagecontrol>60</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<preloaditems>2</preloaditems>
+			<itemlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(Episodes) + !Container.Content(TVShows)" height="262" width="224">
+				<control type="group">
+					<posx>0</posx>
+					<posy>2</posy>
+					<control type="image">
+						<posx>2</posx>
+						<posy>1</posy>
+						<width>220</width>
+						<height>220</height>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<aspectratio scalediffuse="true">scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>2</posx>
+						<posy>220</posy>
+						<width>220</width>
+						<height>40</height>
+						<texture colordiffuse="CCFFFFFF">black.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>2</posx>
+						<posy>224</posy>
+						<width>220</width>
+						<height>30</height>
+						<font>40</font>
+						<textcolor>$VAR[CustomColorNofocus]</textcolor>
+						<selectedcolor>$VAR[CustomButtonColorFocus]</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</control>
+				<control type="image">
+					<posx>150</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+					<visible>Container.Content(MusicVideos)</visible>
+				</control>
+				<control type="image">
+					<posx>190</posx>
+					<posy>5</posy>
+					<width>30</width>
+					<height>30</height>
+					<texture>OverlayWatched.png</texture>
+					<visible>Window.IsVisible(AddonBrowser) + String.IsEqual(ListItem.Label2,$LOCALIZE[305])</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(Episodes) + !Container.Content(TVShows)" height="262" width="224">
+				<control type="group">
+					<posx>0</posx>
+					<posy>2</posy>
+					<control type="image">
+						<posx>2</posx>
+						<posy>1</posy>
+						<width>220</width>
+						<height>220</height>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<aspectratio scalediffuse="true">scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>2</posx>
+						<posy>220</posy>
+						<width>220</width>
+						<height>40</height>
+						<texture>header.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>2</posx>
+						<posy>224</posy>
+						<width>220</width>
+						<height>30</height>
+						<font>40</font>
+						<textcolor>$VAR[CustomButtonColorFocus]</textcolor>
+						<selectedcolor>$VAR[CustomButtonColorFocus]</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</control>
+				<control type="image">
+					<posx>150</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+					<visible>Container.Content(MusicVideos)</visible>
+				</control>
+				<control type="image">
+					<posx>190</posx>
+					<posy>5</posy>
+					<width>30</width>
+					<height>30</height>
+					<texture>OverlayWatched.png</texture>
+					<visible>Window.IsVisible(AddonBrowser) + String.IsEqual(ListItem.Label2,$LOCALIZE[305])</visible>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)" height="330" width="210">
+				<control type="group">
+					<posx>5</posx>
+					<posy>15</posy>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>190</width>
+						<height>270</height>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>270</posy>
+						<width>190</width>
+						<height>40</height>
+						<texture>thumb_label_bg.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>5</posx>
+						<posy>275</posy>
+						<width>180</width>
+						<height>30</height>
+						<font>40</font>
+						<textcolor>$VAR[CustomColorNofocus]</textcolor>
+						<selectedcolor>$VAR[CustomButtonColorFocus]</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</control>
+				<control type="image">
+					<posx>153</posx>
+					<posy>20</posy>
+					<width>37</width>
+					<height>27</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+				</control>
+				<control type="image">
+					<posx>115</posx>
+					<posy>20</posy>
+					<width>22</width>
+					<height>22</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.Overlay]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)" height="330" width="210">
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>285</height>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>285</posy>
+						<width>200</width>
+						<height>40</height>
+						<texture>thumb_label_bg.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>6</posx>
+						<posy>290</posy>
+						<width>190</width>
+						<height>30</height>
+						<font>40</font>
+						<textcolor>$VAR[CustomButtonColorFocus]</textcolor>
+						<selectedcolor>$VAR[CustomButtonColorFocus]</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</control>
+				<control type="image">
+					<posx>149</posx>
+					<posy>6</posy>
+					<width>45</width>
+					<height>33</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+				</control>
+				<control type="image">
+					<posx>105</posx>
+					<posy>10</posy>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.Overlay]</texture>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="Container.Content(Episodes)" height="240" width="308">
+				<control type="group">
+					<posx>10</posx>
+					<posy>60</posy>
+					<control type="image">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>220</width>
+						<height>220</height>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<aspectratio scalediffuse="true">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>220</posy>
+						<width>220</width>
+						<height>40</height>
+						<texture>thumb_label_bg.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>225</posy>
+						<width>210</width>
+						<height>30</height>
+						<font>40</font>
+						<textcolor>$VAR[CustomColorNofocus]</textcolor>
+						<selectedcolor>$VAR[CustomButtonColorFocus]</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</control>
+				<control type="image">
+					<posx>210</posx>
+					<posy>26</posy>
+					<width>40</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+				</control>
+				<control type="image">
+					<posx>175</posx>
+					<posy>26</posy>
+					<width>30</width>
+					<height>30</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.Overlay]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="Container.Content(Episodes)" height="240" width="308">
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>280</height>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<aspectratio scalediffuse="true">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>280</posy>
+						<width>280</width>
+						<height>40</height>
+						<texture>header.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>5</posx>
+						<posy>285</posy>
+						<width>270</width>
+						<height>30</height>
+						<font>40</font>
+						<textcolor>$VAR[CustomButtonColorFocus]</textcolor>
+						<selectedcolor>$VAR[CustomButtonColorFocus]</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</control>
+				<control type="image">
+					<posx>230</posx>
+					<posy>6</posy>
+					<width>40</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+					<visible>Container.Content(MusicVideos)</visible>
+				</control>
+				<control type="image">
+					<posx>195</posx>
+					<posy>6</posy>
+					<width>30</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.Overlay]</texture>
+				</control>
+			</focusedlayout>
+		</control>
+	</include>
+
+
+
+	<include name="WideIconView">
+		<control type="panel" id="502">
+			<visible>!Container.Content(Movies) + !Container.Content(Episodes) + !Container.Content(Seasons) + !Container.Content(MusicVideos)</visible>
+			<posx>90</posx>
+			<posy>90</posy>
+			<width>1147</width>
+			<height>540</height>
+			<onleft condition="Control.IsVisible(555)">Control.SetFocus(555)</onleft>
+			<onleft condition="!Control.IsVisible(555)">Control.SetFocus(666)</onleft>
+			<onright>60</onright>
+			<onup>502</onup>
+			<ondown>502</ondown>
+			<pagecontrol>60</pagecontrol>
+			<scrolltime>300</scrolltime>
+			<preloaditems>2</preloaditems>
+			<viewtype label="539">wide</viewtype>
+			<itemlayout height="135" width="574">
+				<control type="image">
+					<posx>4</posx>
+					<posy>0</posy>
+					<width>570</width>
+					<height>131</height>
+					<texture border="4">SubBack.png</texture>
+				</control>
+				<control type="image">
+					<posx>11</posx>
+					<posy>4</posy>
+					<width>555</width>
+					<height>101</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$VAR[BannerThumb]</texture>
+				</control>
+				<control type="image">
+					<posx>4</posx>
+					<posy>0</posy>
+					<width>187</width>
+					<height>131</height>
+					<texture>GlassOverlay.png</texture>
+				</control>
+				<control type="label">
+					<posx>11</posx>
+					<posy>94</posy>
+					<width>596</width>
+					<height>37</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<!--<control type="label">
+					<posx>750</posx>
+					<posy>145</posy>
+					<width>500</width>
+					<height>20</height>
+					<font>font16</font>
+					<textcolor>$VAR[CustomTextColorLabel2]2</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>-->
+			</itemlayout>
+			<focusedlayout height="135" width="412">
+				<control type="image">
+					<posx>4</posx>
+					<posy>0</posy>
+					<width>570</width>
+					<height>131</height>
+					<texture border="4">SubBack2.png</texture>
+				</control>
+				<control type="image">
+					<posx>11</posx>
+					<posy>4</posy>
+					<width>555</width>
+					<height>101</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$VAR[BannerThumb]</texture>
+				</control>
+				<control type="image">
+					<posx>4</posx>
+					<posy>0</posy>
+					<width>187</width>
+					<height>131</height>
+					<texture>GlassOverlay.png</texture>
+				</control>
+				<control type="label">
+					<posx>11</posx>
+					<posy>94</posy>
+					<width>525</width>
+					<height>37</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<!--<control type="label">
+					<posx>562</posx>
+					<posy>109</posy>
+					<width>375</width>
+					<height>15</height>
+					<font>font24</font>
+					<textcolor>black</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>-->
+			</focusedlayout>
+		</control>
+	</include>
+	<include name="BannerBig">
+		<control type="panel" id="550">
+			<left>77</left>
+			<top>75</top>
+			<width>1150</width>
+			<height>550</height>
+			<onleft>2</onleft>
+			<onright>60</onright>
+			<onup>550</onup>
+			<ondown>550</ondown>
+			<pagecontrol>60</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<itemlayout condition="Container.Content(Movies)" height="550" width="1100">
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>1115</width>
+					<height>540</height>
+					<texture border="5">bg_black.png</texture>
+					<colordiffuse>BFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>1115</width>
+					<height>540</height>
+					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+					<colordiffuse>40FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>25</left>
+					<top>30</top>
+					<width>337</width>
+					<height>480</height>
+					<texture background="true">$VAR[PosterThumb]</texture>
+				</control>
+				<control type="label">
+					<left>395</left>
+					<top>25</top>
+					<width>600</width>
+					<height>40</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>395</left>
+					<top>70</top>
+					<width>390</width>
+					<height>20</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Genre]</label>
+				</control>
+				<control type="image">
+					<left>1030</left>
+					<top>25</top>
+					<width>60</width>
+					<height>40</height>
+					<texture>$INFO[ListItem.VideoResolution,dark/,.png]</texture>
+				</control>
+				<control type="image">
+					<left>1000</left>
+					<top>28</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>keep</aspectratio>
+					<texture>OverlayWatching.png</texture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="image">
+					<left>995</left>
+					<top>28</top>
+					<width>50</width>
+					<height>50</height>
+					<texture>$INFO[ListItem.Overlay]</texture>
+					<visible>!ListItem.IsResumable</visible>
+				</control>
+				<control type="textbox">
+					<left>395</left>
+					<top>107</top>
+					<width>670</width>
+					<height>405</height>
+					<font>30</font>
+					<align>justify</align>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<label>$INFO[ListItem.Plot]</label>
+					<pagecontrol>61</pagecontrol>
+					<autoscroll delay="3000" time="1000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="Container.Content(Movies)" height="550" width="1100">
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>1115</width>
+					<height>540</height>
+					<texture border="5">bg_black.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>1115</width>
+					<height>540</height>
+					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+					<colordiffuse>40FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>25</left>
+					<top>30</top>
+					<width>337</width>
+					<height>480</height>
+					<texture background="true">$VAR[PosterThumb]</texture>
+				</control>
+				<control type="label">
+					<left>395</left>
+					<top>25</top>
+					<width>600</width>
+					<height>40</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>395</left>
+					<top>70</top>
+					<width>390</width>
+					<height>20</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Genre]</label>
+				</control>
+				<control type="image">
+					<left>1030</left>
+					<top>25</top>
+					<width>60</width>
+					<height>40</height>
+					<texture>$INFO[ListItem.VideoResolution,dark/,.png]</texture>
+				</control>
+				<control type="image">
+					<left>1000</left>
+					<top>28</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>keep</aspectratio>
+					<texture>OverlayWatching.png</texture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="image">
+					<left>995</left>
+					<top>28</top>
+					<width>30</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.Overlay,dark/]</texture>
+					<visible>!ListItem.IsResumable</visible>
+				</control>
+				<control type="textbox">
+					<left>395</left>
+					<top>107</top>
+					<width>670</width>
+					<height>405</height>
+					<font>30</font>
+					<align>justify</align>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<label>$INFO[ListItem.Plot]</label>
+					<pagecontrol>61</pagecontrol>
+					<autoscroll delay="3000" time="1000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="Container.Content(Episodes)" height="240" width="770">
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>765</width>
+					<height>235</height>
+					<texture border="5">SubBack.png</texture>
+				</control>
+				<control type="image">
+					<left>5</left>
+					<top>10</top>
+					<width>250</width>
+					<height>160</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>250</width>
+					<height>235</height>
+					<texture>GlassOverlay.png</texture>
+				</control>
+				<control type="textbox">
+					<left>270</left>
+					<top>10</top>
+					<width>480</width>
+					<height>155</height>
+					<font>20</font>
+					<align>justify</align>
+					<textcolor>$VAR[CustomTextColorLabel2]</textcolor>
+					<label>$INFO[ListItem.Plot]</label>
+					<pagecontrol>61</pagecontrol>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>180</top>
+					<width>600</width>
+					<height>25</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>210</top>
+					<width>550</width>
+					<height>20</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Premiered,$LOCALIZE[20416] : ]</label>
+				</control>
+				<control type="label">
+					<left>660</left>
+					<top>180</top>
+					<width>400</width>
+					<height>30</height>
+					<font>40</font>
+					<textcolor>$VAR[CustomTextColorLabel2]</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+				<control type="image">
+					<description>Rating value</description>
+					<left>570</left>
+					<top>210</top>
+					<width>100</width>
+					<height>25</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture fallback="light/left_rating/rating0.png">$INFO[ListItem.RatingAndVotes,light/left_rating/]</texture>
+				</control>
+				<control type="image">
+					<left>670</left>
+					<top>185</top>
+					<width>60</width>
+					<height>40</height>
+					<texture>$INFO[ListItem.VideoResolution,light/,.png]</texture>
+				</control>
+				<control type="image">
+					<left>730</left>
+					<top>190</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>keep</aspectratio>
+					<texture>OverlayWatching.png</texture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="image">
+					<left>730</left>
+					<top>190</top>
+					<width>30</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.Overlay,light/]</texture>
+					<visible>!ListItem.IsResumable</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="Container.Content(Episodes)" height="240" width="770">
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>765</width>
+					<height>235</height>
+					<texture border="5">SubBack2.png</texture>
+				</control>
+				<control type="image">
+					<left>5</left>
+					<top>10</top>
+					<width>250</width>
+					<height>160</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>5</top>
+					<width>250</width>
+					<height>235</height>
+					<texture>GlassOverlay.png</texture>
+				</control>
+				<control type="textbox">
+					<left>270</left>
+					<top>10</top>
+					<width>480</width>
+					<height>155</height>
+					<font>20</font>
+					<align>justify</align>
+					<textcolor>black</textcolor>
+					<label>$INFO[ListItem.Plot]</label>
+					<pagecontrol>61</pagecontrol>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>180</top>
+					<width>600</width>
+					<height>25</height>
+					<font>40</font>
+					<textcolor>black</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>210</top>
+					<width>550</width>
+					<height>20</height>
+					<font>40</font>
+					<textcolor>black</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Premiered,$LOCALIZE[20416] : ]</label>
+				</control>
+				<control type="label">
+					<left>660</left>
+					<top>180</top>
+					<width>400</width>
+					<height>30</height>
+					<font>40</font>
+					<textcolor>black</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+				<control type="image">
+					<description>Rating value</description>
+					<left>570</left>
+					<top>210</top>
+					<width>100</width>
+					<height>25</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture fallback="dark/left_rating/rating0.png">$INFO[ListItem.RatingAndVotes,dark/left_rating/]</texture>
+				</control>
+				<control type="image">
+					<left>670</left>
+					<top>185</top>
+					<width>60</width>
+					<height>40</height>
+					<texture>$INFO[ListItem.VideoResolution,dark/,.png]</texture>
+				</control>
+				<control type="image">
+					<left>730</left>
+					<top>190</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>keep</aspectratio>
+					<texture>OverlayWatching.png</texture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="image">
+					<left>730</left>
+					<top>190</top>
+					<width>30</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.Overlay,dark/]</texture>
+					<visible>!ListItem.IsResumable</visible>
+				</control>
+			</focusedlayout>
+		</control>
+	</include>
+</includes>

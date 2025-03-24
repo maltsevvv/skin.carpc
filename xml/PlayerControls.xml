@@ -1,0 +1,8 @@
+<window type="dialog" id="114">
+	<defaultcontrol always="true">666</defaultcontrol>
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
+	<controls>
+		<include>HomeButtonCommons</include>
+<!-- 		<include>PlayerControl</include> -->
+	</controls>
+</window>

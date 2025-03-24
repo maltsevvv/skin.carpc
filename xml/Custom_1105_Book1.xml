@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="1105">
+	<defaultcontrol always="true">301</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>FrameMax</include>
+
+		<control type="label">
+			<left>49</left>
+			<top>0</top>
+			<width>925</width>
+			<height>65</height>
+			<font>50</font>
+			<align>left</align>
+			<label>$LOCALIZE[40050] #1</label>
+		</control>
+		<control type="label">
+			<left>580</left>
+			<top>0</top>
+			<width>925</width>
+			<height>65</height>
+			<font>40</font>
+			<align>left</align>
+			<label>$LOCALIZE[40024]</label>
+		</control>
+		<control type="label">
+			<left>760</left>
+			<top>0</top>
+			<width>925</width>
+			<height>65</height>
+			<font>40</font>
+			<align>left</align>
+			<label>$LOCALIZE[209]</label>
+		</control>
+		<control type="grouplist">
+			<top>80</top>
+			<left>50</left>
+			<width>1900</width>
+			<height>520</height>
+			<itemgap>-6</itemgap>
+			<orientation>vertical</orientation>
+			<align>top</align>
+			
+			<description>MOTOR OIL</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>1900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="301">
+					<width>480</width>
+					<label>$LOCALIZE[40051]</label>
+					<onup>-</onup>
+					<ondown>305</ondown>
+				</control>
+				<control type="button" id="302">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(motor_oil1)]</label>
+					<onclick>Skin.SetNumeric(motor_oil1)</onclick>
+					<onup>-</onup>
+					<ondown>306</ondown>
+				</control>
+				<control type="button" id="303">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(motor_oil2)]</label>
+					<onclick>Skin.SetNumeric(motor_oil2)</onclick>
+					<ondown>307</ondown>
+				</control>
+			</control>
+
+			<description>air_filter</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="305">
+					<width>480</width>
+					<label>$LOCALIZE[40052]</label>
+					<onup>301</onup>
+					<ondown>309</ondown>
+				</control>
+				<control type="button" id="306">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(air_filter)]</label>
+					<onclick>Skin.SetNumeric(air_filter)</onclick>
+					<onup>302</onup>
+					<ondown>310</ondown>
+				</control>
+				<control type="button" id="307">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(air_filter)]</label>
+					<onclick>Skin.SetNumeric(air_filter)</onclick>
+					<onup>303</onup>
+					<ondown>311</ondown>
+				</control>
+			</control>
+
+			<description>fuel_filter</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="309">
+					<width>480</width>
+					<label>$LOCALIZE[40053]</label>
+					<onup>305</onup>
+					<ondown>313</ondown>
+				</control>
+				<control type="button" id="310">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(fuel_filter)]</label>
+					<onclick>Skin.SetNumeric(fuel_filter)</onclick>
+					<onup>306</onup>
+					<ondown>314</ondown>
+				</control>
+				<control type="button" id="311">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(fuel_filter2)]</label>
+					<onclick>Skin.SetNumeric(fuel_filter2)</onclick>
+					<onup>307</onup>
+					<ondown>315</ondown>
+				</control>
+			</control>
+
+			<description>cabin_filter</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="313">
+					<width>480</width>
+					<label>$LOCALIZE[40054]</label>
+					<onup>309</onup>
+					<ondown>317</ondown>
+				</control>
+				<control type="button" id="314">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(cabin_filter)]</label>
+					<onclick>Skin.SetNumeric(cabin_filter)</onclick>
+					<onup>310</onup>
+					<ondown>318</ondown>
+				</control>
+				<control type="button" id="315">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(cabin_filter2)]</label>
+					<onclick>Skin.SetNumeric(cabin_filter2)</onclick>
+					<onup>311</onup>
+					<ondown>319</ondown>
+				</control>
+			</control>
+
+			<description>GEAR OIL</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="317">
+					<width>480</width>
+					<label>$LOCALIZE[40055]</label>
+					<onup>313</onup>
+					<ondown>321</ondown>
+				</control>
+				<control type="button" id="318">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(gear_oil)]</label>
+					<onclick>Skin.SetNumeric(gear_oil)</onclick>
+					<onup>314</onup>
+					<ondown>322</ondown>
+				</control>
+				<control type="button" id="319">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(gear_oil2)]</label>
+					<onclick>Skin.SetNumeric(gear_oil2)</onclick>
+					<onup>315</onup>
+					<ondown>323</ondown>
+				</control>
+			</control>
+
+			<description>BREAK FLUID</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="321">
+					<width>480</width>
+					<label>$LOCALIZE[40056]</label>
+					<onup>317</onup>
+					<ondown>325</ondown>
+				</control>
+				<control type="button" id="322">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(brake_fluid)]</label>
+					<onclick>Skin.SetNumeric(brake_fluid)</onclick>
+					<onup>318</onup>
+					<ondown>326</ondown>
+				</control>
+				<control type="button" id="323">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(brake_fluid2)]</label>
+					<onclick>Skin.SetNumeric(brake_fluid2)</onclick>
+					<onup>319</onup>
+					<ondown>327</ondown>
+				</control>
+			</control>
+			
+			<description>SPARK PLAGS</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="325">
+					<width>480</width>
+					<label>$LOCALIZE[40057]</label>
+					<onup>321</onup>
+					<ondown>ActivateWindow(1106)</ondown>
+				</control>
+				<control type="button" id="326">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(spark_plags)]</label>
+					<onclick>Skin.SetNumeric(spark_plags)</onclick>
+					<onup>322</onup>
+					<ondown>ActivateWindow(1106)</ondown>
+				</control>
+				<control type="button" id="327">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(spark_plags2)]</label>
+					<onclick>Skin.SetNumeric(spark_plags2)</onclick>
+					<onup>323</onup>
+					<ondown>ActivateWindow(1106)</ondown>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

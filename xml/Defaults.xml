@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<default type="label">
+		<left>0</left>
+		<top>0</top>
+		<width>250</width>
+		<height>70</height>
+		<visible>true</visible>
+		<align>center</align>
+		<aligny>center</aligny>
+		<scroll>false</scroll>
+		<label></label>
+		<angle>0</angle>
+		<haspath>false</haspath>
+		<font>30</font>
+		<textcolor>$VAR[TextColorDisable]</textcolor>
+		<selectedcolor>$VAR[TextColorSelect]</selectedcolor>
+		<shadowcolor>-</shadowcolor>
+		<wrapmultiline>false</wrapmultiline>
+		<scrollspeed>50</scrollspeed>
+		<scrollsuffix> - </scrollsuffix>
+	</default>
+	
+	<default type="button">
+		<description>Button</description>
+		<left>0</left>
+		<top>0</top>
+		<width>250</width>
+		<height>70</height>
+		<visible>true</visible>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+		<label></label>
+		<wrapmultiline>false</wrapmultiline>
+		<font>50</font>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<focusedcolor>$VAR[TextColorFocus]</focusedcolor>
+		<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+		<invalidcolor>$VAR[TextColorDisable]</invalidcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>10</textoffsetx>
+		<textoffsety></textoffsety>
+		<pulseonselect>false</pulseonselect>
+		<onclick></onclick>
+		<onfocus></onfocus>
+		<onunfocus></onunfocus>
+		<onup></onup>
+		<ondown></ondown>
+		<onleft></onleft>
+		<onright></onright>
+	</default>
+
+	<default type="radiobutton">
+		<type>radiobutton</type>
+		<left>0</left>
+		<top>0</top>
+		<width>250</width>
+		<height>70</height>
+		<visible>true</visible>
+		<radiowidth>150</radiowidth>
+		<radioheight>90</radioheight>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+		<textureradioon>radiobutton2-focus.png</textureradioon>
+		<textureradiooff>radiobutton2-nofocus.png</textureradiooff>
+		<textureradioondisabled>radiobutton2-disabled_focus.png</textureradioondisabled>
+		<textureradiooffdisabled>radiobutton2-disabled_nofocus.png</textureradiooffdisabled>
+		<selected></selected>
+		<onclick></onclick>
+		<label></label>
+		<font>50</font>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<focusedcolor>$VAR[TextColorFocus]</focusedcolor>
+		<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+		<textwidth>730</textwidth>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>10</textoffsetx>
+		<textoffsety>5</textoffsety>
+		<pulseonselect>false</pulseonselect>
+		<onfocus></onfocus>
+		<onunfocus></onunfocus>
+		<onup></onup>
+		<ondown></ondown>
+		<onleft></onleft>
+		<onright></onright>
+	</default>
+
+	<default type="togglebutton">
+		<left>0</left>
+		<top>0</top>
+		<width>250</width>
+		<height>70</height>
+		<visible>true</visible>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+		<alttexturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</alttexturefocus>
+		<alttexturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</alttexturenofocus>
+		<usealttexture></usealttexture>
+		<label></label>
+		<altlabel></altlabel>
+		<font>50</font>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<focusedcolor>$VAR[TextColorFocus]</focusedcolor>
+		<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>10</textoffsetx>
+		<textoffsety>5</textoffsety>
+		<pulseonselect>false</pulseonselect>
+		<onclick></onclick>
+		<onfocus></onfocus>
+		<onunfocus></onunfocus>
+		<onup></onup>
+		<ondown></ondown>
+		<onleft></onleft>
+		<onright></onright>
+		<wrapmultiline>false</wrapmultiline>
+	</default>
+
+	<default type="spincontrolex">
+		<left>0</left>
+		<top>0</top>
+		<width>250</width>
+		<height>70</height>
+		<spinposx>20</spinposx>
+		<spinposy>80</spinposy>
+		<spinwidth>70</spinwidth>
+		<spinheight>70</spinheight>
+		<visible>true</visible>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+		<textureup colordiffuse="$VAR[ButtonNoFocus]">select_up.png</textureup>
+		<textureupfocus colordiffuse="$VAR[ButtonFocus]">select_up.png</textureupfocus>
+		<texturedown colordiffuse="$VAR[ButtonNoFocus]">select_down.png</texturedown>
+		<texturedownfocus colordiffuse="$VAR[ButtonFocus]">select_down.png</texturedownfocus>
+		<textureupdisabled colordiffuse="AAFFAAFF">mydowntexture.png</textureupdisabled>
+		<texturedowndisabled colordiffuse="AAFFAAFF">mydownfocustexture.png</texturedowndisabled>
+		<label></label>
+		<font>50</font>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+		<align>left</align>
+		<aligny></aligny>
+		<textoffsetx>10</textoffsetx>
+		<textoffsety></textoffsety>
+		<pulseonselect></pulseonselect>
+		<reverse></reverse>
+		<onup></onup>
+		<ondown></ondown>
+		<onleft></onleft>
+		<onright></onright>
+	</default>
+
+	<default type="textbox">
+		<left>0</left>
+		<top>0</top>
+		<width>1280</width>
+		<height>200</height>
+		<visible>true</visible>
+		<colordiffuse></colordiffuse>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<pulseonselect></pulseonselect>
+		<font>50</font>
+		<pagecontrol>13</pagecontrol>
+		<monofont>mono30</monofont>
+		<scrolltime>200</scrolltime>
+		<align>center</align>
+		<aligny>center</aligny>
+		<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+		<label></label>
+	</default>
+
+	<default type="edit">
+		<left>0</left>
+		<top>0</top>
+		<width>250</width>
+		<height>70</height>
+		<visible>true</visible>
+		<aligny>center</aligny>
+		<label>Search</label>
+		<hinttext>Enter search string</hinttext>
+		<font>50</font>
+		<textoffsetx>10</textoffsetx>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+		<invalidcolor>$VAR[TextColorDisable]</invalidcolor>
+		<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+		<pulseonselect>no</pulseonselect>
+	</default>
+
+
+	<default type="scrollbar">
+		<top>70</top>
+		<left>1200</left>
+		<width>48</width>
+		<height>550</height>
+		<texturesliderbackground colordiffuse="BB808080">scrollbarv_bar_bold2.png</texturesliderbackground>
+		<texturesliderbar colordiffuse="$VAR[TextColorDisable]">osdsliderbar_square.png</texturesliderbar>
+		<texturesliderbarfocus colordiffuse="$VAR[TextColorEnable]">osdsliderbar_square.png</texturesliderbarfocus>
+		<textureslidernib colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernib>
+		<textureslidernibfocus colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernibfocus>
+		<onleft>50</onleft>
+		<ondown>60</ondown>
+		<onup>60</onup>
+		<onright>100</onright>
+		<showonepage>false</showonepage>
+		<orientation>vertical</orientation>
+	</default>
+
+	<default type="sliderex">
+		<posx>0</posx>
+		<posy>60</posy>
+		<width>250</width>
+		<height>70</height>
+		<sliderwidth>250</sliderwidth>
+		<sliderheight>40</sliderheight>
+		<visible>true</visible>
+		<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texturenofocus>
+		<texturesliderbar>slider_bg.png</texturesliderbar>
+		<textureslidernib>progressback.png</textureslidernib>
+		<textureslidernibfocus>progressmid.png</textureslidernibfocus>
+		<info></info>
+		<label></label>
+		<font>50</font>
+		<textcolor>$VAR[TextColor]</textcolor>
+		<focusedcolor>$VAR[TextColorFocus]</focusedcolor>
+		<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+		<textoffsetx>10</textoffsetx>
+		<pulseonselect></pulseonselect>
+		<onup></onup>
+		<ondown></ondown>
+		<onleft></onleft>
+		<onright></onright>
+	</default>
+	
+	<default type="fadelabel">
+		<left>0</left>
+		<top>0</top>
+		<width>1280</width>
+		<height>70</height>
+		<font>50</font>
+		<textcolor>$VAR[TextColorFocus]</textcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+		<scrollout>true</scrollout>
+		<pauseatend>5000</pauseatend>
+	</default>
+
+	<default type="progress">
+		<left>100</left>
+		<top>325</top>
+		<texturebg border="16,0,16,0">OSDProgressBack.png</texturebg>
+		<lefttexture></lefttexture>
+		<midtexture border="16,0,16,0">OSDProgressMid.png</midtexture>
+		<righttexture></righttexture>
+		<overlaytexture></overlaytexture>
+		<reveal>true</reveal>
+	</default>
+	
+	<default type="list">
+		<left>50</left>
+		<top>65</top>
+		<width>1180</width>
+		<height>535</height>
+		<align>top</align>
+		<pagecontrol>60</pagecontrol>
+		<description>No Focus</description>
+		<itemlayout height="85">
+			<control type="image">
+				<top>0</top>
+				<width>1180</width>
+				<height>85</height>
+				<texture colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texture>
+			</control>
+			<control type="image">
+				<left>55</left>
+				<top>10</top>
+				<width>68</width>
+				<height>68</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[Listitem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>130</left>
+				<top>0</top>
+				<width>600</width>
+				<height>85</height>
+				<align>left</align>
+				<textcolor>$VAR[TextColor]</textcolor>
+				<!-- <selectedcolor>$VAR[TextColorEnable]</selectedcolor> -->
+				<shadowcolor>-</shadowcolor>
+				<font>50</font>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<left>740</left>
+				<top>0</top>
+				<width>410</width>
+				<height>85</height>
+				<align>right</align>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+				<font>30</font>
+				<info>ListItem.Label2</info>
+			</control>
+		</itemlayout>
+		<description>Focuse</description>
+		<focusedlayout height="85">
+			<control type="image">
+				<top>0</top>
+				<width>1180</width>
+				<height>85</height>
+				<texture colordiffuse="$VAR[ButtonFocus]">button_base.png</texture>
+			</control>
+			<control type="image">
+				<left>55</left>
+				<top>10</top>
+				<width>65</width>
+				<height>65</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[Listitem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>130</left>
+				<top>0</top>
+				<width>720</width>
+				<height>85</height>
+				<align>left</align>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+				<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+				<font>50</font>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<left>740</left>
+				<top>0</top>
+				<width>410</width>
+				<height>85</height>
+				<align>right</align>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<selectedcolor>$VAR[TextColorDisable]</selectedcolor>
+				<shadowcolor>-</shadowcolor>
+				<font>30</font>
+				<info>ListItem.Label2</info>
+			</control>
+		</focusedlayout>
+	</default>
+
+	<default type="grouplist">
+		<left>10</left>
+		<top>630</top>
+		<width>1260</width>
+		<height>65</height>
+		<align>center</align>
+		<itemgap>5</itemgap>
+		<orientation>horizontal</orientation>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onright>50</onright>
+		<onleft>50</onleft>
+	</default>
+
+
+</includes>
+
+

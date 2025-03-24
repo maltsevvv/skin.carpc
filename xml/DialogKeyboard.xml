@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">300</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<!-- <include>framemax</include> -->
+		<control type="group">
+			<visible>!Window.IsVisible(numericinput)</visible>
+			<control type="group">
+				<left>0</left>
+				<top>0</top>
+				<visible>Control.IsVisible(313)</visible>
+				<control type="label" id="313">
+					<description>HZCODE label</description>
+					<left>55</left>
+					<top>18</top>
+					<width>50</width>
+					<height>30</height>
+					<textcolor>$VAR[TextColorFocuse]</textcolor>
+					<font>30</font>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="label" id="314">
+					<description>HZLIST label</description>
+					<left>55</left>
+					<top>55</top>
+					<width>50</width>
+					<height>20</height>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<font>30</font>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="label" id="311">
+				<description>Heading</description>
+				<left>50</left>
+				<top>20</top>
+				<width>1180</width>
+				<height>50</height>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+				<align>center</align>
+			</control>
+			<control type="edit" id="312">
+				<description>Edit Text</description>
+				<left>50</left>
+				<top>100</top>
+				<width>1180</width>
+				<height>75</height>
+				<font>50</font>
+				<aligny>center</aligny>
+				<textcolor>$VAR[TextColor]</textcolor>
+				<selectedcolor>$VAR[TextColorEnable]</selectedcolor>
+				<disabledcolor>$VAR[TextColorDisable]</disabledcolor>
+				<pulseonselect>false</pulseonselect>
+				<onup>32</onup>
+				<ondown>1</ondown>
+				<onleft>32</onleft>
+				<onright>1</onright>
+			</control>
+
+			<control type="group">
+				<left>0</left>
+				<top>160</top>
+				<!-- 1st row -->
+				<control type="grouplist" id="1">
+					<height>110</height>
+					<width>1280</width>
+					<onup>312</onup>
+					<ondown>2</ondown>
+					<onleft>312</onleft>
+					<onright>2</onright>
+					<top>40</top>
+					<itemgap>5</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="button" id="100">
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>304</ondown>
+					</control>
+					<control type="button" id="101">
+						<description>(0,1) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>120</ondown>
+					</control>
+					<control type="button" id="102">
+						<description>(0,2) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>121</ondown>
+					</control>
+					<control type="button" id="103">
+						<description>(0,3) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>122</ondown>
+					</control>
+					<control type="button" id="104">
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>123</ondown>
+					</control>
+					<control type="button" id="105">
+						<description>(0,5) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>124</ondown>
+					</control>
+					<control type="button" id="106">
+						<description>(0,6) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>125</ondown>
+					</control>
+					<control type="button" id="107">
+						<description>(0,7) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>126</ondown>
+					</control>
+					<control type="button" id="108">
+						<description>(0,8) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>127</ondown>
+					</control>
+					<control type="button" id="109">
+						<description>(0,9) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>128</ondown>
+					</control>
+					<control type="button" id="110">
+						<description>(0,10) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>312</onup>
+						<ondown>129</ondown>
+					</control>
+					 <control type="button" id="8">
+						<description>BACKSPACE button</description>
+						<width>200</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>30</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>BACKSPACE</label>
+						<onup>312</onup>
+						<ondown>130</ondown>
+					</control>
+				</control>
+				<!-- 2nd row -->
+				<control type="grouplist" id="2">
+					<orientation>horizontal</orientation>
+					<height>110</height>
+					<width>1280</width>
+					<top>130</top>
+					<itemgap>5</itemgap>
+					<onup>312</onup>
+					<ondown>3</ondown>
+					<onleft>1</onleft>
+					<onright>3</onright>
+					<control type="radiobutton" id="304">
+						<description>Symbols button</description>
+						<width>80</width>
+						<height>80</height>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<!-- <texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textoffsetx>0</textoffsetx>
+						<texturenofocus colordiffuse="$VAR[CustomButtonColorNoFocus]">button_base.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus> -->
+						<radiowidth>50</radiowidth>
+						<radioheight>50</radioheight>
+						<radioposx>20</radioposx>
+						<radioposy>40</radioposy>
+						<aspectratio>keep</aspectratio>
+						<font>40</font>
+						<label>@#!*</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>30</font>
+						<onup>100</onup>
+						<ondown>140</ondown>
+					</control>
+					
+					<control type="button" id="120">
+						<description>key button (Q)</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>101</onup>
+						<ondown>141</ondown>
+					</control>
+					<control type="button" id="121">
+						<description>key button (W)</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>102</onup>
+						<ondown>142</ondown>
+					</control>
+					<control type="button" id="122">
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>103</onup>
+						<ondown>143</ondown>
+					</control>
+					<control type="button" id="123">
+						<description>(1,3) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>104</onup>
+						<ondown>144</ondown>
+					</control>
+					<control type="button" id="124">
+						<description>(1,4) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>105</onup>
+						<ondown>145</ondown>
+					</control>
+					<control type="button" id="125">
+						<description>(1,5) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>106</onup>
+						<ondown>146</ondown>
+					</control>
+					<control type="button" id="126">
+						<description>(1,6) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>107</onup>
+						<ondown>147</ondown>
+					</control>
+					<control type="button" id="127">
+						<description>(1,7) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>108</onup>
+						<ondown>148</ondown>
+					</control>
+					<control type="button" id="128">
+						<description>(1,8) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>109</onup>
+						<ondown>149</ondown>
+					</control>
+					<control type="button" id="129">
+						<description>(1,9) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>110</onup>
+						<ondown>150</ondown>
+					</control>
+					<control type="button" id="130">
+						<description>(1,10) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>50</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>8</onup>
+						<ondown>300</ondown>
+					</control>
+					<control type="button" id="131">
+						<description>(1,11) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>50</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>8</onup>
+						<ondown>300</ondown>
+					</control>
+				</control>
+				<!-- 3rd row -->
+				<control type="grouplist" id="3">
+					<height>110</height>
+					<width>1280</width>
+					<top>220</top>
+					<onup>2</onup>
+					<ondown>4</ondown>
+					<onleft>2</onleft>
+					<onright>4</onright>
+					<orientation>horizontal</orientation>
+					<itemgap>5</itemgap>
+					<control type="button" id="140">
+						<description>(2,0) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>304</onup>
+						<ondown>303</ondown>
+					</control>
+					<control type="button" id="141">
+						<description>(2,1) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>120</onup>
+						<ondown>302</ondown>
+					</control>
+					<control type="button" id="142">
+						<description>(2,2) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>121</onup>
+						<ondown>160</ondown>
+					</control>
+					<control type="button" id="143">
+						<description>(2,3) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>122</onup>
+						<ondown>161</ondown>
+					</control>
+					<control type="button" id="144">
+						<description>(2,4) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>123</onup>
+						<ondown>162</ondown>
+					</control>
+					<control type="button" id="145">
+						<description>(2,5) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>124</onup>
+						<ondown>163</ondown>
+					</control>
+					<control type="button" id="146">
+						<description>(2,6) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>125</onup>
+						<ondown>164</ondown>
+					</control>
+					<control type="button" id="147">
+						<description>(2,7) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>126</onup>
+						<ondown>165</ondown>
+					</control>
+					<control type="button" id="148">
+						<description>(2,8) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>127</onup>
+						<ondown>166</ondown>
+					</control>
+					<control type="button" id="149">
+						<description>(2,9) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>128</onup>
+						<ondown>167</ondown>
+					</control>
+					<control type="button" id="150">
+						<description>(2,10) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>129</onup>
+						<ondown>168</ondown>
+					</control>
+					<control type="button" id="151">
+						<description>(2,11) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>150</onup>
+						<ondown>302</ondown>
+					</control>
+					<control type="button" id="300">
+						<description>DONE button</description>
+						<width>180</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>40</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>20177</label>
+						<onup>131</onup>
+						<ondown>307</ondown>
+					</control>
+				</control>
+				<!-- 4th row -->
+				<control type="grouplist" id="4">
+					<height>110</height>
+					<width>1280</width>
+					<top>340</top>
+					<itemgap>5</itemgap>
+					<onup>3</onup>
+					<ondown>5</ondown>
+					<onleft>3</onleft>
+					<onright>5</onright>
+					<orientation>horizontal</orientation>
+					<control type="radiobutton" id="303">
+						<description>CAPS</description>
+						<width>100</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>40</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<label>CAPS</label>
+						<!-- <textoffsetx>0</textoffsetx>
+						<texturenofocus colordiffuse="$VAR[CustomButtonColorNoFocus]">button_base.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">button_base.png</texturefocus> -->
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<radiowidth>50</radiowidth>
+						<radioheight>50</radioheight>
+						<radioposx>20</radioposx>
+						<radioposy>40</radioposy>
+						<onup>140</onup>
+						<ondown>309</ondown>
+					</control>
+					<control type="radiobutton" id="302">
+						<description>SHIFT button</description>
+						<width>100</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>40</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<!-- <textcolor>$VAR[TextColorFocuse]</textcolor>
+						<focusedcolor>$VAR[CustomFocusTextColor]</focusedcolor>
+						<selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<radiowidth>50</radiowidth>
+						<radioheight>50</radioheight>
+						<radioposx>20</radioposx>
+						<radioposy>40</radioposy>
+						<label>20178</label>
+						<onup>141</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="160">
+						<description>(3,0) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>142</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="161">
+						<description>(3,1) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>143</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="162">
+						<description>(3,2) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>144</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="163">
+						<description>(3,3) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>145</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="164">
+						<description>(3,4) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>146</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="165">
+						<description>(3,5) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>147</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="166">
+						<description>(3,6) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>148</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="167">
+						<description>(3,7) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>149</onup>
+						<ondown>32</ondown>
+					</control>
+					<control type="button" id="168">
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>150</onup>
+						<ondown>305</ondown>
+					</control>
+					<control type="button" id="169">
+						<description>(3,9) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>300</onup>
+						<ondown>305</ondown>
+					</control>
+					<control type="button" id="170">
+						<description>(3,10) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>169</onup>
+						<ondown>171</ondown>
+					</control>
+					<control type="button" id="171">
+						<description>(3,11) key button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<onup>170</onup>
+						<ondown>305</ondown>
+					</control>
+					<control type="button" id="307">
+						<description>IP Input button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>50</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>IP</label>
+						<font>30</font>
+						<onup>300</onup>
+						<ondown>306</ondown>
+					</control>
+				</control>
+				<!-- 5th row -->
+				<control type="grouplist" id="5">
+					<height>110</height>
+					<width>1280</width>
+					<top>440</top>
+					<itemgap>5</itemgap>
+					<onup>4</onup>
+					<ondown>1</ondown>
+					<onleft>4</onleft>
+					<onright>1</onright>
+					<orientation>horizontal</orientation>
+					<control type="button" id="309">
+						<description>Language button</description>
+						<width>280</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>30</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>20177</label>
+						<onup>303</onup>
+						<ondown>100</ondown>
+					</control>
+					<control type="button" id="32">
+						<description>SPACE button</description>
+						<width>600</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>40</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>20182</label>
+						<onup>163</onup>
+						<ondown>1</ondown>
+					</control>
+					<control type="button" id="305">
+						<description>previous button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>&lt;</label>
+						<onup>307</onup>
+						<ondown>306</ondown>
+					</control>
+					<control type="button" id="306">
+						<description>next button</description>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>80</font>
+						<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">keyboardeditarea.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[ButtonFocus]">subback2.png</texturefocus>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<label>&gt;</label>
+						<onup>307</onup>
+						<ondown>1</ondown>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

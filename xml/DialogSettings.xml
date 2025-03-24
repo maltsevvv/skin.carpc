@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<include>FrameMax</include>
+		<control type="grouplist" id="5">
+			<left>50</left>
+			<top>80</top>
+			<width>1180</width>
+			<height>500</height>
+			<description>control area</description>
+			<height>470</height>
+			<orientation>vertical</orientation>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<animation effect="slide" start="0,0" end="-10,0" time="0" condition="Control.IsVisible(60)">Conditional</animation>
+		</control>
+		<control type="button" id="7">
+		</control>
+		<control type="radiobutton" id="8">
+			<textwidth>680</textwidth>
+		</control>
+		<control type="spincontrolex" id="9">
+		</control>
+		<control type="edit" id="12">
+		</control>
+		<control type="sliderex" id="13">
+		</control>
+		<control type="label" id="14">
+		</control>
+		<control type="grouplist" id="9000">
+			<onup>5</onup>
+			<ondown>5</ondown>
+			<top>650</top>
+			<width>1280</width>
+			<control type="button" id="28">
+				<description>OK Button</description>
+				<align>center</align>
+			</control>
+			<control type="button" id="29">
+				<description>Cancel Button</description>
+				<align>center</align>
+			</control>
+			<control type="button" id="30">
+				<description>Settings Button</description>
+				<align>center</align>
+			</control>
+		</control>
+	</controls>
+</window>

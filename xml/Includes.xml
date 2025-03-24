@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include file="Defaults.xml" />
+	<include file="View_50_List.xml" />
+	<include file="IncludeCanBus.xml" />
+	<include file="IncludeFrame.xml" />
+	<include file="IncludeMusic.xml" />
+	<include file="IncludeBluetooth.xml" />
+	<include file="IncludesMediaControls.xml" />
+	<include file="Variables.xml" />
+
+
+	<include name="background">
+		<description>Background</description>
+        <control type="image">
+            <description>Normal Default Background Image</description>
+            <left>0</left>
+            <top>0</top>
+			<width>1280</width>
+			<height>720</height>
+            <aspectratio>scale</aspectratio>
+            <texture fallback="special://skin/background/SKINDEFAULT_RED_DARK2.png">special://skin/background/$INFO[Skin.CurrentTheme].jpg</texture>
+            <visible>![Skin.HasSetting(UseCustomBackground) + !String.IsEmpty(Skin.String(CustomBackgroundPath))]</visible>
+        </control>
+        <control type="image">
+            <description>User Set Background Image</description>
+            <left>0</left>
+            <top>0</top>
+			<width>1280</width>
+			<height>720</height>
+            <aspectratio>scale</aspectratio>
+            <texture>$INFO[Skin.String(CustomBackgroundPath)]</texture>
+            <visible>Skin.HasSetting(UseCustomBackground) + !String.IsEmpty(Skin.String(CustomBackgroundPath))</visible>
+        </control>
+	</include>
+
+	<include name="backgroundPanel">
+		<description>BackgroundPanel</description>
+        <control type="image">
+            <description>Normal Default Background Image</description>
+            <left>0</left>
+            <top>0</top>
+			<width>1280</width>
+			<height>720</height>
+            <aspectratio>scale</aspectratio>
+            <texture fallback="special://skin/background/SKINDEFAULT_RED_DARK2.png">special://skin/background/$INFO[Skin.CurrentThemePanel].jpg</texture>
+            <visible>![Skin.HasSetting(UseCustomBackgroundPanel) + !String.IsEmpty(Skin.String(CustomBackgroundPathPanel))]</visible>
+        </control>
+        <control type="image">
+            <description>User Set Background Image</description>
+            <left>0</left>
+            <top>0</top>
+			<width>1280</width>
+			<height>720</height>
+            <aspectratio>scale</aspectratio>
+            <texture>$INFO[Skin.String(CustomBackgroundPathPanel)]</texture>
+            <visible>Skin.HasSetting(UseCustomBackgroundPanel) + !String.IsEmpty(Skin.String(CustomBackgroundPathPanel))</visible>
+        </control>
+	</include>
+
+	<include name="background1">
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture colordiffuse="DD000000">background1.png</texture>
+		</control>
+	</include>
+
+	<include name="BackgroundMini">
+		<control type="image">
+			<left>360</left>
+			<top>70</top>
+			<width>870</width>
+			<height>530</height>
+			<texture>background.png</texture>
+		</control>
+	</include>
+	
+	<include name="HomeButtonCommons">
+		<control type="grouplist" id="100">
+			<visible>!Skin.HasSetting(RNS-JP3)</visible>
+			<left>905</left>
+			<top>615</top>
+			<width>350</width>
+			<height>100</height>
+			<itemgap>20</itemgap>
+			<scrolltime>150</scrolltime>
+			<orientation>horizontal</orientation>
+			<align>right</align>
+			<onup>50</onup>
+			<ondown>10</ondown>
+			<onleft>204</onleft>
+			<onright>20</onright>
+			<control type="group">
+				<description>Update library</description>
+				<visible>Window.IsActive(MyVideoNav.xml)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(101)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="101">
+					<width>100</width>
+					<height>100</height>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturenofocus>
+					<onclick>UpdateLibrary(video)</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>204</onleft>
+					<onright>102</onright>
+				</control>
+			</control>
+			<control type="group">
+				<description>Update library</description>
+				<visible>Window.IsActive(MyMusicNav.xml)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(102)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="102">
+					<width>100</width>
+					<height>100</height>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturenofocus>
+					<onclick>UpdateLibrary(music)</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>101</onleft>
+					<onright>103</onright>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Window.IsActive(AddonBrowser.xml)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(103)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="103">
+					<width>100</width>
+					<height>100</height>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturenofocus>
+					<onclick>UpdateAddonRepos</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>102</onleft>
+					<onright>104</onright>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Player.HasMedia | !Player.HasMedia + !Window.IsActive(Home)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(104)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="104">
+					<width>100</width>
+					<height>100</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_back.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_back.png</texturefocus>
+					<onclick>Back</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>103</onleft>
+					<onright>105</onright>
+				</control>
+			</control>
+			<control type="group">
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(105)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="105">
+					<height>100</height>
+					<width>100</width>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]" border="5">icon_view_w.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">icon_view_w.png</texturefocus>
+					<onclick>ActivateWindow(1100)</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>104</onleft>
+					<onright>20</onright>
+				</control>
+			</control>
+		</control>
+		
+		
+		<control type="grouplist" id="100">
+			<visible>Skin.HasSetting(RNS-JP3) + [Window.IsActive(FullScreenVideo) | Window.IsActive(Home) | Window.IsActive(1205) | Window.IsActive(addonbrowser) | Window.IsActive(programs) | Window.IsActive(videos) | Window.IsActive(music)]</visible>
+			<left>905</left>
+			<top>515</top>
+			<width>350</width>
+			<height>100</height>
+			<itemgap>20</itemgap>
+			<scrolltime>150</scrolltime>
+			<orientation>horizontal</orientation>
+			<align>right</align>
+			<onup>50</onup>
+			<ondown>10</ondown>
+			<onleft>204</onleft>
+			<onright>20</onright>
+			<control type="group">
+				<description>Update library</description>
+				<visible>Window.IsActive(MyVideoNav.xml)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(101)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="101">
+					<width>100</width>
+					<height>100</height>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturenofocus>
+					<onclick>UpdateLibrary(video)</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>204</onleft>
+					<onright>102</onright>
+				</control>
+			</control>
+			<control type="group">
+				<description>Update library</description>
+				<visible>Window.IsActive(MyMusicNav.xml)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(102)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="102">
+					<width>100</width>
+					<height>100</height>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturenofocus>
+					<onclick>UpdateLibrary(music)</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>101</onleft>
+					<onright>103</onright>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Window.IsActive(AddonBrowser.xml)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(103)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="103">
+					<width>100</width>
+					<height>100</height>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_update.png</texturenofocus>
+					<onclick>UpdateAddonRepos</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>102</onleft>
+					<onright>104</onright>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Player.HasMedia | !Player.HasMedia + !Window.IsActive(Home)</visible>
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(104)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="104">
+					<width>100</width>
+					<height>100</height>
+					<font></font>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_back.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_back.png</texturefocus>
+					<onclick>Back</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>103</onleft>
+					<onright>105</onright>
+				</control>
+			</control>
+			<control type="group">
+				<width>100</width>
+				<height>100</height>
+				<control type="image">
+					<visible>Control.HasFocus(105)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="button" id="105">
+					<height>100</height>
+					<width>100</width>
+					<texturenofocus colordiffuse="$VAR[ButtonNoFocus]" border="5">icon_view_w.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">icon_view_w.png</texturefocus>
+					<onclick>ActivateWindow(1100)</onclick>
+					<onup>50</onup>
+					<ondown>10</ondown>
+					<onleft>104</onleft>
+					<onright>20</onright>
+				</control>
+			</control>
+		</control>
+	</include>
+	
+
+
+	<include name="background80">
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>background80.png</texture>
+		</control>
+	</include>
+
+
+	<include name="videowindow">
+		<visible>Player.HasVideo</visible>
+		<control type="videowindow">
+			<description>Video in window</description>
+			<left>0</left>
+			<top>0</top>
+			<aspectratio>keep</aspectratio>
+			<width>1280</width>
+			<height>720</height>
+		</control>
+	</include>
+
+
+	<include name="FileCountCommons">
+		<control type="group">
+			<left>0</left>
+			<top>5</top>
+			<visible></visible>
+			<control type="label">
+				<description>Window label</description>
+				<top>0</top>
+				<left>20</left>
+				<width>900</width>
+				<font>40</font>
+				<align>center</align>
+				<scroll>true</scroll>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<!-- <label>$INFO[Container.FolderName]</label> -->
+				<label>$INFO[Container.FolderPath]</label>
+			</control>
+			<control type="image">
+				<left>1170</left>
+				<top>-15</top>
+				<width>100</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_filemanager.png</texture>
+			</control>
+			<control type="label">
+				<description>Page Count Label 1</description>
+				<left>750</left>
+				<top>10</top>
+				<width>375</width>
+				<height>15</height>
+				<font>30</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>false</scroll>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[Window.Property(filter),$LOCALIZE[587] , - ]$INFO[Container.NumItems,, Items]</label>
+			</control>
+			<control type="label">
+				<description>Page Count Label 2</description>
+				<left>750</left>
+				<top>40</top>
+				<width>375</width>
+				<height>15</height>
+				<font>30</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>false</scroll>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container.CurrentPage,Page ]$INFO[Container.NumPages, of ,]</label>
+			</control>
+		</control>
+	</include>
+	
+	
+
+</includes>

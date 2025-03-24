@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<!-- <include>framemax</include> -->
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<colordiffuse>40FFFFFF</colordiffuse>
+		</control>
+		<control type="image">
+			<left>57</left>
+			<top>85</top>
+			<width>270</width>
+			<height>380</height>
+			<aspectratio>stretch</aspectratio>
+			<scroll>true</scroll>
+			<texture background="true">$VAR[PosterThumb]</texture>
+		</control>
+		<control type="list" id="49">
+			<left>330</left>
+			<top>85</top>
+			<width>900</width>
+			<height>550</height>
+			<scrolltime>200</scrolltime>
+			<itemlayout height="45">
+				<control type="label">
+					<left>5</left>
+					<top>0</top>
+					<width>auto</width>
+					<height>30</height>
+					<font>40</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>blue</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<info>ListItem.Label</info>
+				</control>
+				<control type="label">
+					<left>300</left>
+					<top>0</top>
+					<width>600</width>
+					<height>30</height>
+					<font>40</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<scroll>true</scroll>
+					<selectedcolor>$VAR[CustomSelectTextColorLabel2]</selectedcolor>
+					<info>ListItem.Label2</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="45">
+				<control type="label">
+					<left>5</left>
+					<top>0</top>
+					<width>300</width>
+					<height>30</height>
+					<font>40</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>blue</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<info>ListItem.Label</info>
+				</control>
+				<control type="label" id = "31">
+					<left>300</left>
+					<top>0</top>
+					<width>600</width>
+					<height>30</height>
+					<font>40</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>$VAR[CustomTextColor]</textcolor>
+					<selectedcolor>$VAR[CustomSelectTextColorLabel2]</selectedcolor>
+					<scroll>true</scroll>
+					<info>ListItem.Label2</info>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<label>$LOCALIZE[20376]:</label>
+					<label2>$INFO[ListItem.OriginalTitle]   </label2>
+					<visible>!String.IsEmpty(ListItem.OriginalTitle) + !String.IsEqual(ListItem.OriginalTitle,Listitem.Title)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[20339]:</label>
+					<label2>$INFO[ListItem.Director]   </label2>
+					<onclick>SendClick(2003,13)</onclick>
+					<visible>!String.IsEmpty(ListItem.Director)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[20417]:</label>
+					<label2>$INFO[ListItem.Writer]   </label2>
+					<visible>!String.IsEmpty(ListItem.Writer)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[572]:</label>
+					<label2>$INFO[ListItem.Studio]   </label2>
+					<visible>!String.IsEmpty(ListItem.Studio)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[515]:</label>
+					<label2>$INFO[ListItem.Genre]   </label2>
+					<visible>!String.IsEmpty(ListItem.Genre)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[562]:</label>
+					<label2>$INFO[ListItem.Year]   </label2>
+					<visible>!String.IsEmpty(ListItem.Year)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[2050]:</label>
+					<label2>$VAR[DurationInMinutes]</label2>
+					<visible>!String.IsEmpty(ListItem.Duration)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[38018]:</label>
+					<label2>$INFO[ListItem.Userrating]</label2>
+					<visible>!String.IsEmpty(ListItem.Userrating)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[563]:</label>
+					<label2>$INFO[ListItem.RatingAndVotes]</label2>
+					<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[202]:</label>
+					<label2>$INFO[ListItem.TagLine]</label2>
+					<visible>!String.IsEmpty(ListItem.TagLine)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[203]:</label>
+					<label2>$INFO[ListItem.PlotOutline]</label2>
+					<visible>!String.IsEmpty(ListItem.PlotOutline)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[20074]:</label>
+					<label2>$INFO[ListItem.mpaa]</label2>
+					<visible>!String.IsEmpty(ListItem.mpaa)</visible>
+				</item>
+				<item>
+
+					<label>$LOCALIZE[15311]</label>
+					<label2>$INFO[ListItem.FilenameAndPath]   </label2>
+					<visible>!String.IsEmpty(ListItem.FilenameAndPath)</visible>
+				</item>
+			</content>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>620</top>
+			<width>1280</width>
+			<height>100</height>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture>subback.png</texture>
+		</control>
+		<control type="grouplist" id="9000">
+			<itemgap>4</itemgap>
+			<align>center</align>
+			<orientation>horizontal</orientation>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+
+			<control type="togglebutton" id="8">
+				<description>Play/browse to Show</description>
+				<label>208</label>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_base.png</texturefocus>
+				<texturenofocus>button_base.png</texturenofocus>
+				<altlabel>1024</altlabel>
+				<align>center</align>
+				<textcolor>$VAR[CustomTextColor]</textcolor>
+				<usealttexture>String.IsEqual(ListItem.DBTYPE,tvshow)</usealttexture>
+			</control>
+			<control type="button" id="6">
+				<description>Refresh</description>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_base.png</texturefocus>
+				<texturenofocus>button_base.png</texturenofocus>
+				<include>ButtonInfoDialogsCommonValues</include>
+				<label>184</label>
+				<align>center</align>
+			</control>
+			<control type="button" id="10">
+				<description>Get Thumb</description>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_base.png</texturefocus>
+				<texturenofocus>button_base.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_base.png</texturefocus>
+				<texturenofocus>button_base.png</texturenofocus>
+				<label>13511</label>
+				<align>center</align>
+			</control>
+			<control type="button" id="11">
+				<description>Play Trailer</description>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_base.png</texturefocus>
+				<texturenofocus>button_base.png</texturenofocus>
+				<label>20410</label>
+				<align>center</align>
+				<visible>!String.IsEmpty(ListItem.Trailer) + !Skin.HasSetting(WindowedTrailer)</visible>
+			</control>
+			<control type="button" id="15">
+				<description>Play Trailer Windowed</description>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_base.png</texturefocus>
+				<texturenofocus>button_base.png</texturenofocus>
+				<label>20410</label>
+				<align>center</align>
+				<onclick>PlayMedia($INFO[ListItem.Trailer],1)</onclick>
+				<visible>!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(WindowedTrailer)</visible>
+			</control>
+		</control>
+	</controls>
+</window>

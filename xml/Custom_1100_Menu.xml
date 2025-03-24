@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="1100">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background</include>
+		<include>videowindow</include>
+		<include>HomeButtonCommons</include>
+		<include>FrameMax</include>
+
+<!-- 1st Row -->
+		<control type="group">
+			<left>60</left>
+			<top>75</top>
+			<control type="image">
+				<visible>Control.HasFocus(10)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="10">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_microsd.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">button_microsd.png</texturefocus>
+				<onclick>ActivateWindow(1102)</onclick>
+				<onup>222</onup>
+				<ondown>50</ondown>
+				<onleft>-</onleft>
+				<onright>20</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>190</top>
+				<height>50</height>
+				<width>250</width>
+				<font>50</font>
+				<align>center</align>
+				<label>$LOCALIZE[20136]</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<control type="group">
+			<left>360</left>
+			<top>75</top>
+			<control type="image">
+				<visible>Control.HasFocus(20)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="20">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_shutdown.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">button_shutdown.png</texturefocus>
+				<onclick>ActivateWindow(ShutDownMenu)</onclick>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>10</onleft>
+				<onright>30</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>190</top>
+				<height>50</height>
+				<width>250</width>
+				<font>50</font>
+				<align>center</align>
+				<label>Power</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>
+		</control>
+		<control type="group">
+			<left>670</left>
+			<top>75</top>
+			<control type="image">
+				<visible>Control.HasFocus(30)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="30">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>center</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">car/button_car_can.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">car/button_car_can.png</texturefocus>
+				<onclick>ActivateWindow(1101)</onclick>
+				<onup>-</onup>
+				<ondown>70</ondown>
+				<onleft>20</onleft>
+				<onright>40</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>190</top>
+				<height>50</height>
+				<width>250</width>
+				<font>50</font>
+				<align>center</align>
+				<label>$LOCALIZE[5]</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>
+		</control>
+		
+		<control type="group">
+			<left>970</left>
+			<top>75</top>
+			<control type="image">
+				<visible>Control.HasFocus(40)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="40">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">car/button_car_can.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">car/button_car_can.png</texturefocus>
+				<onclick>RunScript("special://skin/scripts/FullLogCan.py")</onclick>
+				<onup>-</onup>
+				<ondown>80</ondown>
+				<onleft>30</onleft>
+				<onright>50</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>190</top>
+				<height>50</height>
+				<width>250</width>
+				<font>50</font>
+				<align>center</align>
+				<label>Full Log</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>
+		</control>
+
+
+		<control type="group">
+			<left>60</left>
+			<top>350</top>
+			<control type="image">
+				<visible>Control.HasFocus(50)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="50">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_filemanager.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">button_filemanager.png</texturefocus>
+				<onclick>activatewindow(FileManager)</onclick>
+				<onup>10</onup>
+				<ondown>100</ondown>
+				<onleft>40</onleft>
+				<onright>70</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>170</top>
+				<height>50</height>
+				<width>250</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[10003]</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+
+
+		<control type="group">
+			<left>670</left>
+			<top>350</top>
+			<control type="image">
+				<visible>Control.HasFocus(70)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="70">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">car/button_car.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">car/button_car.png</texturefocus>
+				<onclick>ActivateWindow(1105)</onclick>
+				<onup>30</onup>
+				<ondown>100</ondown>
+				<onleft>50</onleft>
+				<onright>80</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>190</top>
+				<height>50</height>
+				<width>250</width>
+				<font>40</font>
+				<align>center</align>
+				<label>Service Book</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>
+		</control>
+
+		<control type="group">
+			<left>970</left>
+			<top>350</top>
+			<control type="image">
+				<visible>Control.HasFocus(80)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>236</width>
+				<height>236</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="80">
+				<left>0</left>
+				<top>0</top>
+				<height>250</height>
+				<width>250</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">car/button_car_can.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]" border="5">car/button_car_can.png</texturefocus>
+				<onclick>RunScript("special://skin/scripts/MFSWLogCan.py")</onclick>
+				<onup>40</onup>
+				<ondown>100</ondown>
+				<onleft>70</onleft>
+				<onright>10</onright>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>190</top>
+				<height>50</height>
+				<width>250</width>
+				<font>40</font>
+				<align>center</align>
+				<label>MFSW Log</label>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>
+		</control>
+	</controls>
+</window>

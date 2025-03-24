@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<description>Music</description>
+	<include name="Music">
+ 		<control type="group">
+			<visible>Player.HasAudio + !Skin.HasSetting(RNS-JP3)</visible>
+			<left>10</left>
+			<top>350</top>
+			<control type="image">
+				<description>CD Cover</description>
+				<left>40</left>
+				<top>110</top>
+				<width>150</width>
+				<height>150</height>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="white">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture>ThumbBorderGrey.png</bordertexture>
+			</control>
+			<control type="label">
+				<description>Artist Info</description>
+				<left>200</left>
+				<top>110</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[MusicPlayer.Artist]</label>
+			</control>
+
+			<control type="label">
+				<description>Player.Title</description>
+				<left>200</left>
+				<top>160</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>50</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[musicplayer.Playlistposition] - $INFO[Player.Title]</label>
+
+			</control>
+			<control type="label">
+				<description>Player.Time</description>
+				<left>200</left>
+				<top>210</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=Color4] / [/COLOR]]</label>
+			</control>
+		</control>
+
+<!-- RNS-JP3 -->
+ 		<control type="group">
+			<visible>Player.HasAudio + Skin.HasSetting(RNS-JP3)</visible>
+			<left>10</left>
+			<top>350</top>
+			<control type="image">
+				<description>CD Cover</description>
+				<left>40</left>
+				<top>210</top>
+				<width>150</width>
+				<height>150</height>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="white">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture>ThumbBorderGrey.png</bordertexture>
+			</control>
+			<control type="label">
+				<description>Artist Info</description>
+				<left>240</left>
+				<top>110</top>
+				<width>1000</width>
+				<height>50</height>
+				<align>left</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[MusicPlayer.Artist]</label>
+			</control>
+			<control type="label">
+				<description>Player.Title</description>
+				<left>240</left>
+				<top>280</top>
+				<width>1000</width>
+				<height>50</height>
+				<align>left</align>
+				<font>50</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[musicplayer.Playlistposition] - $INFO[Player.Title]</label>
+
+			</control>
+			<control type="label">
+				<description>Player.Time</description>
+				<left>20</left>
+				<top>110</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=Color4] / [/COLOR]]</label>
+			</control>
+		</control>
+
+	</include>
+
+</includes>

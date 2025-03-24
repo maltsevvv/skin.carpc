@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<views>50</views>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<include>videowindow</include>
+		<include>FileCountCommons</include>
+		<include>FrameMax</include>
+		<!-- <include>View_50_List</include> -->
+		<control type="group">
+			<left>40</left>
+			<top>0</top>
+			<control type="panel" id="50">
+				<left>0</left>
+				<top>85</top>
+				<width>1200</width>
+				<height>520</height>
+				<align>top</align>
+				<pagecontrol>60</pagecontrol>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<onleft>100</onleft>
+				<onright>60</onright>
+				<description>No Focus</description>
+				<itemlayout height="85">
+					<control type="image">
+						<top>-5</top>
+						<width>1200</width>
+						<height>85</height>
+						<texture colordiffuse="$VAR[ButtonNoFocus]">button_base.png</texture>
+					</control>
+					<control type="image">
+						<left>55</left>
+						<top>4</top>
+						<width>68</width>
+						<height>68</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="label">
+						<left>130</left>
+						<top>0</top>
+						<width>750</width>
+						<height>65</height>
+						<align>left</align>
+						<textcolor>$VAR[TextColor]</textcolor>
+						<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<shadowcolor>-</shadowcolor>
+						<font>50</font>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<left>980</left>
+						<top>0</top>
+						<width>200</width>
+						<height>65</height>
+						<align>right</align>
+						<textcolor>$VAR[TextColorDisable]</textcolor>
+						<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<shadowcolor>-</shadowcolor>
+						<font>30</font>
+						<info>ListItem.Label2</info>
+					</control>
+				</itemlayout>
+				<description>Focuse</description>
+				<focusedlayout height="75">
+					<control type="image">
+						<top>-5</top>
+						<width>1200</width>
+						<height>85</height>
+						<texture colordiffuse="$VAR[ButtonFocus]">button_base.png</texture>
+					</control>
+					<control type="image">
+						<left>55</left>
+						<top>4</top>
+						<width>68</width>
+						<height>68</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$VAR[PosterThumb]</texture>
+					</control>
+					<control type="label">
+						<left>130</left>
+						<top>0</top>
+						<width>750</width>
+						<height>65</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>$VAR[TextColorFocus]</textcolor>
+						<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<font>50</font>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<left>980</left>
+						<top>0</top>
+						<width>200</width>
+						<height>65</height>
+						<align>right</align>
+						<textcolor>$VAR[TextColorDisable]</textcolor>
+						<!-- <selectedcolor>$VAR[CustomSelectTextColor]</selectedcolor> -->
+						<font>30</font>
+						<info>ListItem.Label2</info>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<top>70</top>
+				<left>1200</left>
+				<width>48</width>
+				<height>550</height>
+				<texturesliderbackground colordiffuse="BB808080">scrollbarv_bar_bold2.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="$VAR[TextColorDisable]">osdsliderbar_square.png</texturesliderbar>
+				<texturesliderbarfocus colordiffuse="$VAR[TextColorEnable]">osdsliderbar_square.png</texturesliderbarfocus>
+				<textureslidernib colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="$VAR[TextColorFocus]">osdslidernib_square.png</textureslidernibfocus>
+				<onleft>50</onleft>
+				<onright>100</onright>
+				<ondown>100</ondown>
+				<onup>60</onup>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+			</control>
+		</control>
+		<control type="label">
+			<top>600</top>
+			<left>20</left>
+			<width>900</width>
+			<height>100</height>
+			<font>40</font>
+			<label>$LOCALIZE[12014] $INFO[Window(AddonBrowser).Property(Updated)]</label>
+			<align>center</align>
+			<!-- <textcolor>Color3</textcolor> -->
+		</control>
+		<include>HomeButtonCommons</include>
+	</controls>
+</window>

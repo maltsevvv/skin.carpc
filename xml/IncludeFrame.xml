@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="FrameMax">
+		<control type="image">
+			<description>UP</description>
+			<left>40</left>
+			<top>60</top>
+			<width>1200</width> 
+			<height>10</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<description>DOWN</description>
+			<left>40</left>
+			<top>600</top>
+			<width>1200</width> 
+			<height>10</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<description>LEFT</description>
+			<left>40</left>
+			<top>60</top>
+			<width>10</width> 
+			<height>550</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<description>RIGHT</description>
+			<left>1230</left>
+			<top>60</top>
+			<width>10</width> 
+			<height>550</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+	</include>
+	
+	<include name="FrameDialog">
+		<control type="group">
+				<top>50</top>
+			<control type="image">
+				<left>200</left>
+				<top>25</top>
+				<width>880</width> 
+				<height>38</height> 
+				<texture colordiffuse="DD000000">background1.png</texture>
+			</control>
+			<control type="image">
+				<description>up</description>
+				<left>200</left>
+				<top>25</top>
+				<width>880</width> 
+				<height>10</height> 
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+			</control>
+			<control type="image">
+				<description>down</description>
+				<left>200</left>
+				<top>400</top>
+				<width>880</width> 
+				<height>10</height> 
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+			</control>
+			<control type="image">
+				<description>left</description>
+				<left>200</left>
+				<top>25</top>
+				<width>10</width> 
+				<height>380</height> 
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+			</control>
+			<control type="image">
+				<description>right</description>
+				<left>1070</left>
+				<top>25</top>
+				<width>10</width> 
+				<height>380</height> 
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+			</control>
+		</control>
+	</include>
+
+	<description>Рамка Файловый менеджер</description>
+	<include name="FrameManager">
+		<control type="image">
+			<description>Up</description>
+			<left>0</left>
+			<top>10</top>
+			<width>598</width> 
+			<height>10</height>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<description>Down</description>
+			<left>0</left>
+			<top>600</top>
+			<width>598</width> 
+			<height>10</height>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<description>Left</description>
+			<left>-1</left>
+			<top>10</top>
+			<width>9</width> 
+			<height>590</height>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+ 		<control type="image">
+			<description>Right</description>
+			<left>590</left>
+			<top>10</top>
+			<width>9</width> 
+			<height>600</height>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+<!--		<control type="image">
+			<description>|</description>
+			<left>504</left>
+			<top>10</top>
+			<width>18</width> 
+			<height>747</height> 
+			<texture>button-focus.png</texture>
+		</control> -->
+	</include>
+
+	<description>Рамка диалога</description>
+	<include name="framemini">
+		<control type="image">
+			<left>200</left>
+			<top>65</top>
+			<width>880</width> 
+			<height>395</height> 
+			<texture colordiffuse="DD000000">background1.png</texture>
+		</control>
+		<control type="image">
+			<left>200</left>
+			<top>65</top>
+			<width>880</width> 
+			<height>10</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<description>butom</description>
+			<left>200</left>
+			<top>450</top>
+			<width>880</width> 
+			<height>10</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<left>200</left>
+			<top>65</top>
+			<width>10</width> 
+			<height>395</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<left>1070</left>
+			<top>65</top>
+			<width>10</width> 
+			<height>395</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+	</include>
+
+	<include name="FrameContextMenu">
+		<description>Рамка Контекстного меню</description>
+		<control type="image">
+			<description>background image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>450</width>
+			<height>510</height>
+			<texture>subback.png</texture>
+		</control>
+  		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>450</width> 
+			<height>10</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+  		<control type="image">
+			<left>0</left>
+			<top>510</top>
+			<width>450</width> 
+			<height>10</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<height>510</height>
+			<width>9</width> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<left>450</left>
+			<top>0</top>
+			<height>520</height>
+			<width>9</width> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+	</include>
+	
+	<description>Рамка Оповещение</description>
+	<include name="notification">
+		<control type="image">
+			<left>50</left>
+			<top>10</top>
+			<width>1180</width>
+			<height>180</height>
+			<texture>subback.png</texture>
+		</control>
+  		<control type="image">
+			<left>50</left>
+			<top>10</top>
+			<width>1180</width> 
+			<height>5</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+  		<control type="image">
+			<left>50</left>
+			<top>190</top>
+			<width>1180</width> 
+			<height>5</height> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>		
+		<control type="image">
+			<left>50</left>
+			<top>10</top>
+			<height>180</height>
+			<width>5</width> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+		<control type="image">
+			<left>1225</left>
+			<top>10</top>
+			<height>180</height>
+			<width>5</width> 
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture colordiffuse="$VAR[FrameColor]">bottombar_bg_nomask.png</texture>
+		</control>
+	</include>
+</includes>

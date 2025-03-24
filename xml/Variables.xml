@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="BannerThumb">
+		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value condition="String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="PosterThumb">
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
+	</variable>
+
+
+	<!-- SD Card Close Write -->
+ 	<variable name="SDCardClose">
+		<value condition="!String.IsEmpty(Skin.String(SDCardClose))">$INFO[Skin.String(SDCardClose)]</value>
+		<value>FF48D709</value>
+	</variable>
+	
+	<!-- Button Home Color -->
+ 	<variable name="ButtonHomeFocus">
+		<value condition="!String.IsEmpty(Skin.String(ButtonHomeFocus))">$INFO[Skin.String(ButtonHomeFocus)]</value>
+		<value>red</value>
+	</variable>
+ 	<variable name="ButtonHomeBorderFocus">
+		<value condition="!String.IsEmpty(Skin.String(ButtonHomeBorderFocus))">$INFO[Skin.String(ButtonHomeBorderFocus)]</value>
+		<value>FFFFFFFF</value>
+
+	</variable>
+ 	<variable name="ButtonHomeNoFocus">
+		<value condition="!String.IsEmpty(Skin.String(ButtonHomeNoFocus))">$INFO[Skin.String(ButtonHomeNoFocus)]</value>
+		<value>white</value>
+	</variable>
+
+	<!-- Button Home Text Color -->
+	<variable name="ButtonHomeTextColor">
+		<value condition="!String.IsEmpty(Skin.String(ButtonHomeTextColor))">$INFO[Skin.String(ButtonHomeTextColor)]</value>
+		<value>white</value>
+	</variable>
+
+	<!-- Button Home Icon Color -->
+	<variable name="ButtonHomeIconColor">
+		<value condition="!String.IsEmpty(Skin.String(ButtonHomeIconColor))">$INFO[Skin.String(ButtonHomeIconColor)]</value>
+		<value>white</value>
+	</variable>
+
+<!-- Progress Color -->
+	<variable name="TextColorCan">
+		<value condition="!String.IsEmpty(Skin.String(TextColorCan))">$INFO[Skin.String(TextColorCan)]</value>
+		<value>orange</value>
+	</variable>
+
+
+	<!-- Progress Color -->
+ 	<variable name="ProgressOn">
+		<value condition="!String.IsEmpty(Skin.String(ProgressOn))">$INFO[Skin.String(ProgressOn)]</value>
+		<value>orange</value>
+	</variable>
+ 	<variable name="ProgressOff">
+		<value condition="!String.IsEmpty(Skin.String(ProgressOff))">$INFO[Skin.String(ProgressOff)]</value>
+		<value>gray</value>
+	</variable>
+
+
+	<!-- All Button Color -->
+	<variable name="ButtonFocus">
+		<value condition="!String.IsEmpty(Skin.String(ButtonFocus))">$INFO[Skin.String(ButtonFocus)]</value>
+		<value>red</value>
+	</variable>
+ 	<variable name="ButtonBorderFocus">
+		<value condition="!String.IsEmpty(Skin.String(ButtonBorderFocus))">$INFO[Skin.String(ButtonBorderFocus)]</value>
+		<value>FFFFFFFF</value>
+	</variable>
+ 	<variable name="ButtonNoFocus">
+		<value condition="!String.IsEmpty(Skin.String(ButtonNoFocus))">$INFO[Skin.String(ButtonNoFocus)]</value>
+		<value>white</value>
+	</variable>
+
+	<!-- All Text Color -->
+	<variable name="TextColor">
+		<value condition="!String.IsEmpty(Skin.String(TextColor))">$INFO[Skin.String(TextColor)]</value>
+		<value>black</value>
+	</variable>
+	<variable name="TextColorFocus">
+		<value condition="!String.IsEmpty(Skin.String(TextColorFocus))">$INFO[Skin.String(TextColorFocus)]</value>
+		<value>white</value>
+	</variable>
+	<variable name="TextColorSelect">
+		<value condition="!String.IsEmpty(Skin.String(TextColorSelect))">$INFO[Skin.String(TextColorSelect)]</value>
+		<value>green</value>
+	</variable>
+	<variable name="TextColorDisable">
+		<value condition="!String.IsEmpty(Skin.String(TextColorDisable))">$INFO[Skin.String(TextColorDisable)]</value>
+		<value>gray</value>
+	</variable>
+	<variable name="TextColorEnable">
+		<value condition="!String.IsEmpty(Skin.String(TextColorEnable))">$INFO[Skin.String(TextColorEnable)]</value>
+		<value>red</value>
+	</variable>
+	
+	
+	<!-- Frame Color -->
+	<variable name="FrameColor">
+		<value condition="!String.IsEmpty(Skin.String(FrameColor))">$INFO[Skin.String(FrameColor)]</value>
+		<value>red</value>
+	</variable>
+
+</includes>

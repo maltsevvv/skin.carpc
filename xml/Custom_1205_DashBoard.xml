@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="1205">
+	<defaultcontrol always="true">100</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>backgroundPanel</include>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<texture>car/off_light.png</texture>
+		</control>
+
+		<control type="image">
+			<visible>!String.IsEmpty(Window(10000).Property(CanBusLight))</visible>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<texture>car/on_Light.png</texture>
+		</control>
+		
+		<control type="group">
+			<visible>Player.HasAudio + !Skin.HasSetting(RNS-JP3)</visible>
+			<control type="group">
+				<description>Artist Info</description>
+				<top>380</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>$LOCALIZE[557]:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<label>$INFO[MusicPlayer.Artist]</label>
+				</control>
+			</control>
+		
+			<control type="group">
+				<description>Title Info</description>
+				<top>470</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>$LOCALIZE[556]:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<label>$INFO[MusicPlayer.Title]</label>
+				</control>
+			</control>
+		</control>
+
+		<control type="group">
+			<visible>Player.HasAudio + Skin.HasSetting(RNS-JP3)</visible>
+			<control type="group">
+				<description>Artist Info</description>
+				<top>380</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>$LOCALIZE[557]:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<label>$INFO[MusicPlayer.Artist]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Title Info</description>
+				<top>600</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>$LOCALIZE[556]:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<label>$INFO[MusicPlayer.Title]</label>
+				</control>
+			</control>
+		</control>
+		
+		<control type="progress">
+			<description>Progressbar</description>
+			<left>40</left>
+			<top>600</top>
+			<width>1200</width>
+			<height>10</height>
+			<info>Player.Progress</info>
+			<texturebg colordiffuse="$VAR[ProgressOff]" border="5">headerprogressfrontwhite.png</texturebg>
+			<midtexture colordiffuse="$VAR[ProgressOn]" border="5">headerprogressfrontwhite.png</midtexture>
+		</control>
+
+
+		
+		<control type="videowindow">
+			<visible>Player.HasVideo</visible>
+			<description>Video in window</description>
+			<left>0</left>
+			<top>15</top>
+			<aspectratio>keep</aspectratio>
+			<height>600</height>
+		</control>
+
+
+
+		<include>PlayerControl</include>
+		<include>HomeButtonCommons</include>
+		<include>Bluetooth</include>
+		<include>canbus</include>
+	</controls>
+</window>

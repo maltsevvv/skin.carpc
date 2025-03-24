@@ -1,0 +1,170 @@
+# Kodi Media Center language file
+# Addon Name: Audi RNS
+# Addon id: skin.rns
+# Addon Provider: Maltsev
+msgid ""
+msgstr ""
+
+msgctxt "#40000"
+msgid "Can-Bus"
+msgstr "Can-Bus"
+
+msgctxt "#40001"
+msgid "Can-Bus traffic"
+msgstr "Can-Bus трафик"
+
+msgctxt "#40002"
+msgid "Log CanBus traffic"
+msgstr "Лог CanBus трафик"
+
+msgctxt "#40003"
+msgid "CanBus traffic record"
+msgstr "Запись трафика Can-Bus"
+
+msgctxt "#40004"
+msgid "Record completed Can Bus traffic"
+msgstr "Запись завершена трафика Can-Bus"
+
+msgctxt "#40005"
+msgid "Audi RNSPI settings"
+msgstr "Настройки Audi RNSPI"
+
+msgctxt "#40006"
+msgid "Emulation"
+msgstr "Эмуляция"
+
+msgctxt "#40007"
+msgid "TV-Tuner"
+msgstr "ТВ-Тюнер"
+
+msgctxt "#40008"
+msgid "TMC-Tuner"
+msgstr "TMC-Тюнер"
+
+msgctxt "#40009"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "#40010"
+msgid "Change Encoder Direction"
+msgstr "Поменять Направление Энкодера"
+
+msgctxt "#40011"
+msgid "MFSW Change button assignments"
+msgstr "MFSW Поменять назначение кнопок"
+
+msgctxt "#40012"
+msgid "Car Key Status Monitoring"
+msgstr "Мониторинг состояния ключа автомобиля"
+
+msgctxt "#40013"
+msgid "Status Key"
+msgstr "Статус Ключа"
+
+msgctxt "#40014"
+msgid "RNS Status Monitoring"
+msgstr "Мониторинг состояния RNS"
+
+msgctxt "#40015"
+msgid "Status RNS"
+msgstr "Статус RNS"
+
+msgctxt "#40016"
+msgid "Speed on home screen"
+msgstr "Скорость на домашнем экране экране"
+
+msgctxt "#40017"
+msgid "Action when tracking status is received"
+msgstr "Действие, при получении статуса отслеживания"
+
+msgctxt "#40018"
+msgid "SD card protection, reduces the risk of data corruption during a power outage. Any changes to the interface are saved until the device is rebooted. Copying data to an SD card with protection enabled is not possible."
+msgstr "Защита SD-карты, снижает риск повреждения данных при аварийном отключении питания. Любые изменения в интерфейсе сохраняются до перезагрузки устройства. Копирование данных на SD-карту с включенной защитой, не возможны."
+
+msgctxt "#40019"
+msgid "Send to FIS display"
+msgstr "Отправка на FIS дисплей"
+
+msgctxt "#40020"
+msgid "Fuel"
+msgstr "Топливо"
+
+msgctxt "#40021"
+msgid "Coolant"
+msgstr "ож"
+
+msgctxt "#40022"
+msgid "rpm"
+msgstr "об/мин"
+
+msgctxt "#40023"
+msgid "km/h"
+msgstr "км/ч"
+
+msgctxt "#40024"
+msgid "Mileage"
+msgstr "Пробег"
+
+msgctxt "#40025"
+msgid "Dashboard"
+msgstr "Панель"
+
+msgctxt "#40026"
+msgid "Up/Down >> Down/Up"
+msgstr "Up/Down >> Down/Up"
+
+msgctxt "#40027"
+msgid "Left/Right >> Right/Left"
+msgstr "Left/Right >> Right/Left"
+
+msgctxt "#40030"
+msgid "Horizontal Home Menu"
+msgstr "Горизонтальное главное меню"
+
+msgctxt "#40050"
+msgid "Car Service Book"
+msgstr "Сервисная Книга"
+
+msgctxt "#40051"
+msgid "Motor Oil"
+msgstr "Моторное Масло"
+
+msgctxt "#40052"
+msgid "Air Filter"
+msgstr "Воздушный Фильтр"
+
+msgctxt "#40053"
+msgid "Fuel Filter"
+msgstr "Топливный Фильтр"
+
+msgctxt "#40054"
+msgid "Cabin Filter"
+msgstr "Салонный Фильтр"
+
+msgctxt "#40055"
+msgid "Gear Oil"
+msgstr "Трансмиссионное Масло"
+
+msgctxt "#40056"
+msgid "Brake Fluid"
+msgstr "Тормозная Жидкость"
+
+msgctxt "#40057"
+msgid "Spark Plugs"
+msgstr "Свечи Зажигания"
+
+msgctxt "#40058"
+msgid "Timing Belt"
+msgstr "Ремень ГРМ"
+
+msgctxt "#40059"
+msgid "Conditioner"
+msgstr "Кондиционер"
+
+msgctxt "#40060"
+msgid "Coolant"
+msgstr "Охлаждающая Жидкость"
+
+msgctxt "#40061"
+msgid "Generator Belt"
+msgstr "Ремень Генератора"

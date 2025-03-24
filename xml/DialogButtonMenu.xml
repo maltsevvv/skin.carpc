@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="buttonMenu" id="111">
+	<defaultcontrol always="true">3119</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background1</include>
+		<include>FrameMax</include>
+		<control type="group">
+			<description>Shutdown</description>
+			<left>134</left>
+			<top>96</top>
+			<control type="image">
+				<visible>Control.HasFocus(3116)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>285</width>
+				<height>285</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="3116">
+				<left>0</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
+				<font></font>
+				<texturenofocus colordiffuse="white">button_shutdown.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_shutdown.png</texturefocus>
+				<onclick>Powerdown()</onclick>
+				<onright>3118</onright>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onup>-</onup>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>240</top>
+				<height>40</height>
+				<width>300</width>
+				<label>$LOCALIZE[13005]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>  
+		</control>
+
+		<control type="group">
+			<description>Reboot</description>
+			<left>490</left>
+			<top>96</top>
+			<control type="image">
+				<visible>Control.HasFocus(3118)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>285</width>
+				<height>285</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="3118">
+				<left>0</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
+				<font></font>
+				<texturenofocus colordiffuse="white">button_reload.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_reload.png</texturefocus>
+				<onclick>Reset()</onclick>
+				<onright>3119</onright>
+				<ondown>-</ondown>
+				<onleft>3116</onleft>
+				<onup>-</onup>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>240</top>
+				<height>40</height>
+				<width>300</width>
+				<label>$LOCALIZE[13013]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>Cancel</description>
+			<left>850</left>
+			<top>96</top>
+			<control type="image">
+				<visible>Control.HasFocus(3119)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>285</width>
+				<height>285</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="3119">
+				<left>0</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
+				<font></font>
+				<texturenofocus colordiffuse="white">button_switcher_sub.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_switcher_sub.png</texturefocus>
+				<onclick>Back</onclick>
+				<onright>-</onright>
+				<ondown>-</ondown>
+				<onleft>3118</onleft>
+				<onup>-</onup>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>240</top>
+				<height>40</height>
+				<width>300</width>
+				<label>$LOCALIZE[222]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>  
+		</control>
+	</controls>
+</window>

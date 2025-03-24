@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1102">
+	<defaultcontrol always="true">31180</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background1</include>
+		<include>FrameMax</include>
+		<control type="group">
+			<description>SD card</description>
+			<left>134</left>
+			<top>96</top>
+			<control type="image">
+				<visible>Control.HasFocus(31160)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>285</width>
+				<height>285</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+
+			<description>SD card Open</description>
+			<control type="button" id="31160">
+				<visible>Skin.String(sd,open) + !Skin.String(sd,close)</visible>
+				<left>0</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
+				<font></font>
+				<texturenofocus colordiffuse="$VAR[ButtonNoFocus]">button_microsd.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_microsd.png</texturefocus>
+				<onclick>RunScript("special://skin/scripts/sd_card.py")</onclick>
+				<onright>31180</onright>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onup>-</onup>
+			</control>
+			<control type="label">
+				<visible>Skin.String(sd,open) + !Skin.String(sd,close)</visible>
+				<left>10</left>
+				<top>200</top>
+				<height>80</height>
+				<width>280</width>
+				<label>$LOCALIZE[20165]</label>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+				<shadowcolor>$VAR[TextColor</shadowcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+
+			<description>SD card Close</description>
+			<control type="button" id="31160">
+				<visible>!Skin.String(sd,open) + Skin.String(sd,close)</visible>
+				<left>0</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
+				<font></font>
+				<texturenofocus colordiffuse="$VAR[SDCardClose]">button_microsd.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[SDCardClose]">button_microsd.png</texturefocus>
+				<onclick>RunScript("special://skin/scripts/sd_card.py")</onclick>
+				<onright>31180</onright>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onup>-</onup>
+			</control>
+			<control type="label">
+				<visible>!Skin.String(sd,open) + Skin.String(sd,close)</visible>
+				<left>10</left>
+				<top>200</top>
+				<height>80</height>
+				<width>280</width>
+				<label>$LOCALIZE[20166]</label>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+
+
+		<control type="textbox">
+			<left>50</left>
+			<top>400</top>
+			<height>180</height>
+			<width>1180</width>
+			<font>50</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>$LOCALIZE[40018]</label>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<delay>10</delay>
+		</control>
+
+		<control type="group">
+			<description>Cancel</description>
+			<left>490</left>
+			<top>96</top>
+			<control type="image">
+				<visible>Control.HasFocus(31180)</visible>
+				<left>7</left>
+				<top>7</top>
+				<width>285</width>
+				<height>285</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+			</control>
+			<control type="button" id="31180">
+				<left>0</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
+				<font></font>
+				<texturenofocus  colordiffuse="$VAR[ButtonNoFocus]">button_switcher_sub.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonNoFocus]">button_switcher_sub.png</texturefocus>
+				<onclick>Back</onclick>
+				<onright>-</onright>
+				<ondown>-</ondown>
+				<onleft>31160</onleft>
+				<onup>-</onup>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>240</top>
+				<height>40</height>
+				<width>300</width>
+				<label>$LOCALIZE[222]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>40</font>
+				<textcolor>$VAR[TextColorFocus]</textcolor>
+			</control>  
+		</control>
+	</controls>
+</window>

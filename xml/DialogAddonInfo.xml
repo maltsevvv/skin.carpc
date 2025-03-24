@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background</include>
+		<include>FrameMax</include>
+
+		<control type="label">
+			<description>Название Addon</description>
+			<left>0</left>
+			<top>5</top>
+			<width>1280</width>
+			<height>60</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<font>40</font>
+			<label>[B]$INFO[ListItem.Property(Addon.Name)][/B]</label>
+			<scroll>true</scroll>
+			
+		</control>
+		<control type="image">
+			<left>57</left>
+			<top>95</top>
+			<width>250</width>
+			<height>250</height>
+			<aspectratio>keep</aspectratio>
+			<texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+			<aspectratio align="center" aligny="top">keep</aspectratio>
+		</control>
+		<control type="label">
+			<description>Version Addon</description>
+			<left>57</left>
+			<top>350</top>
+			<width>250</width>
+			<height>50</height>
+			<align>center</align>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<font>50</font>
+			<label>$INFO[ListItem.AddonVersion]</label>
+		</control>
+		
+		<control type="textbox">
+			<description>Информация про Addon</description>
+			<left>300</left>
+			<top>100</top>
+			<width>900</width>
+			<height>190</height>
+			<align>center</align>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<font>50</font>
+			<label>$INFO[ListItem.AddonSummary]</label>
+			<scroll>true</scroll>
+		</control>
+
+		<control type="textbox">
+			<description>Описание Addon</description>
+			<left>50</left>
+			<top>350</top>
+			<width>1180</width>
+			<height>200</height>
+			<align>justify</align>
+			<textcolor>$VAR[TextColorFocus]</textcolor>
+			<label>$INFO[ListItem.AddonDescription]</label>
+		</control>
+
+		<control type="image">
+			<left>0</left>
+			<top>620</top>
+			<width>1280</width> 
+			<height>90</height> 
+			<texture>background1.png</texture>
+		</control>
+		<control type="grouplist" id="9000">
+			<control type="button" id="6">
+				<description>Установить/Удалить Addon</description>
+				<width>200</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[24022]</label>
+			</control>
+			<control type="button" id="7">
+				<description>Включить/Выключить Addon</description>
+				<width>200</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[24022]</label>
+			</control>
+			<control type="button" id="14">
+				<description>Обновить Addon</description>
+				<width>200</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[24069]</label>
+			</control>
+<!-- 			<control type="button" id="14">
+				<description>Version Addon</description>
+				<width>160</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[24069]</label>
+			</control> -->
+			<control type="radiobutton" id="13">
+				<width>200</width>
+				<font>40</font>
+				<align>center</align>
+				<radiowidth>95</radiowidth>
+				<radioheight>95</radioheight>
+				<radioposx>95</radioposx>
+				<textwidth>180</textwidth>
+				<textoffsetx>1</textoffsetx>
+				<textoffsety>1</textoffsety>
+				<!-- <visible>Control.IsEnabled(13)</visible> -->
+			</control>
+			<control type="button" id="9">
+				<description>Настроить Addon</description>
+				<width>200</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[24020]</label>
+			</control>
+			<control type="button" id="12">
+				<description>Запустить Addon</description>
+				<width>200</width>
+				<font>40</font>
+				<align>center</align>
+				<label>$LOCALIZE[518]</label>
+			</control>
+		</control>
+	</controls>
+</window>

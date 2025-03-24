@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<description>Линии</description>
+	<include name="line">
+		<description>Левая группа кнопок</description>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(11)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>433</top>
+				<width>9</width> 
+				<height>260</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>480</left>
+				<top>433</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(12)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>508</top>
+				<width>9</width> 
+				<height>180</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>480</left>
+				<top>508</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(13)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>583</top>
+				<width>9</width> 
+				<height>110</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>480</left>
+				<top>583</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control>
+
+		
+		<description>Правая группа кнопок</description>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(21) + !Control.HasFocus(22)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>433</top>
+				<width>9</width> 
+				<height>260</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>510</left>
+				<top>433</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(23) + !Control.HasFocus(24)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>508</top>
+				<width>9</width> 
+				<height>180</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>510</left>
+				<top>508</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(26)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>583</top>
+				<width>9</width> 
+				<height>110</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>510</left>
+				<top>583</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control>
+		<!-- <control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(27)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>508</top>
+				<width>9</width> 
+				<height>180</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>510</left>
+				<top>508</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control> -->
+
+
+
+		<!-- <control type="group">
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(27)">Conditional</animation>
+			<control type="image">
+				<left>508</left>
+				<top>657</top>
+				<width>9</width> 
+				<height>30</height> 
+				<texture>button-focus.png</texture>
+			</control>
+			<control type="image">
+				<left>510</left>
+				<top>657</top>
+				<width>34</width> 
+				<height>10</height> 
+				<texture>button-focus.png</texture>
+			</control>
+		</control> -->
+	</include>
+</includes>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="10000">
+	<defaultcontrol always="true">21</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background</include>
+		<include>videowindow</include>
+		<include>Music</include>
+		<include>PlayerControl</include>
+		<include>HomeButtonCommons</include>
+
+		<control type="group" id="10">
+			<left>40</left>
+			<top>75</top>
+			<control type="image">
+				<visible>Control.HasFocus(11)</visible>
+				<description>Button_1</description>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>120</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture diffuse="home_1f_mask.png" colordiffuse="$VAR[ButtonHomeFocus]">home_1f_mask.png</texture>
+			</control>
+			<control type="button" id="11">
+				<left>0</left>
+				<top>0</top>
+				<height>120</height>
+				<width>600</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonHomeNoFocus]">home_1f.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonHomeBorderFocus]" border="5">home_1f.png</texturefocus>
+				<onclick>ActivateWindow(Videos,files,return)</onclick>
+				<onright>41</onright>
+				<ondown>21</ondown>
+				<onleft>SkipPrevious</onleft>
+			</control>
+			<control type="image">
+				<description>Button-1 Icon</description>
+				<left>10</left>
+				<top>12</top>
+				<width>100</width>
+				<height>100</height>
+				<texture colordiffuse="$VAR[ButtonHomeIconColor]">icon_video.png</texture>
+			</control>
+			<control type="label" id="12">
+				<left>20</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[3]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+		</control>
+		
+		<description>Button 2</description>
+		<control type="group" id="20">
+			<left>40</left>
+			<top>205</top>
+			<control type="image">
+				<visible>Control.HasFocus(21)</visible>
+				<description>Home_2_Background</description>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>120</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture diffuse="home_2f_mask.png" colordiffuse="$VAR[ButtonHomeFocus]">home_2f_mask.png</texture>
+			</control>
+			<control type="button" id="21">
+				<left>0</left>
+				<top>0</top>
+				<height>120</height>
+				<width>600</width>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonHomeNoFocus]">home_2f.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonHomeBorderFocus]" border="5">home_2f.png</texturefocus>
+				<onclick>ActivateWindow(Music,files,return)</onclick>
+				<onright>51</onright>
+				<ondown>31</ondown>
+				<onup>11</onup>
+				<onleft>SkipPrevious</onleft>
+			</control>
+			<control type="image">
+				<description>Button-2 Icon</description>
+				<left>10</left>
+				<top>12</top>
+				<width>100</width>
+				<height>100</height>
+				<texture colordiffuse="$VAR[ButtonHomeIconColor]">icon_music.png</texture>
+			</control>
+			<control type="label" id="22">
+				<left>20</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[2]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+		</control>
+
+		<description>Button 3</description>
+		<control type="group" id="30">
+			<left>40</left>
+			<top>335</top>
+			<control type="image">
+				<visible>Control.HasFocus(31)</visible>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>120</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture diffuse="home_3f_mask.png" colordiffuse="$VAR[ButtonHomeFocus]">home_3f_mask.png</texture>
+			</control>
+			<control type="button" id="31">
+				<left>0</left>
+				<top>0</top>
+				<height>120</height>
+				<width>600</width>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonHomeNoFocus]">home_3f.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonHomeBorderFocus]" border="5">home_3f.png</texturefocus>
+			<!-- 	<onclick condition="!System.Platform.Android">ActivateWindow(Programs,Addons,return)</onclick> -->
+				<onclick condition="!System.Platform.Android">ActivateWindow(1205,return)</onclick>
+				<onclick condition="System.Platform.Android">ActivateWindow(Programs)</onclick>
+				<onright>61</onright>
+				<ondown>41</ondown>
+				<onup>21</onup>
+				<onleft>SkipPrevious</onleft>
+			</control>
+			<control type="image">
+				<visible>!System.Platform.Android</visible>
+				<description>Button-3 Icon</description>
+				<left>10</left>
+				<top>12</top>
+				<width>100</width>
+				<height>100</height>
+				<texture colordiffuse="$VAR[ButtonHomeIconColor]">car/icon_car.png</texture>
+			</control>
+			<control type="label" id="32">
+				<visible>System.Platform.Android</visible>
+				<left>20</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[0]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+			<control type="label" id="32">
+				<visible>!System.Platform.Android</visible>
+				<left>20</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[40000]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+		</control>
+
+		<description>Button 4</description>
+		<control type="group" id="40">
+			<left>640</left>
+			<top>75</top>
+			<control type="image">
+				<visible>Control.HasFocus(41)</visible>
+				<description>Home_2_Background</description>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>120</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture diffuse="home_4f_mask.png" colordiffuse="$VAR[ButtonHomeFocus]">home_4f_mask.png</texture>
+			</control>
+			<control type="button" id="41">
+				<left>0</left>
+				<top>0</top>
+				<height>120</height>
+				<width>600</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonHomeNoFocus]">home_4f.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonHomeBorderFocus]" border="5">home_4f.png</texturefocus>
+				<onclick>ActivateWindow(TVChannels)</onclick>
+				<onup>31</onup>
+				<onleft>11</onleft>
+				<ondown>51</ondown>
+				<onright>SkipNext</onright>
+			</control>
+			<!-- <control type="image">
+				<description>Button-4 Icon</description>
+				<left>10</left>
+				<top>12</top>
+				<width>100</width>
+				<height>100</height>
+				<texture colordiffuse="white">icon_tv.png</texture>
+			</control> -->
+			<control type="label" id="42">
+				<left>180</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[10700]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+		</control>
+
+		<description>Button 5</description>
+		<control type="group" id="50">
+			<left>640</left>
+			<top>205</top>
+			<control type="image">
+				<visible>Control.HasFocus(51)</visible>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>120</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture diffuse="home_5f_mask.png" colordiffuse="$VAR[ButtonHomeFocus]">home_5f_mask.png</texture>
+			</control>
+			<control type="button" id="51">
+				<left>0</left>
+				<top>0</top>
+				<height>120</height>
+				<width>600</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonHomeNoFocus]">home_5f.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonHomeBorderFocus]" border="5">home_5f.png</texturefocus>
+				<onclick>ActivateWindow(RadioChannels)</onclick>
+				<onright>SkipNext</onright>
+				<ondown>61</ondown>
+				<onleft>21</onleft>
+				<onup>41</onup>
+			</control>
+			<control type="image">
+				<description>Button-2 Icon</description>
+				<left>490</left>
+				<top>12</top>
+				<width>100</width>
+				<height>100</height>
+				<texture colordiffuse="$VAR[ButtonHomeIconColor]">icon_radio.png</texture>
+			</control>
+			<control type="label" id="52">
+				<left>180</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[19021]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+		</control>
+		<description>Button 6</description>
+		<control type="group" id="60">
+			<left>640</left>
+			<top>335</top>
+			<control type="image">
+				<visible>Control.HasFocus(61)</visible>
+				<description>Home_6_Background</description>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>120</height>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texture diffuse="home_6f_mask.png" colordiffuse="$VAR[ButtonHomeFocus]">home_6f_mask.png</texture>
+			</control>
+			<control type="button" id="61">
+				<left>0</left>
+				<top>0</top>
+				<height>120</height>
+				<width>600</width>
+				<align>left</align>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus colordiffuse="$VAR[ButtonHomeNoFocus]">home_6f.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ButtonHomeBorderFocus]" border="5">home_6f.png</texturefocus>
+				<onclick>ActivateWindow(Settings)</onclick>
+				<onright>SkipNext</onright>
+				<ondown>100</ondown>
+				<onleft>31</onleft>
+				<onup>51</onup>
+			</control>
+			<control type="label" id="62">
+				<left>180</left>
+				<top>20</top>
+				<height>70</height>
+				<width>400</width>
+				<font>70</font>
+				<align>center</align>
+				<label>$LOCALIZE[5]</label>
+				<textcolor>$VAR[ButtonHomeTextColor]</textcolor>
+			</control>
+		</control>
+		<include>canbus</include>
+		<include>Bluetooth</include>
+	</controls>
+</window>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="Bluetooth">
+ 		<control type="group">
+			<visible>!String.IsEmpty(Window(10000).Property(BTConnect)) + Window.IsActive(Home)</visible>
+			<left>10</left>
+			<top>350</top>
+			<control type="image">
+				<description>CD Cover</description>
+				<left>40</left>
+				<top>110</top>
+				<width>150</width>
+				<height>150</height>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="white">car/icon_bt.png</texture>
+			</control>
+			<control type="label">
+				<description>BT Artist Info</description>
+				<left>200</left>
+				<top>110</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[Window(10000).Property(BTartist)]</label>
+			</control>
+
+			<control type="label">
+				<description>BT Title Info</description>
+				<left>200</left>
+				<top>160</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>50</font>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[Window(10000).Property(BTtitle)]</label>
+
+			</control>
+			<control type="label">
+				<description>BT Device Info</description>
+				<left>200</left>
+				<top>210</top>
+				<width>1040</width>
+				<height>50</height>
+				<align>left</align>
+				<font>40</font>
+				<textcolor>$VAR[TextColorSelect]</textcolor>
+				<scroll>true</scroll>
+				<label>$INFO[Window(10000).Property(BTdevice)]</label>
+			</control>
+		</control>	
+
+		<control type="group">
+			<visible>!String.IsEmpty(Window(10000).Property(BTConnect)) + Window.IsActive(1205)</visible>
+			<control type="group">
+				<description>Artist Info</description>
+				<top>380</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>$LOCALIZE[557]:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<label>$INFO[Window(10000).Property(BTartist)]</label>
+				</control>
+			</control>
+		
+			<control type="group">
+				<description>BT Title Info</description>
+				<top>470</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>$LOCALIZE[556]:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorFocus]</textcolor>
+					<label>$INFO[Window(10000).Property(BTtitle)]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>BT Device Info</description>
+				<top>600</top>
+				<left>50</left>
+				<control type="label">
+					<width>1200</width>
+					<align>left</align>
+					<font>30</font>
+					<scroll>false</scroll>
+					<label>Device:</label>
+				</control>
+				<control type="label">
+					<top>40</top>
+					<width>1200</width>
+					<align>left</align>
+					<font>60</font>
+					<scroll>true</scroll>
+					<textcolor>$VAR[TextColorSelect]</textcolor>
+					<label>$INFO[Window(10000).Property(BTdevice)]</label>
+				</control>
+			</control>
+		</control>	
+	</include>
+</includes>
+

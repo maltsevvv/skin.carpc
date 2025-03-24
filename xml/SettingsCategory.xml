@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>3</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<include>FrameMax</include>
+		<control type="label">
+			<left>0</left>
+			<top>15</top>
+			<width>1280</width>
+			<height>40</height>
+			<font>30</font>
+			<label>$LOCALIZE[10016]</label>
+			<textcolor>$VAR[TextColorDisable]</textcolor>
+			<align>center</align>
+		</control>
+ 		<control type="label" id="14">
+			<description>Default Label</description>
+			<align>center</align>
+		</control>
+		<control type="grouplist" id="3">
+			<description>Левая панель</description>
+			<left>60</left>
+			<top>80</top>
+			<width>250</width>
+			<height>480</height>
+			<orientation>vertical</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<onleft>5</onleft>
+			<onright>5</onright>
+			<onup>222</onup>
+			<ondown>20</ondown>
+		</control>
+
+		<control type="button" id="20">
+			<description>Setting level button</description>
+			<left>50</left>
+			<top>610</top>
+			<width>250</width>
+			<font>40</font>
+			<align>left</align>
+			<label>$LOCALIZE[10037]</label>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<onleft>5</onleft>
+			<onright>5</onright>
+			<onclick>SettingsLevelChange</onclick>
+		</control>
+
+		<control type="grouplist" id="5">
+			<description>Правая панель</description>
+			<left>330</left>
+			<top>85</top>
+			<width>900</width>
+			<height>500</height>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+			<align>left</align>
+			<onleft>3</onleft>
+			<onright>30</onright>
+			<onup>5</onup>
+			<ondown>30</ondown>
+		</control>
+		
+		<control type="button" id="10">
+			<align>left</align>
+		</control>
+		<control type="button" id="7">
+			<align>left</align>
+		</control>
+		<control type="radiobutton" id="8">
+			<align>left</align>
+		</control>
+		<control type="spincontrolex" id="9">
+			<align>left</align>
+		</control>
+
+		<control type="grouplist" id="30">
+			<left>905</left>
+			<top>615</top>
+			<width>350</width>
+			<height>100</height>
+			<itemgap>20</itemgap>
+			<scrolltime>150</scrolltime>
+			<orientation>horizontal</orientation>
+			<align>right</align>
+			<onright>-</onright>
+			<ondown>-</ondown>
+			<!-- <onleft>200</onleft> -->
+			<onleft>204</onleft>
+			<onup>5</onup>
+			<description>Update library</description>
+			<control type="button" id="101">
+				<width>100</width>
+				<height>100</height>
+				<onclick>UpdateLibrary(video)</onclick>
+				<visible>Window.IsActive(MyVideoNav.xml)</visible>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_update.png</texturefocus>
+				<texturenofocus colordiffuse="white">button_update.png</texturenofocus>
+			</control>
+			<control type="button" id="102">
+				<width>100</width>
+				<height>100</height>
+				<onclick>UpdateLibrary(music)</onclick>
+				<visible>Window.IsActive(MyMusicNav.xml)</visible>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_update.png</texturefocus>
+				<texturenofocus colordiffuse="white">button_update.png</texturenofocus>
+			</control>
+			<control type="button" id="103">
+				<width>100</width>
+				<height>100</height>
+				<onclick>UpdateAddonRepos</onclick>
+				<visible>Window.IsActive(AddonBrowser.xml)</visible>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_update.png</texturefocus>
+				<texturenofocus colordiffuse="white">button_update.png</texturenofocus>
+			</control>
+			<control type="button" id="104">
+				<!-- <visible>Player.HasMedia</visible> -->
+				<width>100</width>
+				<height>100</height>
+				<font></font>
+				<texturenofocus colordiffuse="white">button_back.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]">button_back.png</texturefocus>
+				<onclick>Back</onclick>
+			</control>
+			<control type="button" id="105">
+				<height>100</height>
+				<width>100</width>
+				<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+				<texturenofocus>icon_view_w.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CustomButtonColorFocus]" border="5">icon_view_w.png</texturefocus>
+				<onclick>ActivateWindow(1100)</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

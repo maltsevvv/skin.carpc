@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>1000</defaultcontrol>
+
+	<controls>
+		<include>FrameContextMenu</include>
+<!-- 		<control type="image">
+			<left>15</left>
+			<top>20</top>
+			<width>425</width>
+			<height>482</height>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<texture>subback.png</texture>
+		</control> -->
+		<control type="grouplist" id="996">
+			<description>grouplist for context buttons</description>
+			<left>15</left>
+			<top>20</top>
+			<width>425</width>
+			<height>482</height>
+			<align>top</align>
+			<itemgap>10</itemgap>
+			<orientation>vertical</orientation>
+		</control>
+		<control type="button" id="1000">
+			<description>button template</description>
+			<left>0</left>
+			<top>0</top>
+			<width>450</width>
+			<texture>subback2.png</texture>
+			<align>center</align>
+		</control>
+	</controls>
+</window>

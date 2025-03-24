@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="1106">
+	<defaultcontrol always="true">329</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>FrameMax</include>
+
+		<control type="label">
+			<left>49</left>
+			<top>0</top>
+			<width>925</width>
+			<height>65</height>
+			<font>50</font>
+			<align>left</align>
+			<label>$LOCALIZE[40050] #2</label>
+		</control>
+		<control type="label">
+			<left>580</left>
+			<top>0</top>
+			<width>925</width>
+			<height>65</height>
+			<font>40</font>
+			<align>left</align>
+			<label>$LOCALIZE[40024]</label>
+		</control>
+		<control type="label">
+			<left>760</left>
+			<top>0</top>
+			<width>925</width>
+			<height>65</height>
+			<font>40</font>
+			<align>left</align>
+			<label>$LOCALIZE[209]</label>
+		</control>
+		<control type="grouplist">
+			<top>80</top>
+			<left>50</left>
+			<width>1900</width>
+			<height>520</height>
+			<itemgap>-6</itemgap>
+			<orientation>vertical</orientation>
+			<align>top</align>
+			
+			<description>TIMING BELT</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>1900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="329">
+					<width>480</width>
+					<label>$LOCALIZE[40058]</label>
+					<onup>ActivateWindow(1105)</onup>
+					<ondown>333</ondown>
+				</control>
+				<control type="button" id="330">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(timing_belt)]</label>
+					<onclick>Skin.SetNumeric(timing_belt)</onclick>
+					<onup>ActivateWindow(1105)</onup>
+					<ondown>334</ondown>
+				</control>
+				<control type="button" id="331">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(timing_belt2)]</label>
+					<onclick>Skin.SetNumeric(timing_belt2)</onclick>
+					<onup>ActivateWindow(1105)</onup>
+					<ondown>335</ondown>
+				</control>
+			</control>
+
+			<description>GENERATOR BELT</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="333">
+					<width>480</width>
+					<label>$LOCALIZE[40061]</label>
+					<onup>329</onup>
+					<ondown>337</ondown>
+				</control>
+				<control type="button" id="334">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(generator_belt)]</label>
+					<onclick>Skin.SetNumeric(generator_belt)</onclick>
+					<onup>330</onup>
+					<ondown>338</ondown>
+				</control>
+				<control type="button" id="335">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(generator_belt2)]</label>
+					<onclick>Skin.SetNumeric(generator_belt2)</onclick>
+					<onup>331</onup>
+					<ondown>339</ondown>
+				</control>
+			</control>
+
+			<description>CONDITIONER</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="337">
+					<width>480</width>
+					<label>$LOCALIZE[40059]</label>
+					<onup>333</onup>
+					<ondown>341</ondown>
+				</control>
+				<control type="button" id="338">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(conditioner)]</label>
+					<onclick>Skin.SetNumeric(conditioner)</onclick>
+					<onup>334</onup>
+					<ondown>341</ondown>
+				</control>
+				<control type="button" id="339">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(conditioner2)]</label>
+					<onclick>Skin.SetNumeric(conditioner2)</onclick>
+					<onup>335</onup>
+					<ondown>342</ondown>
+				</control>
+			</control>
+
+			<description>COOLANT</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="341">
+					<width>480</width>
+					<label>$LOCALIZE[40060]</label>
+					<onup>337</onup>
+					<ondown>345</ondown>
+				</control>
+				<control type="button" id="342">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(coolant)]</label>
+					<onclick>Skin.SetNumeric(coolant)</onclick>
+					<onup>338</onup>
+					<ondown>346</ondown>
+				</control>
+				<control type="button" id="343">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(coolant2)]</label>
+					<onclick>Skin.SetNumeric(coolant2)</onclick>
+					<onup>339</onup>
+					<ondown>347</ondown>
+				</control>
+			</control>
+
+			<description>Free Name</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="341">
+					<width>480</width>
+					<label>name</label>
+					<onup>331</onup>
+					<ondown>351</ondown>
+				</control>
+				<control type="button" id="114">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(name)]</label>
+					<onclick>Skin.SetNumeric(name)</onclick>
+				</control>
+				<control type="button" id="115">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(name2)]</label>
+					<onclick>Skin.SetNumeric(name2)</onclick>
+				</control>
+			</control>
+
+			<description>Free Name</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="341">
+					<width>480</width>
+					<label>name</label>
+					<onup>331</onup>
+					<ondown>351</ondown>
+				</control>
+				<control type="button" id="114">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(name)]</label>
+					<onclick>Skin.SetNumeric(name)</onclick>
+				</control>
+				<control type="button" id="115">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(name2)]</label>
+					<onclick>Skin.SetNumeric(name2)</onclick>
+				</control>
+			</control>
+			
+			<description>Free Name</description>
+			<control type="grouplist">
+				<top>0</top>
+				<left>0</left>
+				<width>900</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<align>top</align>
+				<control type="button" id="341">
+					<width>480</width>
+					<label>name</label>
+					<onup>331</onup>
+					<ondown>351</ondown>
+				</control>
+				<control type="button" id="114">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(name)]</label>
+					<onclick>Skin.SetNumeric(name)</onclick>
+				</control>
+				<control type="button" id="115">
+					<width>200</width>
+					<align>center</align>
+					<label>$INFO[Skin.String(name2)]</label>
+					<onclick>Skin.SetNumeric(name2)</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

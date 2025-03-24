@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="1101">
+	<defaultcontrol always="true">11</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>background</include>
+		
+		<include>HomeButtonCommons</include>
+		<include>FrameMax</include>
+		<control type="group">
+		<top>0</top>
+		</control>
+		<description>Левая группа кнопок</description>
+		<control type="grouplist"id="10">
+			<top>85</top>
+			<left>57</left>
+			<width>300</width>
+			<height>520</height>
+			<itemgap>10</itemgap>
+			<orientation>vertical</orientation>
+			<align>top</align>
+			<ondown>100</ondown>
+			<control type="button" id="11">
+				<description>home menu settings</description>
+				<height>65</height>
+				<width>300</width>
+				<font>50</font>
+				<align>left</align>
+				<label>$LOCALIZE[513]  </label>
+				<onright>20</onright>
+			</control>
+			<control type="button" id="12">
+				<description>CanBus monitor</description>
+				<height>65</height>
+				<width>300</width>
+				<font>50</font>
+				<align>left</align>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<label>$LOCALIZE[40001]</label>
+			</control>
+			<control type="button" id="13">
+				<description>Power status</description>
+				<height>65</height>
+				<width>300</width>
+				<font>50</font>
+				<align>left</align>
+				<label>$LOCALIZE[33060]</label>
+				<onleft>-</onleft>
+				<onright>40</onright>
+			</control>
+			<control type="button" id="14">
+				<description>Emulation</description>
+				<height>65</height>
+				<width>300</width>
+				<font>50</font>
+				<align>left</align>
+				<label>$LOCALIZE[40006]</label>
+				<onleft>-</onleft>
+				<onright>50</onright>
+			</control>
+			<control type="button" id="15">
+				<description>Control</description>
+				<height>65</height>
+				<width>300</width>
+				<font>50</font>
+				<align>left</align>
+				<label>$LOCALIZE[14223]</label>
+				<onleft>-</onleft>
+				<onright>60</onright>
+			</control>
+			<!-- <control type="button" id="16">
+				<description>Control</description>
+				<height>65</height>
+				<width>300</width>
+				<font>50</font>
+				<align>left</align>
+				<label>$LOCALIZE[40002]</label>
+				<onleft>-</onleft>
+				<onright>70</onright>
+			</control> -->
+		</control>
+
+		<control type="grouplist" id="20">
+			<animation effect="fade" start="100" end="0" condition="!ControlGroup(20).HasFocus() + !Control.HasFocus(11)">Conditional</animation>
+			<visible allowhiddenfocus="true">!Control.HasFocus(20)</visible>
+			<top>85</top>
+			<left>370</left>
+			<width>900</width>
+			<height>520</height>
+			<align>top</align>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+			<ondown>-</ondown>
+			<onleft>11</onleft>
+			<onright>-</onright>
+			<control type="radiobutton" id="21">
+				<description>SPEED home</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40016] </label>
+				<onclick>Skin.ToggleSetting(CanBusSpeed)</onclick>
+				<selected>!Skin.HasSetting(CanBusSpeed)</selected>
+				<onclick condition="Skin.HasSetting(CanBusSpeed)">SetProperty(CanBusSpeed,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(CanBusSpeed)">SetProperty(CanBusSpeed,false,10000)</onclick>
+				<textwidth>680</textwidth>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="22">
+				<description>RPM</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40022] </label>
+				<onclick>Skin.ToggleSetting(CanBusRPM)</onclick>
+				<selected>!Skin.HasSetting(CanBusRPM)</selected>
+				<onclick condition="Skin.HasSetting(CanBusRPM)">SetProperty(CanBusRPM,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(CanBusRPM)">SetProperty(CanBusRPM,false,10000)</onclick>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="23">
+				<description>COOLANT</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40021] </label>
+				<onclick>Skin.ToggleSetting(CanBusCoolant)</onclick>
+				<selected>!Skin.HasSetting(CanBusCoolant)</selected>
+				<onclick condition="Skin.HasSetting(CanBusCoolant)">SetProperty(CanBusCoolant,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(CanBusCoolant)">SetProperty(CanBusCoolant,false,10000)</onclick>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="24">
+				<description>CPUTemperature</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[22011] </label>
+				<onclick>Skin.ToggleSetting(CPUTemperature)</onclick>
+				<selected>!Skin.HasSetting(CPUTemperature)</selected>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="25">
+				<description>ip</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[150]</label>
+				<onclick>Skin.ToggleSetting(ip)</onclick>
+				<selected>!Skin.HasSetting(ip)</selected>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="26">
+				<description>time</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[142]</label>
+				<onclick>Skin.ToggleSetting(time)</onclick>
+				<selected>!Skin.HasSetting(time)</selected>
+				<onleft>11</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+		
+		
+		<control type="grouplist" id="30">
+			<animation effect="fade" start="100" end="0" condition="!ControlGroup(30).HasFocus() + !Control.HasFocus(12)">Conditional</animation>
+			<visible allowhiddenfocus="true">!Control.HasFocus(30)</visible>
+			<top>85</top>
+			<left>370</left>
+			<width>850</width>
+			<height>600</height>
+			<align>top</align>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+			<control type="group">
+				<description>SPEED</description>
+				<width>850</width>
+				<height>80</height>
+				<control type="label">
+					<width>200</width>
+					<font>40</font>
+					<align>left</align>
+					<label>346# | 351#</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(346)][/COLOR]</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(351)][/COLOR]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>RPM</description>
+				<width>850</width>
+				<height>80</height>
+				<control type="label">
+					<width>200</width>
+					<font>40</font>
+					<align>left</align>
+					<label>347# | 353#</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(347)][/COLOR]</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(353)][/COLOR]</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>KeyCar</description>
+				<width>850</width>
+				<height>80</height>
+				<control type="label">
+					<width>200</width>
+					<font>40</font>
+					<align>left</align>
+					<label>271# | 345#</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(271)][/COLOR]</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(345)][/COLOR]</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<width>850</width>
+				<height>80</height>
+				<control type="label">
+					<description>MFSW1</description>
+					<width>100</width>
+					<font>40</font>
+					<align>left</align>
+					<label>5C3#</label>
+				</control>
+				<control type="label">
+					<description>MFSW1</description>
+					<left>100</left>
+					<width>200</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(5C3)][/COLOR]</label>
+				</control>
+				
+				<control type="label">
+					<description>MFSW2</description>
+					<left>300</left>
+					<width>100</width>
+					<font>40</font>
+					<align>left</align>
+					<label>5C0#</label>
+				</control>
+				<control type="label">
+					<description>MFSW2</description>
+					<left>400</left>
+					<width>200</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(5C0)][/COLOR]</label>
+				</control>
+				
+				<control type="label">
+					<description>MFSW3</description>
+					<left>600</left>
+					<width>100</width>
+					<font>40</font>
+					<align>left</align>
+					<label>5C1#</label>
+				</control>
+				<control type="label">
+					<description>MFSW3</description>
+					<left>700</left>
+					<width>200</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(5C1)][/COLOR]</label>
+				</control>
+			</control>
+			<control type="group">
+				<width>850</width>
+				<height>80</height>
+				<control type="label">
+					<description>TIME</description>
+					<width>200</width>
+					<font>40</font>
+					<align>left</align>
+					<label>623#</label>
+				</control>
+				<control type="label">
+					<description>TIME</description>
+					<left>200</left>
+					<width>600</width>
+					<font>80</font>
+					<align>left</align>
+					<label>[COLOR=$VAR[TextColorCan]]$INFO[Window(10000).Property(623)][/COLOR]</label>
+				</control>
+			</control>
+
+		</control>
+		
+		<control type="grouplist" id="40">
+			<animation effect="fade" start="100" end="0" condition="!ControlGroup(40).HasFocus() + !Control.HasFocus(13)">Conditional</animation>
+			<visible allowhiddenfocus="true">!Control.HasFocus(40)</visible>
+			<top>85</top>
+			<left>370</left>
+			<width>900</width>
+			<height>520</height>
+			<align>top</align>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+			<onleft>13</onleft>
+			<control type="label" id="44">
+				<description>Monitor Key status</description>
+				<left>45</left>
+				<width>850</width>
+				<height>40</height>
+				<font>30</font>
+				<align>center</align>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<label>$LOCALIZE[40012]</label>
+				<scroll>yes</scroll>
+				<onleft>13</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="45">
+				<description>Key Status Car</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40013]</label>
+				<onclick>Skin.ToggleSetting(CanBusKeyCar)</onclick>
+				<selected>!Skin.HasSetting(CanBusKeyCar)</selected>
+				<onclick condition="Skin.HasSetting(CanBusKeyCar)">SetProperty(CanBusKeyCar,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(CanBusKeyCar)">SetProperty(CanBusKeyCar,false,10000)</onclick>
+				<onleft>13</onleft>
+				<onright>-</onright>
+			</control>
+			
+			<control type="label" id="46">
+				<description>Monitor RNS power status</description>
+				<left>45</left>
+				<width>850</width>
+				<height>40</height>
+				<font>30</font>
+				<align>center</align>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<label>$LOCALIZE[40014]</label>
+				<onleft>13</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="47">
+				<description>RNS TFT OFF</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40015]</label>
+				<onclick>Skin.ToggleSetting(RNSTFT)</onclick>
+				<selected>Skin.HasSetting(RNSTFT)</selected>
+				<onclick condition="!Skin.HasSetting(RNSTFT)">SetProperty(RNSTFT,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(RNSTFT)">SetProperty(RNSTFT,false,10000)</onclick>
+				<onleft>13</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="label" id="48">
+				<description>Действие при отслеживании статуса</description>
+				<left>45</left>
+				<width>850</width>
+				<height>40</height>
+				<font>30</font>
+				<align>center</align>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<label>$LOCALIZE[40017]</label>
+				<scroll>yes</scroll>
+			</control>
+			<control type="togglebutton" id="49">
+				<description>Действие при отслеживании статуса</description>
+				<width>850</width>
+				<height>65</height>
+				<font>50</font>
+				<label>$LOCALIZE[13013]</label>
+				<altlabel>$LOCALIZE[13016]</altlabel>
+				<onclick>Skin.ToggleSetting(PowerOFF)</onclick>
+				<selected>!Skin.HasSetting(PowerOFF)</selected>
+				<onclick condition="Skin.HasSetting(PowerOFF)">SetProperty(PowerOFF,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(PowerOFF)">SetProperty(PowerOFF,false,10000)</onclick>
+				<onleft>13</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+		
+		<control type="grouplist" id="50">
+			<animation effect="fade" start="100" end="0" condition="!ControlGroup(50).HasFocus() + !Control.HasFocus(14)">Conditional</animation>
+			<visible allowhiddenfocus="true">!Control.HasFocus(50)</visible>
+			<top>85</top>
+			<left>370</left>
+			<width>900</width>
+			<height>520</height>
+			<align>top</align>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+			<onleft>14</onleft>
+			<control type="radiobutton" id="51">
+				<description>RNSE tvtuner</description>
+				<width>850</width>
+				<label>$LOCALIZE[40006] $LOCALIZE[40007] RNSE </label>
+				<onclick>Skin.ToggleSetting(rnsetv)</onclick>
+				<selected>!Skin.HasSetting(rnsetv)</selected>
+				<onclick condition="Skin.HasSetting(rnsetv)">SetProperty(rnsetv,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(rnsetv)">SetProperty(rnsetv,false,10000)</onclick>
+				<onleft>14</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="52">
+				<description>RNSD TV-Tuner</description>
+				<width>850</width>
+				<label>$LOCALIZE[40006] $LOCALIZE[40007] RNSD</label>
+				<onclick>Skin.ToggleSetting(rnsdtv)</onclick>
+				<selected>!Skin.HasSetting(rnsdtv)</selected>
+				<onclick condition="Skin.HasSetting(rnsdtv)">SetProperty(rnsdtv,true,10000)</onclick>
+				<onclick condition="!Skin.HasSetting(rnsdtv)">SetProperty(rnsdtv,false,10000)</onclick>
+				<onleft>14</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="53">
+				<description>RNSD TMC-Tuner</description>
+				<width>850</width>
+				<label>$LOCALIZE[40006] $LOCALIZE[40008] </label>
+				<onclick>Skin.ToggleSetting(TMCEmulation)</onclick>
+				<selected>Skin.HasSetting(TMCEmulation)</selected>
+				<onclick condition="!Skin.HasSetting(TMCEmulation)">SetProperty(TMCEmulation,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(TMCEmulation)">SetProperty(TMCEmulation,false,10000)</onclick>
+				<onleft>14</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="54">
+				<description>Emulation CanBus</description>
+				<width>850</width>
+				<label>$LOCALIZE[40006] $LOCALIZE[40000] </label>
+				<onclick>Skin.ToggleSetting(CanBusEmulation)</onclick>
+				<selected>Skin.HasSetting(CanBusEmulation)</selected>
+				<onclick condition="!Skin.HasSetting(CanBusEmulation)">SetProperty(CanBusEmulation,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(CanBusEmulation)">SetProperty(CanBusEmulation,false,10000)</onclick>
+				<onleft>14</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="label" id="55">
+				<description>Send FIS Test</description>
+				<left>0</left>
+				<top>210</top>
+				<width>850</width>
+				<height>40</height>
+				<font>50</font>
+				<align>center</align>
+				<scroll>yes</scroll>
+				<textcolor>$VAR[TextColorDisable]</textcolor>
+				<label>Send text to FIS display (test)</label>
+			</control>
+			<control type="radiobutton" id="56">
+				<description>FIS</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40019]</label>
+				<onclick>Skin.ToggleSetting(SendFIS)</onclick>
+				<selected>Skin.HasSetting(SendFIS)</selected>
+				<onclick condition="!Skin.HasSetting(SendFIS)">SetProperty(SendFIS,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(SendFIS)">SetProperty(SendFIS,false,10000)</onclick>
+				<onleft>14</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+
+		<control type="grouplist" id="60">
+			<animation effect="fade" start="100" end="0" condition="!ControlGroup(60).HasFocus() + !Control.HasFocus(15)">Conditional</animation>
+			<visible allowhiddenfocus="true">!Control.HasFocus(60)</visible>
+			<top>85</top>
+			<left>370</left>
+			<width>900</width>
+			<height>520</height>
+			<align>top</align>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+			<onleft>15</onleft>
+			<control type="group">
+				<width>500</width>
+				<height>250</height>
+				<control type="image">
+					<visible>Control.HasFocus(64)</visible>
+					<left>5</left>
+					<top>5</top>
+					<width>190</width>
+					<height>190</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Skin.HasSetting(RNSEncoder)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonNoFocus]">car/button_encoder3.png</texture>
+				</control>
+				<control type="image">
+					<visible>Skin.HasSetting(RNSEncoder)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonNoFocus]">car/button_encoder4.png</texture>
+				</control>
+				<control type="label">
+					<description>Encoder</description>
+					<left>0</left>
+					<top>210</top>
+					<width>200</width>
+					<height>40</height>
+					<font>50</font>
+					<align>center</align>
+					<scroll>yes</scroll>
+					<textcolor>$VAR[TextColorDisable]</textcolor>
+					<label>RNSEncoder</label>
+				</control>
+
+				<control type="image">
+					<visible>Control.HasFocus(66)</visible>
+					<left>260</left>
+					<top>5</top>
+					<width>190</width>
+					<height>190</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Skin.HasSetting(MFSW_LeftRight)</visible>
+					<left>255</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonNoFocus]">car/button2_mfsw_left1.png</texture>
+				</control>
+				<control type="image">
+					<visible>Skin.HasSetting(MFSW_LeftRight)</visible>
+					<left>255</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonNoFocus]">car/button2_mfsw_left2.png</texture>
+				</control>
+				<control type="label">
+					<description>MFSW L/R</description>
+					<left>255</left>
+					<top>210</top>
+					<width>200</width>
+					<height>40</height>
+					<font>50</font>
+					<align>center</align>
+					<scroll>yes</scroll>
+					<textcolor>$VAR[TextColorDisable]</textcolor>
+					<label>MFSW 1</label>
+				</control>
+
+				<control type="image">
+					<visible>Control.HasFocus(67)</visible>
+					<left>510</left>
+					<top>5</top>
+					<width>190</width>
+					<height>190</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonFocus]">subback2.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Skin.HasSetting(MFSW_UpDown)</visible>
+					<left>505</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonNoFocus]">car/button_mfsw_down1.png</texture>
+				</control>
+				<control type="image">
+					<visible>Skin.HasSetting(MFSW_UpDown)</visible>
+					<left>505</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
+					<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+					<texture colordiffuse="$VAR[ButtonNoFocus]">car/button_mfsw_down2.png</texture>
+				</control>
+				<control type="label">
+					<description>MFSW UP/DOWN</description>
+					<left>505</left>
+					<top>210</top>
+					<width>200</width>
+					<height>40</height>
+					<font>50</font>
+					<align>center</align>
+					<scroll>yes</scroll>
+					<textcolor>$VAR[TextColorDisable]</textcolor>
+					<label>MFSW 2</label>
+				</control>
+			</control>
+			<control type="radiobutton" id="64">
+				<description>RNSEncoder Direction Change</description>
+				<width>850</width>
+				<align>left</align>
+				<label>$LOCALIZE[40010]</label>
+				<textwidth>680</textwidth>
+				<onclick>Skin.ToggleSetting(RNSEncoder)</onclick>
+				<selected>Skin.HasSetting(RNSEncoder)</selected>
+				<onclick condition="!Skin.HasSetting(RNSEncoder)">SetProperty(RNSEncoder,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(RNSEncoder)">SetProperty(RNSEncoder,false,10000)</onclick>
+				<onleft>15</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="66">
+				<description>MFSW LEFT/RIGHT Change</description>
+				<width>850</width>
+				<align>left</align>
+				<!-- <label>$LOCALIZE[40027]</label> -->
+				<label>$LOCALIZE[40011] OK/BACK</label>
+				<textwidth>680</textwidth>
+				<onclick>Skin.ToggleSetting(MFSW_LeftRight)</onclick>
+				<selected>Skin.HasSetting(MFSW_LeftRight)</selected>
+				<onclick condition="!Skin.HasSetting(MFSW_LeftRight)">SetProperty(MFSW_LeftRight,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(MFSW_LeftRight)">SetProperty(MFSW_LeftRight,false,10000)</onclick>
+				<onleft>15</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="radiobutton" id="67">
+				<description>MFSW UP/DOWN Change</description>
+				<width>850</width>
+				<align>left</align>
+				<!-- <label>$LOCALIZE[40026]</label> -->
+				<label>$LOCALIZE[40011] Up/Down</label>
+				<textwidth>680</textwidth>
+				<onclick>Skin.ToggleSetting(MFSW_UpDown)</onclick>
+				<selected>Skin.HasSetting(MFSW_UpDown)</selected>
+				<onclick condition="!Skin.HasSetting(MFSW_UpDown)">SetProperty(MFSW_UpDown,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(MFSW_UpDown)">SetProperty(MFSW_UpDown,false,10000)</onclick>
+				<onleft>15</onleft>
+				<onright>-</onright>
+			</control>
+
+			<control type="radiobutton" id="68">
+				<description>RNS JP-3</description>
+				<width>850</width>
+				<align>left</align>
+				<!-- <label>$LOCALIZE[40026]</label> -->
+				<label>$LOCALIZE[10114] RNS-JP3</label>
+				<textwidth>680</textwidth>
+				<onclick>Skin.ToggleSetting(RNS-JP3)</onclick>
+				<selected>Skin.HasSetting(RNS-JP3)</selected>
+				<onclick condition="!Skin.HasSetting(RNS-JP3)">SetProperty(RNS-JP3,true,10000)</onclick>
+				<onclick condition="Skin.HasSetting(RNS-JP3)">SetProperty(RNS-JP3,false,10000)</onclick>
+				<onleft>15</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+		<control type="label">
+			<top>550</top>
+			<left>57</left>
+			<width>300</width>
+			<font>50</font>
+			<align>left</align>
+			<label>$LOCALIZE[20091]</label>
+		</control>
+		<control type="label">
+			<top>600</top>
+			<left>57</left>
+			<width>300</width>
+			<font>50</font>
+			<align>left</align>
+			<label>$INFO[Window(10000).Property(key)]</label>
+		</control>
+	</controls>
+</window>
