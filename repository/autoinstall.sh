@@ -327,17 +327,17 @@ EOF
 }
 
 skin_download() {
-	if ! [ -e /tmp/$SKIN.zip ]; then
+	if ! [ -e /tmp/$SKIN* ]; then
 		if [ -e $KODI$SKIN ]; then
 			rm -r $KODI$SKIN
 		fi
 		echo ${BGreen}'DOWNLOADING' $SKIN${NC}
 		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
-		if ! [ -e /tmp/$SKIN.zip ]; then
+		if ! [ -e /tmp/$SKIN* ]; then
 			wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
 		fi
 		unzip -o /tmp/$SKIN*.zip -d $KODI > /dev/null 2>&1
-		mv $KODI$SKIN* $SKIN
+		mv $KODI$SKIN* $KODI$SKIN
 	fi
 
 	if ! [ -e /tmp/$REPOSITORY.zip ]; then
@@ -346,12 +346,16 @@ skin_download() {
 		fi
 		echo ${BGreen}'\\nDOWNLOADING' $REPOSITORY.zip${NC}
 		wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
-		if ! [ -e /tmp/$REPOSITORY.zip ]; then
+		if ! [ -e /tmp/$REPOSITORY*]; then
 			wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
+			if ! [ -e /tmp/$REPOSITORY*]; then
+				wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
+			fi
 		fi
 		unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	fi
 }
+
 
 
 kodi_set() {
