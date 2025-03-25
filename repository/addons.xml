@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="skin.carpc_psa" version="1.0.4" name="CarPC FOR Pegeout" provider-name="Maltsev">
-	<requires>
-		<import addon="xbmc.gui" version="5.16.0"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
-	</extension>
-	<extension point="xbmc.service" library="addon.py" start="login">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Skin CarPC For PSA</summary>
-		<summary lang="ru">Skin CarPC Для PSA</summary>
-		<description lang="en">Skin CarPC For PSA.</description>
-		<description lang="ru">Обложка CarPC Для PSA</description>
-		<platform>all</platform>
-		<website>https://sites.google.com/view/rnspi/</website>
-		<assets>
-			<icon>icon.png</icon>
-			<screenshot>screenshot-01.png</screenshot>
-		</assets>
-	</extension>
-</addon>
+
 <addon id="skin.carpc" version="1.0.5" name="CarPC FOR VAG" provider-name="Maltsev">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
@@ -46,6 +24,31 @@
 		</assets>
 	</extension>
 </addon>
+
+<addon id="skin.carpc_psa" version="1.0.4" name="CarPC for Pegeout" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.16.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC for Peugeot</summary>
+		<summary lang="ru">Skin CarPC для Пежо</summary>
+		<description lang="en">Skin CarPC for Peugeot</description>
+		<description lang="ru">Обложка CarPC для Пежо</description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+
 <addon id="skin.carpc" version="1.0.5" name="CarPC FOR VAG" provider-name="Maltsev">
 	<requires>
 		<import addon="xbmc.gui" version="5.16.0"/>
@@ -69,6 +72,7 @@
 		</assets>
 	</extension>
 </addon>
+
 <addon id="skin.carpc" version="1.0.6" name="CarPC FOR VAG" provider-name="Maltsev">
 	<requires>
 		<import addon="xbmc.gui" version="5.16.0"/>
@@ -92,4 +96,5 @@
 		</assets>
 	</extension>
 </addon>
+
 </addons>
