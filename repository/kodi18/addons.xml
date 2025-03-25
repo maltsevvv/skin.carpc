@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="skin.audi_rns" version="18.3.0" name="Audi (RNS-D | RNS-E | RNS-JP3)" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1024" height="768" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">AUDI Navigation plus</summary>
+		<summary lang="ru">AUDI Navigation plus</summary>
+		<description lang="en">Skin for Audi (RNS-D | RNS-E | RNS-JP3), for comfortable use on the radio screen. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка для Audi (RNS-D | RNS-E | RNS-JP3), для комфортного использования на экране магнитолы. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+<addon id="skin.carpc" version="1.0.0" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">CarPC FOR VAG</summary>
+		<summary lang="ru">CarPC для VAG</summary>
+		<description lang="en">Skin for Audi (RNS-D | RNS-E | RNS-JP3), for comfortable use on the radio screen. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка для Audi (RNS-D | RNS-E | RNS-JP3), для комфортного использования на экране магнитолы. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+<addon id="skin.carpc" version="1.0.1" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC For VAG</summary>
+		<summary lang="ru">Skin CarPC Для VAG</summary>
+		<description lang="en">Skin CarPC For VAG. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка CarPC Для VAG. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+<addon id="skin.carpc" version="1.0.2" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC For VAG</summary>
+		<summary lang="ru">Skin CarPC Для VAG</summary>
+		<description lang="en">Skin CarPC For VAG. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка CarPC Для VAG. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+<addon id="skin.carpc" version="1.0.3" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC For VAG</summary>
+		<summary lang="ru">Skin CarPC Для VAG</summary>
+		<description lang="en">Skin CarPC For VAG. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка CarPC Для VAG. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+<addon id="skin.carpc" version="1.0.4" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC For VAG</summary>
+		<summary lang="ru">Skin CarPC Для VAG</summary>
+		<description lang="en">Skin CarPC For VAG. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка CarPC Для VAG. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+<addon id="skin.carpc" version="1.0.5" name="CarPC FOR VAG" provider-name="Maltsev">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="addon.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin CarPC For VAG</summary>
+		<summary lang="ru">Skin CarPC Для VAG</summary>
+		<description lang="en">Skin CarPC For VAG. Control is implemented using standard RNS buttons. https://sites.google.com/view/rnspi </description>
+		<description lang="ru">Обложка CarPC Для VAG. Управление реализовано штатными кнопками RNS. https://sites.google.com/view/rnspi </description>
+		<platform>all</platform>
+		<website>https://sites.google.com/view/rnspi/</website>
+		<assets>
+			<icon>icon.png</icon>
+			<screenshot>screenshot-01.png</screenshot>
+		</assets>
+	</extension>
+</addon>
+</addons>
