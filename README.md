@@ -88,7 +88,7 @@ sudo sh /tmp/autoinstall.sh
 
 ### Отключить встроенный BT в raspberry pi  
 
-    sudo nano /boot/config.txt
+    sudo nano /boot/firmware/config.txt
 
 `dtoverlay=disable-bt`
 
