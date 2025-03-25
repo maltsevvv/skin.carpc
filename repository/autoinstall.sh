@@ -332,7 +332,7 @@ skin_download() {
 			rm -r $KODI$SKIN
 		fi
 		echo ${BGreen}'DOWNLOADING' $SKIN${NC}
-		wget -P $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
+		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
 		unzip -o /tmp/$SKIN*.zip -d $KODI > /dev/null 2>&1
 		mv $KODI$SKIN* $SKIN
 	fi
