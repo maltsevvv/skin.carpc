@@ -333,6 +333,9 @@ skin_download() {
 		fi
 		echo ${BGreen}'DOWNLOADING' $SKIN${NC}
 		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
+		if ! [ -e /tmp/$SKIN.zip ]; then
+			wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
+		fi
 		unzip -o /tmp/$SKIN*.zip -d $KODI > /dev/null 2>&1
 		mv $KODI$SKIN* $SKIN
 	fi
@@ -343,6 +346,9 @@ skin_download() {
 		fi
 		echo ${BGreen}'\\nDOWNLOADING' $REPOSITORY.zip${NC}
 		wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
+		if ! [ -e /tmp/$REPOSITORY.zip ]; then
+			wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
+		fi
 		unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	fi
 }
@@ -470,10 +476,16 @@ rpi_vga() {
 	if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
 		echo ${BGreen}'Downloads rpi240p'${NC}
 		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin && > /dev/null 2>&1
+		if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
+			wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin && > /dev/null 2>&1
+		fi
 	fi
  	if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
 		echo ${BGreen}'Downloads rpi480i'${NC}
 		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin && > /dev/null 2>&1
+		if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
+			wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin && > /dev/null 2>&1
+		fi
 	fi
 	if ! grep -q 'video=HDMI-A-1:NTSC' $CMDLINE; then
 		sed -i 's/^/video=HDMI-A-1:NTSC,margin_left=39,margin_right=21,margin_top=17,margin_bottom=27 /' $CMDLINE  #rnse
@@ -721,19 +733,6 @@ echo '---------------------------------------------------------'
 echo '\\\\'$(hostname -I | awk '{print $1}')'\\''rns'
 echo '\\\\'$(hostname -I | awk '{print $2}')'\\''rns'
 echo '---------------------------------------------------------'
-
-echo '---------------------------------------------------------'
-echo '# For TV if msg not connect'
-echo 'sudo cp /boot/firmware/cmdline.txt /boot/firmware/cmdline.txt.rns'
-echo 'sudo cp /boot/firmware/cmdline.txt.backup /boot/firmware/cmdline.txt'
-echo 'sudo reboot'
-echo ''
-echo '# Return config for RNS'
-echo 'sudo cp /boot/firmware/cmdline.txt /boot/firmware/cmdline.txt.backup'
-echo 'sudo cp /boot/firmware/cmdline.txt.rns /boot/firmware/cmdline.txt'
-echo 'sudo reboot'
-echo '---------------------------------------------------------'
-
 
 echo '---------------------------------------------------------'
 if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
