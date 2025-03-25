@@ -17,7 +17,7 @@ sudo apt-get upgrade -y
 ```
 
 ```
-wget -P /tmp https://raw.githubusercontent.com/maltsevvv/repository-kodi/master/autoinstall.sh
+wget -P /tmp https://raw.githubusercontent.com/maltsevvv/skin.carpc/master/repository/autoinstall.sh
 ```
 
 ```
