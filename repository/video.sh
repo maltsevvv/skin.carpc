@@ -32,31 +32,36 @@ rpi_conf() {
 
 
 config_tv() {
-	if [ -e $CMDLINE.rns ]; then
-		rm $CMDLINE.rns
-	fi
-	cp $CMDLINE $CMDLINE.rns
-	cp $CMDLINE.backup $CMDLINE
-	reboot
+        if ! [ -e $CMDLINE.rns ]; then
+                cp $CMDLINE $CMDLINE.rns
+                cp $CMDLINE.backup $CMDLINE
+                echo ${BGreen}"Use HDMI Video Output TV"${NC}
+                echo ${BRed}"The system will reboot now"${NC}
+                reboot
+        else
+                echo ${BGreen}"NOW use HDMI Video Output TV"${NC}
+        fi
 }
 
 
 config_rns() {
-	if [ -e $CMDLINE.rns ]; then
-		rm $CMDLINE.backup
-		mv $CMDLINE.rns $CMDLINE
-		reboot
-	fi
+        if [ -e $CMDLINE.rns ]; then
+                mv $CMDLINE.rns $CMDLINE
+                echo ${BGreen}"Use HDMI Video Output RNS"${NC}
+                echo ${BRed}"The system will reboot now"${NC}
+                reboot
+        else
+                echo ${BGreen}"Use HDMI Video Output RNS"${NC}
+        fi
 }
 
 
 echo '---------------------------------------------------------'
 if (whiptail --title "Video Output" --yes-button " TV " --no-button " RNS " --yesno "Select video output source" 10 60); then
-	echo ${BGreen}"Use HDMI Video Output TV"${NC}
-	echo $(config_tv)
+        #echo ${BGreen}"Use HDMI Video Output TV"${NC}
+        echo $(config_tv)
 else
-	echo ${BGreen}"Use HDMI Video Output RNS"${NC}
-	echo $(config_rns)
+        #echo ${BGreen}"Use HDMI Video Output RNS"${NC}
+        echo $(config_rns)
 fi
 echo '---------------------------------------------------------'
-
