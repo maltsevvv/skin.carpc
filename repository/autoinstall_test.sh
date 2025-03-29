@@ -67,11 +67,10 @@ is_installed() {
 }
 
 samba() {
-	echo ${BBlue}'\\nSAMBA Installed'${NC}
+	echo ${BBlue}'SAMBA Installing'${NC}
 	if is_installed "samba"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt-get install -y samba 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
 		  echo ${BGreen}'\\nSuccessfully'${NC}
@@ -99,11 +98,10 @@ EOF
 }
 
 kodi() {
-	echo ${BBlue}'Installed KODI'${NC}
+	echo ${BBlue}'KODI Installing'${NC}
 	if is_installed "kodi"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt-get install -y kodi 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
 			echo ${BGreen}'\\nSuccessfully'${NC}
@@ -131,11 +129,10 @@ WantedBy=multi-user.target
 browseable = no
 EOF
 	fi
-	echo ${BBlue}'\\nInstalled PVR IPTV'${NC}
+	echo ${BBlue}'\\nPVR IPTV Installing'${NC}
 	if is_installed "kodi-pvr-iptvsimple"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt-get install -y kodi-pvr-iptvsimple 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
 			echo ${BGreen}'\\nSuccessfully'${NC}
@@ -168,11 +165,10 @@ kodi_status() {
 }
 
 canutils() {
-	echo ${BBlue}'\\nInstalled CAN-UTILS'${NC}
+	echo ${BBlue}'CAN-UTILS Installing'${NC}
 	if is_installed "can-utils"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y can-utils 2>/dev/null 1>/dev/null
 			if [ "$?" = 0 ]; then
 				echo ${BGreen}'\\nSuccessfully'${NC}
@@ -193,11 +189,10 @@ EOF
 }
 
 pythoncan() {
-	echo ${BBlue}'\\nInstalled PYTHON-CAN'${NC}
+	echo ${BBlue}'PYTHON-CAN Installing'${NC}
 	if is_installed "python-can"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y python3-can 2>/dev/null 1>/dev/null
 			if [ "$?" = 0 ]; then
 				echo ${BGreen}'\\nSuccessfully'${NC}
@@ -209,11 +204,10 @@ pythoncan() {
 }
 
 overlay() {
-	echo ${BBlue}'\\nInstalled Overlay SD card'${NC}
+	echo ${BBlue}'Overlay SD-Card Installing'${NC}
 	if is_installed "overlayroot"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling Overlay SD card'${NC}
 		apt-get install -y overlayroot 2>/dev/null 1>/dev/null
 			if [ "$?" = 0 ]; then
 				echo ${BGreen}'\\nSuccessfully'${NC}
@@ -225,14 +219,16 @@ overlay() {
 }
 
 bluetooth() {
-	echo ${BBlue}'\\nInstalling BLUETOOTHE RECIEVER'${NC}
+	echo ${BBlue}'BLUETOOTHE RECIEVER Installing'${NC}
+	echo '\\n'
+	echo ${BBlue}'\\nPulse Audio'${NC}
 	if is_installed "pulseaudio"; then
-		echo ${BGreen}'\\nPulseaudio Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
 		hostnamectl set-hostname --pretty "rns"
 		apt install -y --no-install-recommends pulseaudio 2>/dev/null 1>/dev/null
 		if [ $? -eq 0 ]; then
-			echo ${BGreen}'\\nPulseaudio Successfully'${NC}
+			echo ${BGreen}'\\nSuccessfully'${NC}
 		else
 			whiptail --title "PULSE AUDIO" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
@@ -261,11 +257,10 @@ EOF
 		systemctl enable --now pulseaudio.service
 		systemctl --global mask pulseaudio.socket
 	fi
-	echo ${BBlue}'\\nInstalling Bluez Tools'${NC}
+	echo ${BBlue}'\\nBluez Tools'${NC}
 	if is_installed "bluez-tools"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y --no-install-recommends bluez-tools 2>/dev/null 1>/dev/null
 		if [ $? -eq 0 ]; then
 			echo ${BGreen}'\\nSuccessfully'${NC}
@@ -274,11 +269,10 @@ EOF
 			kill -s TERM $TOP_PID
 		fi
 	fi
-	echo ${BBlue}'\\nInstalling Pulse Audio Module Bluetooth'${NC}
+	echo ${BBlue}'\\nPulse Audio Module Bluetooth'${NC}
 	if is_installed "pulseaudio-module-bluetooth"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y --no-install-recommends pulseaudio-module-bluetooth 2>/dev/null 1>/dev/null
 		if [ $? -eq 0 ]; then
 			echo ${BGreen}'\\nSuccessfully'${NC}
@@ -356,7 +350,7 @@ EOF
 }
 
 skin_download() {
-	echo ${BBlue}'\\nInstalling '$SKIN${NC}
+	echo ${BBlue}$SKIN' Installing'${NC}
 	wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
 	unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
 	if ! [ -d $KODI$SKIN ]; then
@@ -364,13 +358,13 @@ skin_download() {
 		cp -r /tmp/$SKIN/ $KODI$SKIN/
 	fi
 	if ! [ -d $KODI$SKIN ]; then
-		echo ${BBlue}'\\nRepeat Downloading'${NC}
+		echo ${BBlue}'\\n'$SKIN' Downloading'${NC}
 		wget -P $KODI$SKIN $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
 		unzip -o $KODI$SKIN*.zip -d $KODI > /dev/null 2>&1
 		mv $KODI$SKIN*/ $KODI$SKIN/ > /dev/null 2>&1
 	fi
 	if [ -d $KODI$SKIN ]; then
-		echo ${BGreen}'\\nInstalled'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
 		whiptail --title $SKIN" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -378,16 +372,16 @@ skin_download() {
 }
 
 repository_download() {
-	echo ${BBlue}'\\nInstalling '$REPOSITORY${NC}
+	echo ${BBlue}$REPOSITORY' Installing'${NC}
 	wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
 	unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	if ! [ -d $KODI$REPOSITORY ]; then
-		echo ${BBlue}'\\nRepeat Downloading' $REPOSITORY${NC}
+		echo ${BBlue}'\\n'$REPOSITORY' Downloading'${NC}
 		wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
 		unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	fi
 	if [ -d $KODI$REPOSITORY ]; then
-		echo ${BGreen}'\\nInstalled'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
 		whiptail --title $REPOSITORY" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -396,23 +390,35 @@ repository_download() {
 
 
 kodi_set() {
+	echo ${BBlue}'EDIT addon-manifest'${NC}
 	if ! grep -q $SKIN /usr/share/kodi/system/addon-manifest.xml; then
-		echo ${BGreen}'\\nAdd '$SKIN' to addon-manifest.xml'${NC}
+		echo ${BGreen}'\\n'$SKIN${NC}
 		sed -i '$i\  <addon optional="true">'$SKIN'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
 	if ! grep -q $REPOSITORY /usr/share/kodi/system/addon-manifest.xml; then
-		echo ${BGreen}'\\nAdd '$REPOSITORY' to addon-manifest.xml'${NC}
+		echo ${BGreen}'\\n'$REPOSITORY${NC}
 		sed -i '$i\  <addon optional="true">'$REPOSITORY'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
+	echo ${BBlue}'EDIT guisettings'${NC}
 	if ! grep -q $SKIN /home/pi/.kodi/userdata/guisettings.xml; then
-		echo ${BGreen}'\\nAdd '$SKIN' to guisettings.xml'${NC}
-		#sed -i -e 's/"lookandfeel.skin" default="true">skin.estuary/"lookandfeel.skin">skin.carpc/' /home/pi/.kodi/userdata/guisettings.xml
-		#sed -i 's/lookandfeel.skin" default="true">'$BaseSkin'/lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
+		echo ${BGreen}'\\n'$SKIN${NC}
 		sed -i 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
 	fi
 
+# Disable Screensaver
+	echo ${BGreen}'\\nDisable Screensaver'${NC}
+	sed -i -r 's/(.+screensaver.mode").+/\1/' /home/pi/.kodi/userdata/guisettings.xm #
+	sed -i 's/screensaver.mode"/screensaver.mode" \/>/' /home/pi/.kodi/userdata/guisettings.xm  # <setting id="screensaver.mode" />
+# Amplifi volume up to 30.0dB
+	echo ${BGreen}'\\nVolume +30dB'${NC}
+	sed -i 's/volumeamplification>0.000000/volumeamplification>30.000000/' /home/pi/.kodi/userdata/guisettings.xml
+# Enable web-server
+	echo ${BGreen}'\\nEnable Web-Server'${NC}
+	sed -i 's/id="services.webserverauthentication" default="true">true/id="services.webserverauthentication">false/' /home/pi/.kodi/userdata/guisettings.xml
+	sed -i 's/id="services.webserver" default="true">false/id="services.webserver">true/' /home/pi/.kodi/userdata/guisettings.xml
+
 	echo ${BBlue}'\\nPresettings KODI'${NC}
-	echo ${BGreen}'\\nAdd Media Source Folder'${NC}
+	echo ${BGreen}'\\n/home/pi/movies/ \\n/home/pi/tvshows/ \\n/home/pi/clips/ \\n/home/pi/mults/ \\n/home/pi/music/'${NC}
 	cat <<'EOF' > /home/pi/.kodi/userdata/sources.xml
 <sources>
     <programs>
@@ -471,19 +477,7 @@ kodi_set() {
 </sources>
 EOF
 
-# Disable Screensaver
-	echo ${BGreen}'\\nDisable Screensaver'${NC}
-	sed -i 's/default="true">screensaver.xbmc.builtin.dim<\/setting/\//' /home/pi/.kodi/userdata/guisettings.xml
-# Enable auto play next video
-	echo ${BGreen}'\\nEnable Auto Play'${NC}
-	sed -i 's/id="videoplayer.autoplaynextitem" default="true" \/>id="videoplayer.autoplaynextitem">0,1,2,3,4<\/setting>/' /home/pi/.kodi/userdata/guisettings.xml
-# Amplifi volume up to 30.0dB
-	echo ${BGreen}'\\nVolume +30dB'${NC}
-	sed -i 's/volumeamplification>0.000000/volumeamplification>30.000000/' /home/pi/.kodi/userdata/guisettings.xml
-# Enable web-server
-	echo ${BGreen}'\\nEnable Web-Server'${NC}
-	sed -i 's/id="services.webserverauthentication" default="true">true/id="services.webserverauthentication">false/' /home/pi/.kodi/userdata/guisettings.xml
-	sed -i 's/id="services.webserver" default="true">false/id="services.webserver">true/' /home/pi/.kodi/userdata/guisettings.xml
+
 }
 
 folder() {
@@ -670,49 +664,49 @@ echo '---------------------------------------------------------'
 echo $(chekos)
 echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(network)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(network)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(update)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(update)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-if (whiptail --title "FULL UPGRADE SYSTEM" --yesno "Installation is Recommended.\nBut it will take a long time" 10 60); then
-	echo $(upgrade)
-else
-	echo ${BRed}'YOU CANCELED UPGRADE SYSTEM'${NC}
-fi
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# if (whiptail --title "FULL UPGRADE SYSTEM" --yesno "Installation is Recommended.\nBut it will take a long time" 10 60); then
+	# echo $(upgrade)
+# else
+	# echo ${BRed}'YOU CANCELED UPGRADE SYSTEM'${NC}
+# fi
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(samba)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(samba)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(kodi)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(kodi)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(canutils)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(canutils)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(pythoncan)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(pythoncan)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(overlay)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(overlay)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-if (whiptail --title "Bluetooth audio receiver installer" --yesno "Install Bluetooth Audio Receive." 10 60) then
-	echo $(bluetooth)
-else
-	echo ${BRed}'YOU CANCELED THE INSTALLATION BLUETOOTH RECIEVER'${NC}
-fi
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# if (whiptail --title "Bluetooth audio receiver installer" --yesno "Install Bluetooth Audio Receive." 10 60) then
+	# echo $(bluetooth)
+# else
+	# echo ${BRed}'YOU CANCELED THE INSTALLATION BLUETOOTH RECIEVER'${NC}
+# fi
+# echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 echo $(kodi_status)
@@ -730,65 +724,65 @@ echo '---------------------------------------------------------'
 echo $(kodi_set)
 echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(folder)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(folder)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(rpi_conf)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo $(rpi_conf)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-if (whiptail --title "Video Output" --yes-button " HDMI-VGA " --no-button " ANALOG VIDEO " --yesno "Select video output source" 10 60); then
-	echo ${BGreen}"Use HDMI-VGA Adapter For Video Output"${NC}
-	echo $(rpi_vga)
-else
-	echo ${BGreen}"Use Analog Video Output Jack 3,5mm"${NC}
-	echo $(rpi_composite)
-fi
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# if (whiptail --title "Video Output" --yes-button " HDMI-VGA " --no-button " ANALOG VIDEO " --yesno "Select video output source" 10 60); then
+	# echo ${BGreen}"Use HDMI-VGA Adapter For Video Output"${NC}
+	# echo $(rpi_vga)
+# else
+	# echo ${BGreen}"Use Analog Video Output Jack 3,5mm"${NC}
+	# echo $(rpi_composite)
+# fi
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-if (whiptail --title "AUDIO Output" --yes-button " PCM5102 " --no-button " ANALOG " --yesno "Select Audio output source" 10 60); then
-	echo ${BGreen}'Use Digital (PCM5102) Audio Output'${NC}
-	echo $(rpi_pcm)
-else
-	echo ${BGreen}'Use Analog Audio Output Jack 3,5mm'${NC}
-	echo $(rpi_audio)
-fi
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# if (whiptail --title "AUDIO Output" --yes-button " PCM5102 " --no-button " ANALOG " --yesno "Select Audio output source" 10 60); then
+	# echo ${BGreen}'Use Digital (PCM5102) Audio Output'${NC}
+	# echo $(rpi_pcm)
+# else
+	# echo ${BGreen}'Use Analog Audio Output Jack 3,5mm'${NC}
+	# echo $(rpi_audio)
+# fi
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo ${BGreen}'Enable mcp2515-can0'${NC}
-echo $(rpi_can0)
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo ${BGreen}'Enable mcp2515-can0'${NC}
+# echo $(rpi_can0)
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-if (whiptail --title "IR Remote Control" --yesno "Enable IR-Receiver? \nfor Control Kodi, FOR RNS-JP3 \nWARNING!!!! ONLY FOR RNS-JP3 (Asian)" 10 60); then
-	echo ${BGreen}'Installed IR-Keytable'${NC}
-	echo $(rpi_ir)
-	sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
-	if ! grep -q 'dtoverlay=gpio-ir' $CONFIG; then
-		cat <<'EOF' >> $CONFIG
+# echo '---------------------------------------------------------'
+# if (whiptail --title "IR Remote Control" --yesno "Enable IR-Receiver? \nfor Control Kodi, FOR RNS-JP3 \nWARNING!!!! ONLY FOR RNS-JP3 (Asian)" 10 60); then
+	# echo ${BGreen}'Installed IR-Keytable'${NC}
+	# echo $(rpi_ir)
+	# sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
+	# if ! grep -q 'dtoverlay=gpio-ir' $CONFIG; then
+		# cat <<'EOF' >> $CONFIG
 
-dtoverlay=gpio-ir,gpio_pin=17
-EOF
-	fi
-else
-	sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/#dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
-fi
-echo '---------------------------------------------------------'
+# dtoverlay=gpio-ir,gpio_pin=17
+# EOF
+	# fi
+# else
+	# sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/#dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
+# fi
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo '\\\\'$(hostname -I | awk '{print $1}')'\\''rns'
-echo '\\\\'$(hostname -I | awk '{print $2}')'\\''rns'
-echo '---------------------------------------------------------'
+# echo '---------------------------------------------------------'
+# echo '\\\\'$(hostname -I | awk '{print $1}')'\\''rns'
+# echo '\\\\'$(hostname -I | awk '{print $2}')'\\''rns'
+# echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
-	echo "Reboot System"
-	echo ''
-	reboot
-fi
+# echo '---------------------------------------------------------'
+# if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
+	# echo "Reboot System"
+	# echo ''
+	# reboot
+# fi
 echo '---------------------------------------------------------'
 
