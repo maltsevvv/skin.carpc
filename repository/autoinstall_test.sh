@@ -21,7 +21,7 @@ export TOP_PID=$$
 
 chekos() {
 	if grep -q 'VERSION="12 (bookworm)"' /etc/os-release; then
-		cat /sys/firmware/devicetree/base/model;echo
+		${BGreen} cat /sys/firmware/devicetree/base/model;echo ${NC}
 	else
 		echo $BRed"Unsupported OS detected. Recommended Debian 12"$NC $BGreen"\nBookworm lite version"$NC
 		kill -s TERM $TOP_PID
@@ -30,9 +30,10 @@ chekos() {
 
 
 network() {
+	echo ${BBlue}'\\nCheck Internet Connection'${NC}
 	ping -c1 -w1 raspberrypi.org 2>/dev/null 1>/dev/null
 	if [ "$?" = 0 ]; then
-		echo ${BGreen}'Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
 		whiptail --title "ERROR" --msgbox "Inernet Connection is Missing \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -40,6 +41,7 @@ network() {
 }
 
 update() {
+	echo ${BBlue}'Update Packets'${NC}
 	apt-get update -y 2>/dev/null 1>/dev/null
 	if [ "$?" = 0 ]; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
@@ -50,6 +52,7 @@ update() {
 }
 
 upgrade() {
+	echo ${BBlue}'Upgrade System'${NC}
 	apt-get upgrade -y 2>/dev/null 1>/dev/null
 	if [ "$?" = 0 ]; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
@@ -64,12 +67,14 @@ is_installed() {
 }
 
 samba() {
+	echo ${BBlue}'\\nSAMBA Installed'${NC}
 	if is_installed "samba"; then
-		echo ${BGreen}'Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt-get install -y samba 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
-		  echo ${BGreen}'Successfully'${NC}
+		  echo ${BGreen}'\\nSuccessfully'${NC}
 		else
 		  whiptail --title "SAMBA" --msgbox "ERROR Installing \nRestart installer!" 10 60
 		  kill -s TERM $TOP_PID
@@ -94,13 +99,14 @@ EOF
 }
 
 kodi() {
+	echo ${BBlue}'Installed KODI'${NC}
 	if is_installed "kodi"; then
-		echo ${BGreen}'Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'Installing'${NC}
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt-get install -y kodi 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
-			echo ${BGreen}'Successfully'${NC}
+			echo ${BGreen}'\\nSuccessfully'${NC}
 		else
 			whiptail --title "KODI" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
@@ -108,7 +114,7 @@ kodi() {
 	fi
 	sed -i '/service.xbmc.versioncheck/d' /usr/share/kodi/system/addon-manifest.xml #Disable versioncheck
 	if ! grep -q "/usr/bin/kodi-standalone" /etc/systemd/system/kodi.service; then
-		cat <<'EOF' > /etc/systemd/system/kodi.service
+		cat <<EOF > /etc/systemd/system/kodi.service
 [Unit]
 Description=Kodi Media Center
 [Service]
@@ -125,16 +131,16 @@ WantedBy=multi-user.target
 browseable = no
 EOF
 	fi
-
+	echo ${BBlue}'Installed PVR IPTV'${NC}
 	if is_installed "kodi-pvr-iptvsimple"; then
-		echo ${BGreen}'\\nKODI PVR IPTV Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nKODI PVR IPTV Installing'${NC}
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt-get install -y kodi-pvr-iptvsimple 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
-			echo ${BGreen}'\\nKODI PVR IPTV Successfully'${NC}
+			echo ${BGreen}'\\nSuccessfully'${NC}
 		else
-			whiptail --title "KODI PVR IPTV" --msgbox "ERROR Installing \nRestart installer!" 10 60
+			whiptail --title "KODI-PVR-IPTVsimple" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
 		fi
 	fi
@@ -144,6 +150,7 @@ EOF
 }
 
 kodi_status() {
+	echo ${BBlue}"STOP KODI"${NC}
 	if is_installed "kodi"; then
 		if (systemctl -q is-active kodi.service); then
 			systemctl stop kodi.service
@@ -153,6 +160,7 @@ kodi_status() {
 			systemctl stop kodi.service
 			sleep 10
 		fi
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
 		whiptail --title "KODI" --msgbox "ERROR Installing \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -160,13 +168,14 @@ kodi_status() {
 }
 
 canutils() {
+	echo ${BBlue}'\\nInstalled CAN-UTILS'${NC}
 	if is_installed "can-utils"; then
-		echo ${BGreen}'Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'Installing'${NC}
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y can-utils 2>/dev/null 1>/dev/null
 			if [ "$?" = 0 ]; then
-				echo ${BGreen}'Successfully'${NC}
+				echo ${BGreen}'\\nSuccessfully'${NC}
 			else
 				whiptail --title "CAN-UTILS" --msgbox "ERROR Installing \nRestart installer!" 10 60
 				kill -s TERM $TOP_PID
@@ -184,13 +193,14 @@ EOF
 }
 
 pythoncan() {
+	echo ${BBlue}'\\nInstalled PYTHON-CAN'${NC}
 	if is_installed "python-can"; then
-		echo ${BGreen}'Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'Installing'${NC}
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y python3-can 2>/dev/null 1>/dev/null
 			if [ "$?" = 0 ]; then
-				echo ${BGreen}'Successfully'${NC}
+				echo ${BGreen}'\\nSuccessfully'${NC}
 			else
 				whiptail --title "PYTHON-CAN" --msgbox "ERROR Installing \nRestart installer!" 10 60
 				kill -s TERM $TOP_PID
@@ -199,13 +209,14 @@ pythoncan() {
 }
 
 overlay() {
+	echo ${BBlue}'\\nInstalled Overlay SD card'${NC}
 	if is_installed "overlayroot"; then
-		echo ${BGreen}'Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'Installing Overlay SD card'${NC}
+		echo ${BGreen}'\\nInstalling Overlay SD card'${NC}
 		apt-get install -y overlayroot 2>/dev/null 1>/dev/null
 			if [ "$?" = 0 ]; then
-				echo ${BGreen}'Successfully'${NC}
+				echo ${BGreen}'\\nSuccessfully'${NC}
 			else
 				whiptail --title "Overlay SD card" --msgbox "ERROR Installing \nRestart installer!" 10 60
 				kill -s TERM $TOP_PID
@@ -214,13 +225,14 @@ overlay() {
 }
 
 bluetooth() {
+	echo ${BBlue}'\\nInstalling BLUETOOTHE RECIEVER'${NC}
 	if is_installed "pulseaudio"; then
-		echo ${BGreen}'Pulseaudio Successfully'${NC}
+		echo ${BGreen}'\\nPulseaudio Successfully'${NC}
 	else
 		hostnamectl set-hostname --pretty "rns"
 		apt install -y --no-install-recommends pulseaudio 2>/dev/null 1>/dev/null
 		if [ $? -eq 0 ]; then
-			echo ${BGreen}'Pulseaudio Successfully'${NC}
+			echo ${BGreen}'\\nPulseaudio Successfully'${NC}
 		else
 			whiptail --title "PULSE AUDIO" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
@@ -249,25 +261,29 @@ EOF
 		systemctl enable --now pulseaudio.service
 		systemctl --global mask pulseaudio.socket
 	fi
+	echo ${BBlue}'\\nBluez Tools'${NC}
 	if is_installed "bluez-tools"; then
-		echo ${BGreen}'\\nBluez-Tools Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling Bluez-Tools'${NC}
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y --no-install-recommends bluez-tools 2>/dev/null 1>/dev/null
 		if [ $? -eq 0 ]; then
 			echo ${BGreen}'\\nSuccessfully'${NC}
 		else
-			whiptail --title "bluez-tools" --msgbox "ERROR Installing \nRestart installer!" 10 60
+			whiptail --title "Bluez Tools" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
 		fi
 	fi
+	echo ${BBlue}'\\nPulse Audio Module Bluetooth'${NC}
 	if is_installed "pulseaudio-module-bluetooth"; then
-		echo ${BGreen}'\\nPulseaudio-Module-Bluetooth Successfully'${NC}
+		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
-		echo ${BGreen}'\\nInstalling Pulseaudio-Module-Bluetooth'${NC}
+		echo ${BGreen}'\\nInstalling'${NC}
 		apt install -y --no-install-recommends pulseaudio-module-bluetooth 2>/dev/null 1>/dev/null
-		if [ ! $? -eq 0 ]; then
-			whiptail --title "pulseaudio-module-bluetooth" --msgbox "ERROR Installing \nRestart installer!" 10 60
+		if [ $? -eq 0 ]; then
+			echo ${BGreen}'\\nSuccessfully'${NC}
+		else
+			whiptail --title "Pulse Audio Module Bluetooth" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
 		fi
 		cat <<'EOF' > /etc/bluetooth/main.conf
@@ -340,6 +356,7 @@ EOF
 }
 
 skin_download() {
+	echo ${BBlue}'\\nInstalling '$SKIN${NC}
 	wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
 	unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
 	if ! [ -d $KODI$SKIN ]; then
@@ -347,13 +364,13 @@ skin_download() {
 		cp -r /tmp/$SKIN/ $KODI$SKIN/
 	fi
 	if ! [ -d $KODI$SKIN ]; then
-		echo ${BBlue}'Repeat loading' $SKIN${NC}
+		echo ${BBlue}'\\nRepeat Downloading'${NC}
 		wget -P $KODI$SKIN $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
 		unzip -o $KODI$SKIN*.zip -d $KODI > /dev/null 2>&1
 		mv $KODI$SKIN*/ $KODI$SKIN/ > /dev/null 2>&1
 	fi
 	if [ -d $KODI$SKIN ]; then
-		echo ${BGreen}'\\n'$SKIN' Installed'${NC}
+		echo ${BGreen}'\\nInstalled'${NC}
 	else
 		whiptail --title $SKIN" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -361,10 +378,11 @@ skin_download() {
 }
 
 repository_download() {
+	echo ${BBlue}'\\nInstalling '$REPOSITORY${NC}
 	wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
 	unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	if ! [ -d $KODI$REPOSITORY ]; then
-		echo ${BBlue}'Repeat loading' $REPOSITORY${NC}
+		echo ${BBlue}'\\nRepeat Downloading' $REPOSITORY${NC}
 		wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
 		unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	fi
@@ -386,14 +404,15 @@ kodi_set() {
 		echo ${BGreen}'\\nAdd '$REPOSITORY' to addon-manifest.xml'${NC}
 		sed -i '$i\  <addon optional="true">'$REPOSITORY'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
-	if ! grep -q $SKIN  /home/pi/.kodi/userdata/guisettings.xml; then
+	if ! grep -q $SKIN /home/pi/.kodi/userdata/guisettings.xml; then
 		echo ${BGreen}'\\nAdd '$SKIN' to guisettings.xml'${NC}
-  		#sed -i -e 's/"lookandfeel.skin" default="true">skin.estuary/"lookandfeel.skin">skin.carpc/' /home/pi/.kodi/userdata/guisettings.xml
+		#sed -i -e 's/"lookandfeel.skin" default="true">skin.estuary/"lookandfeel.skin">skin.carpc/' /home/pi/.kodi/userdata/guisettings.xml
 		#sed -i 's/lookandfeel.skin" default="true">'$BaseSkin'/lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
-  		sed -i 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
+		sed -i 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
 	fi
 
-	echo ${BGreen}'\\nPresettings KODI'${NC}
+	echo ${BBlue}'\\nPresettings KODI'${NC}
+	echo ${BGreen}'\\nAdd Media Source to sources.xml'${NC}
 	cat <<'EOF' > /home/pi/.kodi/userdata/sources.xml
 <sources>
     <programs>
@@ -452,14 +471,17 @@ kodi_set() {
 </sources>
 EOF
 
-
 # Disable Screensaver
+	echo ${BGreen}'\\nDisable Screensaver'${NC}
 	sed -i 's/default="true">screensaver.xbmc.builtin.dim<\/setting/\//' /home/pi/.kodi/userdata/guisettings.xml
 # Enable auto play next video
+	echo ${BGreen}'\\nEnable Auto Play'${NC}
 	sed -i 's/id="videoplayer.autoplaynextitem" default="true" \/>id="videoplayer.autoplaynextitem">0,1,2,3,4<\/setting>/' /home/pi/.kodi/userdata/guisettings.xml
 # Amplifi volume up to 30.0dB
+	echo ${BGreen}'\\nVolume +30dB'${NC}
 	sed -i 's/volumeamplification>0.000000/volumeamplification>30.000000/' /home/pi/.kodi/userdata/guisettings.xml
 # Enable web-server
+	echo ${BGreen}'\\nEnable Web-Server'${NC}
 	sed -i 's/id="services.webserverauthentication" default="true">true/id="services.webserverauthentication">false/' /home/pi/.kodi/userdata/guisettings.xml
 	sed -i 's/id="services.webserver" default="true">false/id="services.webserver">true/' /home/pi/.kodi/userdata/guisettings.xml
 }
@@ -647,19 +669,17 @@ EOF
 echo '---------------------------------------------------------'
 echo $(chekos)
 echo '---------------------------------------------------------'
+
 echo '---------------------------------------------------------'
-echo ${BBlue}'Internet connection'${NC}
 echo $(network)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'Update Packets'${NC}
 echo $(update)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 if (whiptail --title "FULL UPGRADE SYSTEM" --yesno "Installation is Recommended.\nBut it will take a long time" 10 60); then
-	echo ${BBlue}'Upgrade System'${NC}
 	echo $(upgrade)
 else
 	echo ${BRed}'YOU CANCELED UPGRADE SYSTEM'${NC}
@@ -667,33 +687,27 @@ fi
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'SAMBA Installed'${NC}
 echo $(samba)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'Installed KODI'${NC}
 echo $(kodi)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'Installed CAN-UTILS'${NC}
 echo $(canutils)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'Installed PYTHON-CAN'${NC}
 echo $(pythoncan)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'Installed Overlay SD card'${NC}
 echo $(overlay)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 if (whiptail --title "Bluetooth audio receiver installer" --yesno "Install Bluetooth Audio Receive." 10 60) then
-	echo ${BBlue}'Installing BLUETOOTHE RECIEVER'${NC}
 	echo $(bluetooth)
 else
 	echo ${BRed}'YOU CANCELED THE INSTALLATION BLUETOOTH RECIEVER'${NC}
@@ -701,17 +715,14 @@ fi
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BGreen}"Stop kodi service"${NC}
 echo $(kodi_status)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'DOWNLOADING' $SKIN${NC}
 echo $(skin_download)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'DOWNLOADING' $REPOSITORY${NC}
 echo $(repository_download)
 echo '---------------------------------------------------------'
 
@@ -739,7 +750,7 @@ echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 if (whiptail --title "AUDIO Output" --yes-button " PCM5102 " --no-button " ANALOG " --yesno "Select Audio output source" 10 60); then
-	echo ${BGreen}'Use Digital (PCM5102) Audio Output Jack 3,5mm'${NC}
+	echo ${BGreen}'Use Digital (PCM5102) Audio Output'${NC}
 	echo $(rpi_pcm)
 else
 	echo ${BGreen}'Use Analog Audio Output Jack 3,5mm'${NC}
