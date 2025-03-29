@@ -387,7 +387,7 @@ repository_download() {
 		unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	fi
 	if [ -d $KODI$REPOSITORY ]; then
-		echo ${BGreen}'\\n'$REPOSITORY' Installed'${NC}
+		echo ${BGreen}'\\nInstalled'${NC}
 	else
 		whiptail --title $REPOSITORY" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -412,7 +412,7 @@ kodi_set() {
 	fi
 
 	echo ${BBlue}'\\nPresettings KODI'${NC}
-	echo ${BGreen}'\\nAdd Media Source to sources.xml'${NC}
+	echo ${BGreen}'\\nAdd Media Source Folder'${NC}
 	cat <<'EOF' > /home/pi/.kodi/userdata/sources.xml
 <sources>
     <programs>
