@@ -131,7 +131,7 @@ WantedBy=multi-user.target
 browseable = no
 EOF
 	fi
-	echo ${BBlue}'Installed PVR IPTV'${NC}
+	echo ${BBlue}'\\nInstalled PVR IPTV'${NC}
 	if is_installed "kodi-pvr-iptvsimple"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
