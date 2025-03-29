@@ -388,9 +388,9 @@ kodi_set() {
 	fi
 	if ! grep -q $SKIN  /home/pi/.kodi/userdata/guisettings.xml; then
 		echo ${BGreen}$SKIN '\\nedit guisettings.xml'${NC}
-  		sed -i -e s/"lookandfeel.skin" default="true">skin.estuary/"lookandfeel.skin">skin.carpc/ /home/pi/.kodi/userdata/guisettings.xml
+  		sed -i -e 's/"lookandfeel.skin" default="true">skin.estuary/"lookandfeel.skin">skin.carpc/' /home/pi/.kodi/userdata/guisettings.xml
 		#sed -i 's/lookandfeel.skin" default="true">'$BaseSkin'/lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
-  		#sed -i -e 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
+  		sed -i 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
 	fi
 
 	echo ${BGreen}'Presettings KODI'${NC}
