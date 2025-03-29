@@ -78,17 +78,17 @@ samba() {
 	if ! grep -q "/home/pi/" /etc/samba/smb.conf; then
 		cat <<'EOF' >> /etc/samba/smb.conf
 [rns]
-path = /home/pi/
-create mask = 0775
-directory mask = 0775
-writeable = yes
-browseable = yes
-public = yes
-force user = pi
-guest ok = yes
+   path = /home/pi/
+   create mask = 0775
+   directory mask = 0775
+   writeable = yes
+   browseable = yes
+   public = yes
+   force user = pi
+   guest ok = yes
 
 [nobody]
-browseable = no
+   browseable = no
 EOF
 	fi
 }
