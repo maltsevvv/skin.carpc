@@ -380,14 +380,14 @@ repository_download() {
 kodi_set() {
 	if ! grep -q $SKIN /usr/share/kodi/system/addon-manifest.xml; then
 		echo ${BGreen}'\\nAdd '$SKIN' to addon-manifest.xml'${NC}
-		sed -i -e '$i \  <addon optional="true">'$SKIN'</addon>' /usr/share/kodi/system/addon-manifest.xml
+		sed -i '$i \  <addon optional="true">'$SKIN'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
 	if ! grep -q $REPOSITORY /usr/share/kodi/system/addon-manifest.xml; then
-		echo ${BGreen}$REPOSITORY '\\nAdd '$REPOSITORY' to addon-manifest.xml'${NC}
-		sed -i -e '$i \  <addon optional="true">'$REPOSITORY'</addon>' /usr/share/kodi/system/addon-manifest.xml
+		echo ${BGreen}'\\nAdd '$REPOSITORY' to addon-manifest.xml'${NC}
+		sed -i '$i \  <addon optional="true">'$REPOSITORY'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
 	if ! grep -q $SKIN  /home/pi/.kodi/userdata/guisettings.xml; then
-		echo ${BGreen}$SKIN '\\nedit guisettings.xml'${NC}
+		echo ${BGreen}'\\nAdd '$SKIN' to guisettings.xml'${NC}
   		#sed -i -e 's/"lookandfeel.skin" default="true">skin.estuary/"lookandfeel.skin">skin.carpc/' /home/pi/.kodi/userdata/guisettings.xml
 		#sed -i 's/lookandfeel.skin" default="true">'$BaseSkin'/lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
   		sed -i 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
