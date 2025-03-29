@@ -711,7 +711,7 @@ echo $(skin_download)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-echo ${BBlue}'DOWNLOADING' $REPOSITORY{NC}
+echo ${BBlue}'DOWNLOADING' $REPOSITORY${NC}
 echo $(repository_download)
 echo '---------------------------------------------------------'
 
