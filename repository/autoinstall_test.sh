@@ -380,11 +380,11 @@ repository_download() {
 kodi_set() {
 	if ! grep -q $SKIN /usr/share/kodi/system/addon-manifest.xml; then
 		echo ${BGreen}'\\nAdd '$SKIN' to addon-manifest.xml'${NC}
-		sed -i '$i \  <addon optional="true">'$SKIN'</addon>' /usr/share/kodi/system/addon-manifest.xml
+		sed -i '$i\  <addon optional="true">'$SKIN'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
 	if ! grep -q $REPOSITORY /usr/share/kodi/system/addon-manifest.xml; then
 		echo ${BGreen}'\\nAdd '$REPOSITORY' to addon-manifest.xml'${NC}
-		sed -i '$i \  <addon optional="true">'$REPOSITORY'</addon>' /usr/share/kodi/system/addon-manifest.xml
+		sed -i '$i\  <addon optional="true">'$REPOSITORY'</addon>' /usr/share/kodi/system/addon-manifest.xml
 	fi
 	if ! grep -q $SKIN  /home/pi/.kodi/userdata/guisettings.xml; then
 		echo ${BGreen}'\\nAdd '$SKIN' to guisettings.xml'${NC}
