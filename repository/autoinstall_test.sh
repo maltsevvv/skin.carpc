@@ -21,7 +21,7 @@ export TOP_PID=$$
 
 chekos() {
 	if grep -q 'VERSION="12 (bookworm)"' /etc/os-release; then
-		cat ${BGreen}/sys/firmware/devicetree/base/model;echo ${NC}
+		cat /sys/firmware/devicetree/base/model;echo
 	else
 		echo $BRed"Unsupported OS detected. Recommended Debian 12"$NC $BGreen"\nBookworm lite version"$NC
 		kill -s TERM $TOP_PID
