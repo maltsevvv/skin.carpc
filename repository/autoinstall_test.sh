@@ -407,8 +407,8 @@ kodi_set() {
 
 # Disable Screensaver
 	echo ${BGreen}'\\nDisable Screensaver'${NC}
-	sed -i -r 's/(.+screensaver.mode").+/\1/' /home/pi/.kodi/userdata/guisettings.xm #
-	sed -i 's/screensaver.mode"/screensaver.mode" \/>/' /home/pi/.kodi/userdata/guisettings.xm  # <setting id="screensaver.mode" />
+	sed -i -r 's/(.+screensaver.mode").+/\1/' /home/pi/.kodi/userdata/guisettings.xml #
+	sed -i 's/screensaver.mode"/screensaver.mode" \/>/' /home/pi/.kodi/userdata/guisettings.xml  # <setting id="screensaver.mode" />
 # Amplifi volume up to 30.0dB
 	echo ${BGreen}'\\nVolume +30dB'${NC}
 	sed -i 's/volumeamplification>0.000000/volumeamplification>30.000000/' /home/pi/.kodi/userdata/guisettings.xml
