@@ -127,12 +127,12 @@ EOF
 	fi
 
 	if is_installed "kodi-pvr-iptvsimple"; then
-		echo ${BGreen}'\nKODI PVR IPTV Successfully'${NC}
+		echo ${BGreen}'\\nKODI PVR IPTV Successfully'${NC}
 	else
-		echo ${BGreen}'\nKODI PVR IPTV Installing'${NC}
+		echo ${BGreen}'\\nKODI PVR IPTV Installing'${NC}
 		apt-get install -y kodi-pvr-iptvsimple 2>/dev/null 1>/dev/null
 		if [ "$?" = 0 ]; then
-			echo ${BGreen}'\nKODI PVR IPTV Successfully'${NC}
+			echo ${BGreen}'\\nKODI PVR IPTV Successfully'${NC}
 		else
 			whiptail --title "KODI PVR IPTV" --msgbox "ERROR Installing \nRestart installer!" 10 60
 			kill -s TERM $TOP_PID
@@ -393,7 +393,7 @@ kodi_set() {
   		sed -i 's/"lookandfeel.skin" default="true">'$BaseSkin'/"lookandfeel.skin">'$SKIN'/' /home/pi/.kodi/userdata/guisettings.xml
 	fi
 
-	echo ${BGreen}'Presettings KODI'${NC}
+	echo ${BGreen}'\\nPresettings KODI'${NC}
 	cat <<'EOF' > /home/pi/.kodi/userdata/sources.xml
 <sources>
     <programs>
