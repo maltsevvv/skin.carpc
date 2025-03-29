@@ -112,7 +112,7 @@ kodi() {
 	fi
 	sed -i '/service.xbmc.versioncheck/d' /usr/share/kodi/system/addon-manifest.xml #Disable versioncheck
 	if ! grep -q "/usr/bin/kodi-standalone" /etc/systemd/system/kodi.service; then
-		cat <<EOF > /etc/systemd/system/kodi.service
+		cat <<'EOF' > /etc/systemd/system/kodi.service
 [Unit]
 Description=Kodi Media Center
 [Service]
@@ -664,49 +664,49 @@ echo '---------------------------------------------------------'
 echo $(chekos)
 echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(network)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(network)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(update)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(update)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# if (whiptail --title "FULL UPGRADE SYSTEM" --yesno "Installation is Recommended.\nBut it will take a long time" 10 60); then
-	# echo $(upgrade)
-# else
-	# echo ${BRed}'YOU CANCELED UPGRADE SYSTEM'${NC}
-# fi
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+if (whiptail --title "FULL UPGRADE SYSTEM" --yesno "Installation is Recommended.\nBut it will take a long time" 10 60); then
+	echo $(upgrade)
+else
+	echo ${BRed}'YOU CANCELED UPGRADE SYSTEM'${NC}
+fi
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(samba)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(samba)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(kodi)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(kodi)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(canutils)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(canutils)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(pythoncan)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(pythoncan)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(overlay)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(overlay)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# if (whiptail --title "Bluetooth audio receiver installer" --yesno "Install Bluetooth Audio Receive." 10 60) then
-	# echo $(bluetooth)
-# else
-	# echo ${BRed}'YOU CANCELED THE INSTALLATION BLUETOOTH RECIEVER'${NC}
-# fi
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+if (whiptail --title "Bluetooth audio receiver installer" --yesno "Install Bluetooth Audio Receive." 10 60) then
+	echo $(bluetooth)
+else
+	echo ${BRed}'YOU CANCELED THE INSTALLATION BLUETOOTH RECIEVER'${NC}
+fi
+echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 echo $(kodi_status)
@@ -724,65 +724,65 @@ echo '---------------------------------------------------------'
 echo $(kodi_set)
 echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(folder)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(folder)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo $(rpi_conf)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo $(rpi_conf)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# if (whiptail --title "Video Output" --yes-button " HDMI-VGA " --no-button " ANALOG VIDEO " --yesno "Select video output source" 10 60); then
-	# echo ${BGreen}"Use HDMI-VGA Adapter For Video Output"${NC}
-	# echo $(rpi_vga)
-# else
-	# echo ${BGreen}"Use Analog Video Output Jack 3,5mm"${NC}
-	# echo $(rpi_composite)
-# fi
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+if (whiptail --title "Video Output" --yes-button " HDMI-VGA " --no-button " ANALOG VIDEO " --yesno "Select video output source" 10 60); then
+	echo ${BGreen}"Use HDMI-VGA Adapter For Video Output"${NC}
+	echo $(rpi_vga)
+else
+	echo ${BGreen}"Use Analog Video Output Jack 3,5mm"${NC}
+	echo $(rpi_composite)
+fi
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# if (whiptail --title "AUDIO Output" --yes-button " PCM5102 " --no-button " ANALOG " --yesno "Select Audio output source" 10 60); then
-	# echo ${BGreen}'Use Digital (PCM5102) Audio Output'${NC}
-	# echo $(rpi_pcm)
-# else
-	# echo ${BGreen}'Use Analog Audio Output Jack 3,5mm'${NC}
-	# echo $(rpi_audio)
-# fi
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+if (whiptail --title "AUDIO Output" --yes-button " PCM5102 " --no-button " ANALOG " --yesno "Select Audio output source" 10 60); then
+	echo ${BGreen}'Use Digital (PCM5102) Audio Output'${NC}
+	echo $(rpi_pcm)
+else
+	echo ${BGreen}'Use Analog Audio Output Jack 3,5mm'${NC}
+	echo $(rpi_audio)
+fi
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo ${BGreen}'Enable mcp2515-can0'${NC}
-# echo $(rpi_can0)
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo ${BGreen}'Enable mcp2515-can0'${NC}
+echo $(rpi_can0)
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# if (whiptail --title "IR Remote Control" --yesno "Enable IR-Receiver? \nfor Control Kodi, FOR RNS-JP3 \nWARNING!!!! ONLY FOR RNS-JP3 (Asian)" 10 60); then
-	# echo ${BGreen}'Installed IR-Keytable'${NC}
-	# echo $(rpi_ir)
-	# sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
-	# if ! grep -q 'dtoverlay=gpio-ir' $CONFIG; then
-		# cat <<'EOF' >> $CONFIG
+echo '---------------------------------------------------------'
+if (whiptail --title "IR Remote Control" --yesno "Enable IR-Receiver? \nfor Control Kodi, FOR RNS-JP3 \nWARNING!!!! ONLY FOR RNS-JP3 (Asian)" 10 60); then
+	echo ${BGreen}'Installed IR-Keytable'${NC}
+	echo $(rpi_ir)
+	sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
+	if ! grep -q 'dtoverlay=gpio-ir' $CONFIG; then
+		cat <<'EOF' >> $CONFIG
 
-# dtoverlay=gpio-ir,gpio_pin=17
-# EOF
-	# fi
-# else
-	# sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/#dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
-# fi
-# echo '---------------------------------------------------------'
+dtoverlay=gpio-ir,gpio_pin=17
+EOF
+	fi
+else
+	sed -i 's/^#\?dtoverlay=gpio-ir,gpio_pin=17/#dtoverlay=gpio-ir,gpio_pin=17/' $CONFIG
+fi
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# echo '\\\\'$(hostname -I | awk '{print $1}')'\\''rns'
-# echo '\\\\'$(hostname -I | awk '{print $2}')'\\''rns'
-# echo '---------------------------------------------------------'
+echo '---------------------------------------------------------'
+echo '\\\\'$(hostname -I | awk '{print $1}')'\\''rns'
+echo '\\\\'$(hostname -I | awk '{print $2}')'\\''rns'
+echo '---------------------------------------------------------'
 
-# echo '---------------------------------------------------------'
-# if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
-	# echo "Reboot System"
-	# echo ''
-	# reboot
-# fi
+echo '---------------------------------------------------------'
+if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
+	echo "Reboot System"
+	echo ''
+	reboot
+fi
 echo '---------------------------------------------------------'
 
