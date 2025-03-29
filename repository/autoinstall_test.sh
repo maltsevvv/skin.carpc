@@ -261,7 +261,7 @@ EOF
 		systemctl enable --now pulseaudio.service
 		systemctl --global mask pulseaudio.socket
 	fi
-	echo ${BBlue}'\\nBluez Tools'${NC}
+	echo ${BBlue}'\\nInstalling Bluez Tools'${NC}
 	if is_installed "bluez-tools"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
@@ -274,7 +274,7 @@ EOF
 			kill -s TERM $TOP_PID
 		fi
 	fi
-	echo ${BBlue}'\\nPulse Audio Module Bluetooth'${NC}
+	echo ${BBlue}'\\nInstalling Pulse Audio Module Bluetooth'${NC}
 	if is_installed "pulseaudio-module-bluetooth"; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
 	else
