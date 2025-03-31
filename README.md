@@ -9,11 +9,11 @@
 
 ## Скрипт для автоматической установки  
 ```
-sudo apt-get update
+sudo apt update
 ```
 
 ```
-sudo apt-get upgrade -y
+sudo apt upgrade -y
 ```
 
 ```
