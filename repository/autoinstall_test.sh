@@ -506,23 +506,23 @@ rpi_conf() {
 	fi
 }
 
+
+driver_download() {
+	echo ${BGreen}'Downloads rpi240p'${NC}
+	wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin
+	if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
+		echo $(driver_download)
+	fi
+
+	echo ${BGreen}'Downloads rpi480i'${NC}
+	wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin
+ 	if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
+		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin
+	fi
+}
 rpi_vga() {
 	sed -i -r 's/.+(console=serial0)/\1/' $CMDLINE                      # Del Analog Video
 	sed -i -r 's/(.+) vc4.tv_norm.+/\1/' $CMDLINE                       # Del Analog Video
-	if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
-		echo ${BGreen}'Downloads rpi240p'${NC}
-		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin && > /dev/null 2>&1
-		if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
-			wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin && > /dev/null 2>&1
-		fi
-	fi
- 	if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
-		echo ${BGreen}'Downloads rpi480i'${NC}
-		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin && > /dev/null 2>&1
-		if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
-			wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin && > /dev/null 2>&1
-		fi
-	fi
 	if ! grep -q 'video=HDMI-A-1:NTSC' $CMDLINE; then
 		sed -i 's/^/video=HDMI-A-1:NTSC,margin_left=39,margin_right=21,margin_top=17,margin_bottom=27 /' $CMDLINE  #rnse
 	fi
@@ -725,6 +725,10 @@ echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 echo $(rpi_conf)
+echo '---------------------------------------------------------'
+
+echo '---------------------------------------------------------'
+echo $(driver_download)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
