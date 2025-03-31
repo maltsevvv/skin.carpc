@@ -351,20 +351,24 @@ EOF
 
 skin_download() {
 	echo ${BBlue}$SKIN' Installing'${NC}
+	echo ${BBlue}'\\n'$SKIN' Downloading'${NC}
 	wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
-	unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
 	if ! [ -d $KODI$SKIN ]; then
-		mv /tmp/$SKIN*/ /tmp/$SKIN/ > /dev/null 2>&1
-		cp -r /tmp/$SKIN/ $KODI$SKIN/
+		echo ${BBlue}'\\nTry downloading it again'${NC}
+		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
+		unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
+		cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
 	fi
 	if ! [ -d $KODI$SKIN ]; then
-		echo ${BBlue}'\\n'$SKIN' Downloading'${NC}
-		wget -P $KODI$SKIN $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
-		unzip -o $KODI$SKIN*.zip -d $KODI > /dev/null 2>&1
-		mv $KODI$SKIN*/ $KODI$SKIN/ > /dev/null 2>&1
+		echo ${BBlue}'\\nTry downloading it again'${NC}
+		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
+		unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
+		cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
 	fi
 	if [ -d $KODI$SKIN ]; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
+		unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
+		cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
 	else
 		whiptail --title $SKIN" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
