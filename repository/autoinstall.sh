@@ -352,25 +352,15 @@ EOF
 skin_download() {
 	echo ${BBlue}$SKIN' Installing'${NC}
 	echo ${BBlue}'\\n'$SKIN' Downloading'${NC}
-	wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
+	wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip")
 	unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
 	cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
  	if ! [ -d $KODI$SKIN ]; then
 		echo ${BBlue}'\\nTry downloading it again'${NC}
-		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
-		unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
-		cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
-	fi
-	if ! [ -d $KODI$SKIN ]; then
-		echo ${BBlue}'\\nTry downloading it again'${NC}
-		wget -P /tmp $(curl -L -s https://api.github.com/repos/maltsevvv/skin.carpc/releases/latest | grep -o -E "https://(.*)skin.carpc-(.*).zip") > /dev/null 2>&1
-		unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
-		cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
+		echo $(skin_download)
 	fi
 	if [ -d $KODI$SKIN ]; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
-		unzip -o /tmp/$SKIN*.zip -d /tmp > /dev/null 2>&1
-		cp -r /tmp/$SKIN*/. $KODI$SKIN > /dev/null 2>&1
 	else
 		whiptail --title $SKIN" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
 		kill -s TERM $TOP_PID
@@ -379,12 +369,11 @@ skin_download() {
 
 repository_download() {
 	echo ${BBlue}$REPOSITORY' Installing'${NC}
-	wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
+	wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip
 	unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	if ! [ -d $KODI$REPOSITORY ]; then
-		echo ${BBlue}'\\n'$REPOSITORY' Downloading'${NC}
-		wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip > /dev/null 2>&1
-		unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
+		echo ${BBlue}'\\nTry downloading it again'${NC}
+		echo $(repository_download)
 	fi
 	if [ -d $KODI$REPOSITORY ]; then
 		echo ${BGreen}'\\nSuccessfully'${NC}
@@ -517,23 +506,25 @@ rpi_conf() {
 	fi
 }
 
+
+driver_rpi240p() {
+	echo ${BGreen}'Downloads rpi240p'${NC}
+	wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin
+	if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
+		echo $(driver_rpi240p)
+	fi
+}
+
+driver_rpi480i() {
+	echo ${BGreen}'Downloads rpi480i'${NC}
+	wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin
+ 	if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
+		echo $(driver_rpi480i)
+	fi
+}
 rpi_vga() {
 	sed -i -r 's/.+(console=serial0)/\1/' $CMDLINE                      # Del Analog Video
 	sed -i -r 's/(.+) vc4.tv_norm.+/\1/' $CMDLINE                       # Del Analog Video
-	if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
-		echo ${BGreen}'Downloads rpi240p'${NC}
-		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin && > /dev/null 2>&1
-		if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
-			wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin && > /dev/null 2>&1
-		fi
-	fi
- 	if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
-		echo ${BGreen}'Downloads rpi480i'${NC}
-		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin && > /dev/null 2>&1
-		if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
-			wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin && > /dev/null 2>&1
-		fi
-	fi
 	if ! grep -q 'video=HDMI-A-1:NTSC' $CMDLINE; then
 		sed -i 's/^/video=HDMI-A-1:NTSC,margin_left=39,margin_right=21,margin_top=17,margin_bottom=27 /' $CMDLINE  #rnse
 	fi
@@ -727,6 +718,14 @@ echo $(repository_download)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
+echo $(driver_rpi240p)
+echo '---------------------------------------------------------'
+
+echo '---------------------------------------------------------'
+echo $(driver_rpi480i)
+echo '---------------------------------------------------------'
+
+echo '---------------------------------------------------------'
 echo $(kodi_set)
 echo '---------------------------------------------------------'
 
@@ -737,6 +736,7 @@ echo '---------------------------------------------------------'
 echo '---------------------------------------------------------'
 echo $(rpi_conf)
 echo '---------------------------------------------------------'
+
 
 echo '---------------------------------------------------------'
 if (whiptail --title "Video Output" --yes-button " HDMI-VGA " --no-button " ANALOG VIDEO " --yesno "Select video output source" 10 60); then
