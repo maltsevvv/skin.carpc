@@ -507,17 +507,19 @@ rpi_conf() {
 }
 
 
-driver_download() {
+driver_rpi240p() {
 	echo ${BGreen}'Downloads rpi240p'${NC}
 	wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi240p.bin
 	if ! [ -e /usr/lib/firmware/rpi240p.bin ] ; then
-		echo $(driver_download)
+		echo $(driver_rpi240p)
 	fi
+}
 
+driver_rpi480i() {
 	echo ${BGreen}'Downloads rpi480i'${NC}
 	wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin
  	if ! [ -e /usr/lib/firmware/rpi480i.bin ] ; then
-		wget -P /usr/lib/firmware/ https://github.com/maltsevvv/skin.carpc/raw/master/repository/driver/rpi480i.bin
+		echo $(driver_rpi480i)
 	fi
 }
 rpi_vga() {
@@ -716,6 +718,14 @@ echo $(repository_download)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
+echo $(driver_rpi240p)
+echo '---------------------------------------------------------'
+
+echo '---------------------------------------------------------'
+echo $(driver_rpi480i)
+echo '---------------------------------------------------------'
+
+echo '---------------------------------------------------------'
 echo $(kodi_set)
 echo '---------------------------------------------------------'
 
@@ -727,9 +737,6 @@ echo '---------------------------------------------------------'
 echo $(rpi_conf)
 echo '---------------------------------------------------------'
 
-echo '---------------------------------------------------------'
-echo $(driver_download)
-echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
 if (whiptail --title "Video Output" --yes-button " HDMI-VGA " --no-button " ANALOG VIDEO " --yesno "Select video output source" 10 60); then
