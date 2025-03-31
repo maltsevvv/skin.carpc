@@ -785,10 +785,21 @@ echo '\\\\'$(hostname -I | awk '{print $2}')'\\''rns'
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
-if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
-	echo "Reboot System"
-	echo ''
-	reboot
+if [ -d $KODI$SKIN ]; then
+	if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
+		echo "Reboot System"
+		echo ''
+		reboot
+	fi
+else
+	whiptail --title $SKIN" NOT Installed" --msgbox "ERROR DOWNLOADING \nRestart installer!" 10 60
+	kill -s TERM $TOP_PID
 fi
+
+#if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
+#	echo "Reboot System"
+#	echo ''
+#	reboot
+#fi
 echo '---------------------------------------------------------'
 
