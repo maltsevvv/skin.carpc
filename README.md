@@ -68,13 +68,44 @@ sudo sh /tmp/autoinstall.sh
 
 `hci0:   Type: Primary  Bus: USB`  
 `        BD Address: 00:1A:7D:DA:71:13  ACL MTU: 679:8  SCO MTU: 48:16`  
-`        DOWN` `Bluetooth не работает. Можно, попробовать обновить ядро Linux.`  
+`        DOWN` `НЕ работает `   
 `        RX bytes:706 acl:0 sco:0 events:22 errors:0`  
 `        TX bytes:68 acl:0 sco:0 commands:22 errors:0`  
 
-    sudo rpi-update
+Проверяем   
 
-    sudo reboot
+    rfkill list all
+
+Ecли видим `Soft blocked: yes`. Он заблокирован  
+
+`0: hci0: Bluetooth`
+`        Soft blocked: yes`
+`        Hard blocked: no`
+`1: hci1: Bluetooth`
+`        Soft blocked: no`
+`        Hard blocked: no`
+
+Разблокируем его  
+
+    sudo rfkill unblock all
+
+Проверяем   
+
+    rfkill list all
+
+Видим `Soft blocked: yes`. `Изменился на Soft blocked: no`  
+
+`0: hci0: Bluetooth`
+`        Soft blocked: no`
+`        Hard blocked: no`
+`1: hci1: Bluetooth`
+`        Soft blocked: no`
+`        Hard blocked: no`
+
+Проверяем
+
+    hciconfig
+
 
 ### Проверяем статyс USB Bluetooth модуля.
 
