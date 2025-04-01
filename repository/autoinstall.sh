@@ -567,7 +567,7 @@ rpi_composite() {
 		sed -i "s/$/ vc4.tv_norm=NTSC/" $CMDLINE                         #vc4.tv_norm=PAL for PAL
 	fi
 	sed -i 's/^#\?dtoverlay=vc4-kms-v3d.*/dtoverlay=vc4-kms-v3d,composite/' $CONFIG
-	if ! grep -q 'enable_tvout' $CMDLINE; then
+	if ! grep -q 'enable_tvout' $CONFIG; then
 		sed -i '/dtoverlay=vc4-kms-v3d/a\enable_tvout=1' $CONFIG
 	fi
 }
