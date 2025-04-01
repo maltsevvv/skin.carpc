@@ -17,18 +17,18 @@
 		</control>
 		
 		<control type="image">
-			<left>340</left>
+			<left>140</left>
 			<top>100</top>
-			<width>600</width>
+			<width>1000</width>
 			<height>90</height>
 			<aspectratio>stretch</aspectratio>
 			<texture colordiffuse="$VAR[ButtonFocus]">button_base.png</texture>
 		</control>
 		<control type="label" id="4">
 			<description>Edit Text</description>
-			<left>350</left>
+			<left>150</left>
 			<top>100</top>
-			<width>600</width>
+			<width>980</width>
 			<height>90</height>
 			<font>70</font>
 			<textcolor>$VAR[TextColorFocus]</textcolor>
