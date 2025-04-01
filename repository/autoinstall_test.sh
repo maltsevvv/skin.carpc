@@ -788,8 +788,7 @@ echo '---------------------------------------------------------'
 echo '---------------------------------------------------------'
 if [ -d $KODI$SKIN ]; then
 	if (whiptail --title "Installation Completed" --yesno "Reboot System Now\nIf everything is fine, then after the reboot \nyou will see a window for entering the activation code" 10 60); then
-		echo "Reboot System"
-		echo ''
+		echo "\\nReboot System"
 		reboot
 	fi
 else
