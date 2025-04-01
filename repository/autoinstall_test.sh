@@ -369,6 +369,7 @@ skin_download() {
 
 repository_download() {
 	echo ${BBlue}$REPOSITORY' Installing'${NC}
+ 	echo ${BBlue}'\\n'$REPOSITORY' Downloading'${NC}
 	wget -P /tmp https://github.com/maltsevvv/skin.carpc/raw/master/repository/$REPOSITORY.zip
 	unzip -o /tmp/$REPOSITORY.zip -d $KODI > /dev/null 2>&1
 	if ! [ -d $KODI$REPOSITORY ]; then
