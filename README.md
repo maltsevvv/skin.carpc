@@ -78,12 +78,12 @@ sudo sh /tmp/autoinstall.sh
 
 Ecли видим `Soft blocked: yes`. Он заблокирован  
 
-`0: hci0: Bluetooth`
-`        Soft blocked: yes`
-`        Hard blocked: no`
-`1: hci1: Bluetooth`
-`        Soft blocked: no`
-`        Hard blocked: no`
+`0: hci0: Bluetooth`  
+`        Soft blocked: yes`  
+`        Hard blocked: no`  
+`1: hci1: Bluetooth`  
+`        Soft blocked: no`  
+`        Hard blocked: no`  
 
 Разблокируем его  
 
@@ -95,12 +95,12 @@ Ecли видим `Soft blocked: yes`. Он заблокирован
 
 Видим `Soft blocked: yes`. `Изменился на Soft blocked: no`  
 
-`0: hci0: Bluetooth`
-`        Soft blocked: no`
-`        Hard blocked: no`
-`1: hci1: Bluetooth`
-`        Soft blocked: no`
-`        Hard blocked: no`
+`0: hci0: Bluetooth`  
+`        Soft blocked: no`  
+`        Hard blocked: no`  
+`1: hci1: Bluetooth`  
+`        Soft blocked: no`  
+`        Hard blocked: no`  
 
 Проверяем
 
