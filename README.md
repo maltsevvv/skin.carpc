@@ -138,9 +138,3 @@ Ecли видим `Soft blocked: yes`. Он заблокирован
 
 `defaults.pcm.card 0` `заменить цифру, на номер Вашей карты`  
 `defaults.ctl.card 0` `заменить цифру, на номер Вашей карты`  
-
-### change image on load system. ONLY BUSTER
-
-
-    wget -P /tmp https://raw.githubusercontent.com/maltsevvv/maltsev-Kodi-Repo/master/splash/splash.sh
-    sudo sh /tmp/splash.sh
