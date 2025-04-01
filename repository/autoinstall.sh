@@ -603,6 +603,16 @@ dtoverlay=spi-bcm2835
 EOF
 		fi
 	fi
+  	if grep -q 'Raspberry Pi 4\|Raspberry Pi 5' $ModelPI; then
+		if grep -q 'dtoverlay=spi-bcm2835' $CONFIG; then			# Config SPI for PI2/3
+			sed -i 's/dtoverlay=spi-bcm2835/dtoverlay=spi-bcm2837/' $CONFIG # Edit SPI for PI4/5
+		fi
+	fi
+	if grep -q 'Raspberry Pi 2\|Raspberry Pi 3' $ModelPI; then
+		if grep -q 'dtoverlay=spi-bcm2837' $CONFIG; then			# Config SPI for PI4/5
+			sed -i 's/dtoverlay=spi-bcm2837/dtoverlay=spi-bcm2835/' $CONFIG # Edit SPI for PI2/3
+		fi
+	fi
 }
 
 
