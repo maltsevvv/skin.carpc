@@ -102,10 +102,6 @@ Ecли видим `Soft blocked: yes`. Он заблокирован
 `        Soft blocked: no`  
 `        Hard blocked: no`  
 
-Проверяем
-
-    hciconfig
-
 
 ### Проверяем статyс USB Bluetooth модуля.
 
@@ -113,7 +109,7 @@ Ecли видим `Soft blocked: yes`. Он заблокирован
 
 `hci0:   Type: Primary  Bus: USB`  
 `        BD Address: 00:1A:7D:DA:71:13  ACL MTU: 679:8  SCO MTU: 48:16`  
-`        UP RUNNING PSCAN ISCAN` `Все хорошо, работает.`  
+`        UP RUNNING PSCAN ISCAN` ` Работает `  
 `        RX bytes:706 acl:0 sco:0 events:22 errors:0`  
 `        TX bytes:68 acl:0 sco:0 commands:22 errors:0`  
 
