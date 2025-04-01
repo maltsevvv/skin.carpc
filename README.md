@@ -1,8 +1,7 @@
-[![Raspberry - Buster](https://img.shields.io/badge/Raspberry-Buster_(Kodi_18)-blue?logo=raspberrypi&logoColor=red)](https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-14/2020-02-13-raspbian-buster-lite.zip "Downloads Buster")
 [![Raspberry - Bookworm](https://img.shields.io/badge/Raspberry-Bookworm_(Kodi_20)-blue?logo=raspberrypi&logoColor=red)](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2024-07-04/2024-07-04-raspios-bookworm-arm64-lite.img.xz "Downloads Bookworm")
 
 [![KODI-repository](https://img.shields.io/badge/KODI-repository.maltsev_kodi.zip-red?logo=kodi)](https://github.com/maltsevvv/repository-kodi/raw/refs/heads/master/repository.maltsev_kodi.zip "Downloads Repository for auto update skin")
-[![KODI_18-skin.carpc](https://img.shields.io/badge/KODI_18-skin.carpc-red?logo=kodi)](https://github.com/maltsevvv/repository-kodi/raw/refs/heads/master/kodi18/skin.carpc/skin.carpc-1.0.5.zip "Downloads Latest Version Skin CarPC for Kodi 18")
+
 [![KODI_20-skin.carpc](https://img.shields.io/badge/KODI_20-skin.carpc-red?logo=kodi)](https://github.com/maltsevvv/repository-kodi/raw/refs/heads/master/kodi20/skin.carpc/skin.carpc-1.0.5.zip "Downloads Latest Version Skin CarPC for Kodi 20")
 
 
