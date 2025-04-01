@@ -1,7 +1,5 @@
 [![Raspberry - Bookworm](https://img.shields.io/badge/Raspberry-Bookworm_(Kodi_20)-blue?logo=raspberrypi&logoColor=red)](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2024-07-04/2024-07-04-raspios-bookworm-arm64-lite.img.xz "Downloads Bookworm")
-
 [![KODI-repository](https://img.shields.io/badge/KODI-repository.maltsevi.zip-red?logo=kodi)](https://github.com/maltsevvv/skin.carpc/raw/master/repository/repository.maltsev.zip "Downloads Repository for auto update skin")
-
 [![KODI_20-skin.carpc](https://img.shields.io/badge/KODI_20-skin.carpc-red?logo=kodi)](https://github.com/maltsevvv/repository-kodi/raw/refs/heads/master/kodi20/skin.carpc/skin.carpc-1.0.5.zip "Downloads Latest Version Skin CarPC for Kodi 20")
 
 
