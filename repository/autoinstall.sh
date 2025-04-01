@@ -599,7 +599,7 @@ EOF
 
 # MCP2515-can0 oscillator=8000000 or 16000000 and GPIO=25
 dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=25
- 
+dtoverlay=spi-bcm2835
 EOF
 		fi
 	fi
