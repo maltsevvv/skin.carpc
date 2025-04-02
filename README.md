@@ -23,10 +23,10 @@ sudo sh /tmp/autoinstall.sh
 
 ***
 ## MCP2515(sn65hvd230) NiRen connect to Raspberry PI. Recommended
-[![RPI-CAN](https://github.com/maltsevvv/repository-kodi/blob/master/img/rpi+mcp2515sn230+pcm5102.png)
+![RPI-CAN](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rpi+mcp2515sn230+pcm5102.png?raw=true)
 
-## MCP2515(tja1050) NiRen connect to Raspberry PI
-[![RPI-CAN](https://github.com/maltsevvv/repository-kodi/blob/master/img/rpi+mcp2515tja1050+pcm5102.png)
+## MCP2515(tja1050) NiRen connect to Raspberry PI (NOT WORK, on Raspberry PI version 4 and 5)
+![RPI-CAN](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rpi+mcp2515tja1050+pcm5102.png?raw=true)
 
 ## Possibility of receiving video on RNSD
 [![RNSD](https://github.com/maltsevvv/repository-kodi/blob/master/img/rnsd.png)
