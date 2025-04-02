@@ -29,10 +29,10 @@ sudo sh /tmp/autoinstall.sh
 ![RPI-CAN](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rpi+mcp2515tja1050+pcm5102.png?raw=true)
 
 ## Possibility of receiving video on RNSD
-[![RNSD](https://github.com/maltsevvv/repository-kodi/blob/master/img/rnsd.png)
+![RNSD](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rnsd.png?raw=true)
 
 ## Possibility of receiving video on RNSE
-[![RNSE](https://github.com/maltsevvv/repository-kodi/blob/master/img/rnse.png)
+![RNSE](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rnse.png?raw=true)
 ***
 ## Raspberry Pi Audio Receiver
 
