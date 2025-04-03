@@ -582,6 +582,11 @@ rpi_pcm() {
 	if ! grep -q 'hifiberry-dac' $CONFIG; then
 		sed -i '/dtparam=audio/a\dtoverlay=hifiberry-dac' $CONFIG
 	fi
+	if grep -q 'video=HDMI' $CMDLINE; then
+		if ! grep -q 'dtoverlay=vc4-kms-v3d,noaudio' $CONFIG; then
+			sed -i 's/dtoverlay=vc4-kms-v3d.*/dtoverlay=vc4-kms-v3d,noaudio/' $CONFIG
+		fi
+	fi
 }
 
 rpi_can0() {
