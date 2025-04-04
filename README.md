@@ -127,6 +127,15 @@ Ecли видим `Soft blocked: yes`. Он заблокирован
 
 ## Подключается, но нет звука
 
+Если звук не нужен, через HDMI
+
+    sudo nano /boot/firmware/config.txt
+
+EDIT STRING `dtoverlay=vc4-kms-v3d` to `dtoverlay=vc4-kms-v3d,noaudio`
+
+    sudo reboot
+
+    
 Проверить номер идентификатора аудио карты
 
     cat /proc/asound/cards
@@ -139,3 +148,4 @@ Ecли видим `Soft blocked: yes`. Он заблокирован
 
 `defaults.pcm.card 0` `заменить цифру, на номер Вашей карты`  
 `defaults.ctl.card 0` `заменить цифру, на номер Вашей карты`  
+
