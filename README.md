@@ -28,11 +28,15 @@ sudo sh /tmp/autoinstall.sh
 ## MCP2515(tja1050) NiRen connect to Raspberry PI (NOT WORK, on Raspberry PI version 4 and 5)
 ![RPI-CAN](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rpi+mcp2515tja1050+pcm5102.png?raw=true)
 
-## Possibility of receiving video on RNSD
-![RNSD](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rnsd.png?raw=true)
+## Video to RNSD
+![RNSD](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/vga_rnsd.png?raw=true)
 
-## Possibility of receiving video on RNSE
-![RNSE](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/rnse.png?raw=true)
+## Video to RNSE
+![RNSE](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/vga_rnse_v2.png?raw=true)
+
+## Video to RNS-JP3
+![RNS-JP3](https://github.com/maltsevvv/skin.carpc/blob/master/repository/src/video_rns_jp3.png?raw=true)
+
 ***
 ## Raspberry Pi Audio Receiver
 
