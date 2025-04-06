@@ -61,6 +61,17 @@ upgrade() {
 		kill -s TERM $TOP_PID
 	fi
 }
+ntp() {
+	echo ${BBlue}'NTP Installing'${NC}
+	apt install -y ntp
+	if [ "$?" = 0 ]; then
+		echo ${BGreen}'\\nSuccessfully'${NC}
+	else
+		whiptail --title "NTP server" --msgbox "ERROR Installing \nRestart installer!" 10 60
+		kill -s TERM $TOP_PID
+	fi
+}
+
 
 is_installed() {
 	dpkg -s "$1" > /dev/null 2>&1
@@ -691,6 +702,10 @@ if (whiptail --title "FULL UPGRADE SYSTEM" --yesno "Installation is Recommended.
 else
 	echo ${BRed}'YOU CANCELED UPGRADE SYSTEM'${NC}
 fi
+echo '---------------------------------------------------------'
+
+echo '---------------------------------------------------------'
+echo $(ntp)
 echo '---------------------------------------------------------'
 
 echo '---------------------------------------------------------'
