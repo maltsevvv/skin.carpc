@@ -106,7 +106,7 @@ guest ok = yes
 browseable = no
 EOF
 	fi
-	service smbd restart
+	systemctl restart smbd
 }
 
 kodi() {
