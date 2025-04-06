@@ -106,6 +106,7 @@ samba() {
    browseable = no
 EOF
 	fi
+	service smbd restart
 }
 
 kodi() {
