@@ -1,3 +1,6 @@
+1.0.7 
+Fix error receiving time from instrument cluster
+
 1.0.6 
 Fix calibration menu
 Fix tvtuner for rnsd
